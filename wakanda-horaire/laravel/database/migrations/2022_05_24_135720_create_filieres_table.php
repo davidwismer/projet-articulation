@@ -13,10 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('roles', function (Blueprint $table) {
+        Schema::create('filieres', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('titre');
-            $table->string('description');
+            $table->string('nom');
+            $table->string('modeFormation');
+            $table->string('niveau');
             $table->timestamps();
         });
     }
@@ -28,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('roles');
+        Schema::dropIfExists('filieres');
     }
 };
