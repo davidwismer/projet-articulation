@@ -19,8 +19,7 @@ return new class extends Migration
             $table->date('dateFin');
             $table->string('motif');
             $table->boolean('isValid');
-            $table->date('dateCreation');
-            $table->timestamps();
+            $table->timestamps(); //date création
         });
     }
 

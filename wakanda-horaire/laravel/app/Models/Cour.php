@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Cour extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'description',
+        'label',
+        'room',
+        'start',
+        'end',
+        'hasRendu'
+    ];
 }

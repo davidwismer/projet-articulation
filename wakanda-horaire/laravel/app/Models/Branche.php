@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Branche extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'coefficient',
+        'description',
+        'annee',
+        'anneeFormation'
+    ];
 }
