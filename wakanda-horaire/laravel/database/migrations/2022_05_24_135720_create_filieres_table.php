@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('filieres', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nom');
+            $table->string('orientation');
             $table->string('modeFormation');
             $table->string('niveau');
             $table->timestamps();

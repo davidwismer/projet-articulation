@@ -11,7 +11,18 @@ class Filiere extends Model
 
     protected $fillable = [
         'nom',
+        'orientation',
         'modeFormation',
         'niveau',
     ];
+
+    //Définition de la relation avec User (une filière peut avoir plusieur users)
+    public function users(){
+        return $this->hasMany(User::class);
+    }
+
+    //Définition de la relation avec Group (une filière peut avoir plusieur groups)
+    public function groups(){
+        return $this->hasMany(Group::class);
+    }
 }

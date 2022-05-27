@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\DB;
 
 return new class extends Migration
 {
@@ -15,9 +16,15 @@ return new class extends Migration
     {
         Schema::create('groups', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nom');
-            $table->date('anneeDebut');
+            $table->string('nom', 50);
+            $table->integer('anneeDebut');
             $table->timestamps();
+            $table->integer('filiere_id')->unsigned();
+            $table->foreign('filiere_id')
+                ->references('id')
+                ->on('filieres')
+                ->onDelete('restrict')
+                ->onUpdate('restrict');
         });
     }
 
@@ -28,6 +35,11 @@ return new class extends Migration
      */
     public function down()
     {
+        if (DB::getDriverName() !== 'mysql') {
+            Schema::table('groups', function (Blueprint $table) {
+                $table->dropForeign('groups_filiere_id_foreign');
+            });
+        }
         Schema::dropIfExists('groups');
     }
 };

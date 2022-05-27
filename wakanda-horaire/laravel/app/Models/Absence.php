@@ -13,6 +13,12 @@ class Absence extends Model
         'dateDebut',
         'dateFin',
         'motif',
-        'isValid'
+        'isValid',
+        'user_id'
     ];
+
+    //Definition avec user (une absence vaut pour un seul utilisateur)
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
 }
