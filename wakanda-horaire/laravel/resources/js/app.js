@@ -4,7 +4,18 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
+
 require('./bootstrap');
+
+// 1. On importe createApp
+import createApp  from "vue"
+
+// 2. On importe AppComponent.vue
+import AppComponent from "./components/AppComponent.vue"
+
+// 3. On monte l'application Vue sur l'élément #app
+createApp(AppComponent).mount("#app")
+
 
 window.Vue = require('vue').default;
 
@@ -19,7 +30,7 @@ window.Vue = require('vue').default;
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+// Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
