@@ -9,7 +9,15 @@
 </head>
 
 <body>
+
     <div id="app"></div>
+
+    @foreach($users as $user)
+    <h1>{{$user->nom}}</h1>
+    @endforeach
+
+
+ 
 
     <script src="{{ asset('js/app.js') }}"></script>
 </body>
