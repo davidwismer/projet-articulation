@@ -14,7 +14,8 @@ return new class extends Migration
     public function up()
     {
         Schema::create('modules', function (Blueprint $table) {
-            $table->increments('id');
+            $table->integer('id');
+            $table->string('dimin')->primary();
             $table->string('nom');
             $table->integer('annee');
             $table->integer('nbCredits');

@@ -79,4 +79,10 @@ class User extends Authenticatable
     public function absences(){
         return $this->hasMany(Absence::class);
     }
+
+    //Définition de la relation avec Note (un utilisateur à plusieur notes)
+    public function notes()
+    {
+        return $this->hasMany(Note::class);
+    }
 }

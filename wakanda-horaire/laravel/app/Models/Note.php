@@ -14,5 +14,12 @@ class Note extends Model
         'coefficient',
         'description',
         'isExam',
+        'user_id'
     ];
+
+    //Définition de la relation avec User (une note est propre à un utilisateur)
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

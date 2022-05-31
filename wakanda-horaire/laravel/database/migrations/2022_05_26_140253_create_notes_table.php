@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\DB;
 
 return new class extends Migration
 {
@@ -15,11 +16,18 @@ return new class extends Migration
     {
         Schema::create('notes', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('valeur');
+            $table->float('valeur');
             $table->integer('coefficient');
             $table->string('description');
             $table->boolean('isExam');
             $table->timestamps();
+            //Lien
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('users')
+                ->onDelete('restrict')
+                ->onUpdate('restrict');
         });
     }
 
@@ -30,6 +38,11 @@ return new class extends Migration
      */
     public function down()
     {
+        if (DB::getDriverName() !== 'mysql') {
+            Schema::table('notes', function (Blueprint $table) {
+                $table->dropForeign('notes_user_id_foreign');
+            });
+        }
         Schema::dropIfExists('notes');
     }
 };
