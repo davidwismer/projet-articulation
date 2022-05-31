@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
         $this->call(GroupsTableSeeder::class);
         $this->call(UsersTableSeeder::class);
         $this->call(NotesTableSeeder::class);
+        $this->call(CoursTableSeeder::class);
         $this->call(AbsencesTableSeeder::class);
     }
 }

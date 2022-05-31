@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use DateTime;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -15,6 +16,12 @@ class Cour extends Model
         'room',
         'start',
         'end',
-        'hasRendu'
+        'hasRendu',
+        'branche_id'
     ];
+
+    //Definition avec Branche (Un cours appartient à une seule branche)
+    public function branche(){
+        return $this->belongsTo(Branche::class);
+    }
 }

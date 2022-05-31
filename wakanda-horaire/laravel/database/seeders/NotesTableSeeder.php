@@ -16,16 +16,18 @@ class NotesTableSeeder extends Seeder
     public function run()
     {
         DB::table('notes')->delete();
-        for ($user=1; $user <= 30 ; $user++) { 
-            for ($idbranche=1; $idbranche <= 69; $idbranche++) { 
-                for ($note=rand(1,3); $note >= 1; $note--) { 
+        $nbUser = DB::select('SELECT * FROM users');
+        $nbBranche = DB::select('SELECT * FROM branches');
+        foreach ($nbUser as $user) {
+            foreach($nbBranche as $branche){
+                for ($note = rand(1, 3); $note >= 1; $note--) {
                     DB::table('notes')->insert([
-                        'valeur' => rand(20,60)/10,
+                        'valeur' => rand(20, 60) / 10,
                         'coefficient' => 1,
                         'description' => 'blablabl balbl blab lba',
-                        'isExam' => rand(0,1),
-                        'user_id' => $user,
-                        'branche_id' => $idbranche
+                        'isExam' => rand(0, 1),
+                        'user_id' => $user->id,
+                        'branche_id' => $branche->id
                     ]);
                 }
             }

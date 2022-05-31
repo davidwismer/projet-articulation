@@ -17,6 +17,10 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         DB::table('users')->delete();
+        //Nombre de groups (classes) / filières
+        $nbFilieres = count(DB::select('SELECT * FROM filieres'));
+        $nbGroups = count(DB::select('SELECT * FROM groups'));
+        //Créer 30 utilisateurs
         for ($i = 1; $i <= 30; $i++) {
             DB::table('users')->insert([
                 'nom' => 'Nom' . $i,
@@ -27,9 +31,9 @@ class UsersTableSeeder extends Seeder
                 'noTel' => '0788457328',
                 'adresse' => 'chemin de blablabl ' . $i,
                 'photo' => 'photo' . $i . '.jpg',
-                'filiere_id' => rand(1, 31),
+                'filiere_id' => rand(1, $nbFilieres),
                 'role_id' => rand(1, 3),
-                'group_id' => rand(0, 50)
+                'group_id' => rand(1, $nbGroups)
             ]);
         }
     }

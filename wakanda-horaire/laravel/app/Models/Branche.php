@@ -27,4 +27,9 @@ class Branche extends Model
     public function notes(){
         return $this->hasMany(Note::class);
     }
+
+    //Definition avec cours (une branche est définie par plusieur cours)
+    public function cours(){
+        return $this->hasMany(Cours::class);
+    }
 }

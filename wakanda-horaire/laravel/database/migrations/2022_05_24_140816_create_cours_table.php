@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\DB;
 
 return new class extends Migration
 {
@@ -17,10 +18,17 @@ return new class extends Migration
             $table->increments('id');
             $table->string('label');
             $table->string('room');
-            $table->date('start');
-            $table->date('end');
+            $table->dateTimeTz('start');
+            $table->dateTimeTz('end');
             $table->boolean('hasRendu');
             $table->timestamps();
+            //Lien
+            $table->integer('branche_id')->unsigned();
+            $table->foreign('branche_id')
+                ->references('id')
+                ->on('branches')
+                ->onDelete('restrict')
+                ->onUpdate('restrict');
         });
     }
 
@@ -31,6 +39,11 @@ return new class extends Migration
      */
     public function down()
     {
+        if (DB::getDriverName() !== 'mysql') {
+            Schema::table('cours', function (Blueprint $table) {
+                $table->dropForeign('cours_branches_id_foreign');
+            });
+        }
         Schema::dropIfExists('cours');
     }
 };
