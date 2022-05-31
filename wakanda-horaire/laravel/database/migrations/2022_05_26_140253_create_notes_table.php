@@ -28,6 +28,12 @@ return new class extends Migration
                 ->on('users')
                 ->onDelete('restrict')
                 ->onUpdate('restrict');
+            $table->integer('branche_id')->unsigned();
+            $table->foreign('branche_id')
+                ->references('id')
+                ->on('branches')
+                ->onDelete('restrict')
+                ->onUpdate('restrict');
         });
     }
 
@@ -41,6 +47,7 @@ return new class extends Migration
         if (DB::getDriverName() !== 'mysql') {
             Schema::table('notes', function (Blueprint $table) {
                 $table->dropForeign('notes_user_id_foreign');
+                $table->dropForeign('notes_branche_id_foreign');
             });
         }
         Schema::dropIfExists('notes');

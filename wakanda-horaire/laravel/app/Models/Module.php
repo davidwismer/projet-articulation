@@ -8,13 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Module extends Model
 {
     use HasFactory;
-
-    protected $primaryKey = 'dimin';
-    public $incrementing = false;
-    protected $keyType = 'string';
-
+    
     protected $fillable = [
-        'id',
         'dimin',
         'nom',
         'annee',

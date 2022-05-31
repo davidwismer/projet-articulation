@@ -25,7 +25,6 @@ class ModulesTableSeeder extends Seeder
         while (($data = fgetcsv($csvFile, 2000, ";")) !== FALSE) {
             if (!$firstline) {
                 DB::table('modules')->insert([
-                    'id' => $id,
                     "dimin" => $data['0'],
                     "nom" => $data['1'],
                     "annee" => 2021,

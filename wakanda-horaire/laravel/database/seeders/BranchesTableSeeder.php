@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Symfony\Component\Console\Input\Input;
 
 class BranchesTableSeeder extends Seeder
 {
@@ -21,13 +22,13 @@ class BranchesTableSeeder extends Seeder
         $csvFile = fopen(base_path("database/data/branche.csv"), "r");
 
         $firstline = true;
-        $id = 1;
         while (($data = fgetcsv($csvFile, 2000, ";")) !== FALSE) {
             if (!$firstline) {
+                $diminModule = $data['1'];
+                $module = DB::table('modules')->where('dimin', '=', $diminModule)->get();
                 DB::table('branches')->insert([
-                    'id' => $id,
                     "dimin" => $data['0'],
-                    "module_id" => $data['1'],
+                    "module_id" => $module,
                     "coefficient" => $data['4'],
                     "nom" => $data['2'],
                     'description' => 'blab lablab lablabla balblabalba lbalab',
@@ -35,7 +36,6 @@ class BranchesTableSeeder extends Seeder
                     "anneeFormation" => $data['3']
                 ]);
             }
-            $id++;
             $firstline = false;
         }
 

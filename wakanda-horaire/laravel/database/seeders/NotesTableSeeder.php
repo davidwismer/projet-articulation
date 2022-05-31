@@ -17,7 +17,7 @@ class NotesTableSeeder extends Seeder
     {
         DB::table('notes')->delete();
         for ($user=1; $user <= 30 ; $user++) { 
-            for ($branche=0; $branche <= 68; $branche++) { 
+            for ($idbranche=0; $idbranche <= 68; $idbranche++) { 
                 for ($note=rand(1,3); $note >= 1; $note--) { 
                     DB::table('notes')->insert([
                         'valeur' => rand(20,60)/10,
@@ -25,6 +25,7 @@ class NotesTableSeeder extends Seeder
                         'description' => 'blablabl balbl blab lba',
                         'isExam' => rand(0,1),
                         'user_id' => $user,
+                        'branche_id' => $idbranche
                     ]);
                 }
             }

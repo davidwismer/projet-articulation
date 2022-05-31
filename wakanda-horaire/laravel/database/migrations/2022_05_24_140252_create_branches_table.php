@@ -15,8 +15,8 @@ return new class extends Migration
     public function up()
     {
         Schema::create('branches', function (Blueprint $table) {
-            $table->integer('id');
-            $table->string('dimin')->primary();
+            $table->increments('id');
+            $table->string('dimin');
             $table->integer('coefficient');
             $table->string('nom');
             $table->string('description');
@@ -24,9 +24,9 @@ return new class extends Migration
             $table->integer('anneeFormation');
             $table->timestamps();
             //Lien
-            $table->string('module_id');
+            $table->integer('module_id')->unsigned();
             $table->foreign('module_id')
-                ->references('dimin')
+                ->references('id')
                 ->on('modules')
                 ->onDelete('restrict')
                 ->onUpdate('restrict');

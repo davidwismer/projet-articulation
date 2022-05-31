@@ -9,12 +9,7 @@ class Branche extends Model
 {
     use HasFactory;
 
-    protected $primaryKey = 'dimin';
-    public $incrementing = false;
-    protected $keyType = 'string';
-
     protected $fillable = [
-        'id',
         'dimin',
         'coefficient',
         'nom',
@@ -26,5 +21,10 @@ class Branche extends Model
     //Definition avec module (une branche appartient à un module)
     public function module(){
         return $this->belongsTo(Module::class);
+    }
+
+    //Definition avec note (une branche est définie par plusieur notes)
+    public function notes(){
+        return $this->hasMany(Note::class);
     }
 }
