@@ -29,7 +29,7 @@ class UsersTableSeeder extends Seeder
                 'photo' => 'photo' . $i . '.jpg',
                 'filiere_id' => rand(1, 31),
                 'role_id' => rand(1, 3),
-                'group_id' => rand(1, 50)
+                'group_id' => rand(0, 50)
             ]);
         }
     }

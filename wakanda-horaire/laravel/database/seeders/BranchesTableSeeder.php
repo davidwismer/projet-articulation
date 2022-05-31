@@ -25,10 +25,10 @@ class BranchesTableSeeder extends Seeder
         while (($data = fgetcsv($csvFile, 2000, ";")) !== FALSE) {
             if (!$firstline) {
                 $diminModule = $data['1'];
-                $module = DB::table('modules')->where('dimin', '=', $diminModule)->get();
+                $module = DB::table('modules')->where('dimin', '=', $diminModule)->first();
                 DB::table('branches')->insert([
                     "dimin" => $data['0'],
-                    "module_id" => $module,
+                    "module_id" => $module->id,
                     "coefficient" => $data['4'],
                     "nom" => $data['2'],
                     'description' => 'blab lablab lablabla balblabalba lbalab',
