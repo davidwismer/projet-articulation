@@ -29,7 +29,7 @@ class RolesTableSeeder extends Seeder
 
         ///////////////////////////////Etudiant
         DB::table('roles')->insert([
-            'titre' => 'Étudiant'
+            'titre' => 'Etudiant'
         ]);
     }
 }

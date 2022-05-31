@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('modules', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('dimin');
             $table->string('nom');
             $table->integer('annee');
             $table->integer('nbCredits');

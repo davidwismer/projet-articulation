@@ -17,11 +17,11 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         DB::table('users')->delete();
-        for ($i = 1; $i <= 10; $i++) {
+        for ($i = 1; $i <= 30; $i++) {
             DB::table('users')->insert([
                 'nom' => 'Nom' . $i,
                 'prenom' => 'Prenom' . $i,
-                'dateNaissance' =>  '1999-02-' . $i,
+                'dateNaissance' =>  '1999-02-12',
                 'email' => 'user' . $i . '@gmail.com',
                 'password' => Hash::make('password' . $i),
                 'noTel' => '0788457328',
@@ -29,7 +29,7 @@ class UsersTableSeeder extends Seeder
                 'photo' => 'photo' . $i . '.jpg',
                 'filiere_id' => rand(1, 31),
                 'role_id' => rand(1, 3),
-                'group_id' => rand(1, 50)
+                'group_id' => rand(0, 50)
             ]);
         }
     }

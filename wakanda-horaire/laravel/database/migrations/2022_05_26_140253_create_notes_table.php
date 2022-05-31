@@ -14,20 +14,24 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('branches', function (Blueprint $table) {
+        Schema::create('notes', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('dimin');
+            $table->float('valeur');
             $table->integer('coefficient');
-            $table->string('nom');
             $table->string('description');
-            $table->integer('annee');
-            $table->integer('anneeFormation');
+            $table->boolean('isExam');
             $table->timestamps();
             //Lien
-            $table->integer('module_id')->unsigned();
-            $table->foreign('module_id')
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')
                 ->references('id')
-                ->on('modules')
+                ->on('users')
+                ->onDelete('restrict')
+                ->onUpdate('restrict');
+            $table->integer('branche_id')->unsigned();
+            $table->foreign('branche_id')
+                ->references('id')
+                ->on('branches')
                 ->onDelete('restrict')
                 ->onUpdate('restrict');
         });
@@ -41,10 +45,11 @@ return new class extends Migration
     public function down()
     {
         if (DB::getDriverName() !== 'mysql') {
-            Schema::table('branches', function (Blueprint $table) {
-                $table->dropForeign('branches_module_id_foreign');
+            Schema::table('notes', function (Blueprint $table) {
+                $table->dropForeign('notes_user_id_foreign');
+                $table->dropForeign('notes_branche_id_foreign');
             });
         }
-        Schema::dropIfExists('branches');
+        Schema::dropIfExists('notes');
     }
 };
