@@ -26,7 +26,9 @@ foreach ($users as $user) {
         const usersNoms = <?php echo json_encode($tabUsers); ?>
     </script>
 
-    <div id="app"></div>
+    <div id="app">
+    </div>
+
 
 
     <script src="{{ asset('js/app.js') }}"></script>
