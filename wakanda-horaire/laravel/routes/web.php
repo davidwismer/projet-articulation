@@ -13,9 +13,9 @@ use App\Http\Controllers\DataController;
 |
 */
 
-Route::get('/', function () {
-    return view('vue');
-});
+// Route::get('/', function () {
+//     return view('vue');
+// });
 
 
 Route::get('/', [DataController::class,'index']);

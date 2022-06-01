@@ -4,15 +4,8 @@ $tabUsers = [];
 foreach ($users as $user) {
     array_push($tabUsers, $user->nom);
 }
+
 ?>
-
-<script>
-    const usersNoms = <?php echo json_encode($tabUsers); ?>
-</script>
-
-
-
-
 
 <!DOCTYPE html>
 <html>
@@ -26,7 +19,12 @@ foreach ($users as $user) {
 
 <body>
 
+<script>
+        const usersNoms = <?php echo json_encode($tabUsers); ?>
+    </script>
+
     <div id="app"></div>
+
 
     <script src="{{ asset('js/app.js') }}"></script>
 </body>

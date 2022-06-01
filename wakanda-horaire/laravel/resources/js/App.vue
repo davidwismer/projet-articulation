@@ -4,14 +4,15 @@ import logo from "./components/logo.vue";
 
 const users = ref(usersNoms)
 
-
 </script>
+
+
 
 <template>
   <logo></logo>
-
-    <div v-for="user of usersNoms">
-    <p> {{user}}</p>
+<h1>Test</h1>
+    <div v-for="user of users">
+    <h1> {{user}} </h1>
   </div>
 
 </template>
