@@ -1,8 +1,7 @@
 <script setup >
 import { ref } from "vue";
 import logo from "./components/logo.vue";
-
-const users = ref(usersNoms)
+import grille from "./components/grille.vue";
 
 </script>
 
@@ -10,10 +9,7 @@ const users = ref(usersNoms)
 
 <template>
   <logo></logo>
-<h1>Test</h1>
-    <div v-for="user of users" :key="user">
-    <h1> {{user}} </h1>
-  </div>
+  <grille></grille>
 
 </template>
     
