@@ -24,4 +24,9 @@ class Cour extends Model
     public function branche(){
         return $this->belongsTo(Branche::class);
     }
+
+    //Definition avec Absences (Un cours est concerné par plusieur absences)
+    public function absences(){
+        return $this->hasMany(Absence::class);
+    }
 }
