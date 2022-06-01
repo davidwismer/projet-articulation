@@ -23001,11 +23001,10 @@ var _hoisted_1 = {
   "class": "sidenav"
 };
 
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"title\">Simple sidebar</div><div class=\"menu-items\"><nav><ul><li><a href=\"#horaires\">Horaires</a></li><li><a href=\"#notes\">Notes</a></li><li><a href=\"#evenements\">Evénements</a></li><li><a href=\"#notifications\">Notifications</a></li></ul></nav></div>", 2);
+var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"menu-items\"><nav><ul><li><a href=\"#horaires\">Horaires</a></li><li><a href=\"#notes\">Notes</a></li><li><a href=\"#evenements\">Evénements</a></li><li><a href=\"#notifications\">Notifications</a></li></ul></nav></div>", 1);
 
-var _hoisted_4 = [_hoisted_2];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, _hoisted_4);
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"title\">Simple sidebar</div> "), _hoisted_2]);
 }
 
 /***/ }),
@@ -28219,7 +28218,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.sidenav {\n  /* visibility: hidden; */\n  height: 100%;\n  width: 200px;\n  position: fixed;\n  z-index: 1;\n  top: 0;\n  left: 0;\n  background-color: #111;\n  overflow-x: hidden;\n  padding-top: 20px;\n}\n.sidenav a {\n  padding: 6px 6px 6px 32px;\n  text-decoration: none;\n  font-size: 25px;\n  color: #818181;\n  display: block;\n}\n.sidenav a:hover {\n  color: #f1f1f1;\n}\n.main {\n  margin-left: 200px; /* Same as the width of the sidenav */\n}\n@media screen and (max-height: 450px) {\n.sidenav {\n    padding-top: 15px;\n}\n.sidenav a {\n    font-size: 18px;\n}\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.sidenav {\n  /* visibility: hidden; */\n  height: 100%;\n  width: 250px; /* devra être 2 douzième de la largeur de l'écran */\n  position: fixed;\n  z-index: 1;\n  top: 0;\n  left: 0;\n  background-color: #111;\n  overflow-x: hidden;\n  padding-top: 20px;\n}\n.sidenav a {\n  padding: 6px 6px 6px 32px;\n  text-decoration: none;\n  font-size: 25px;\n  color: #fff;\n  display: block;\n}\n.sidenav a:hover {\n  color: #FF0000;\n}\nli {\n  list-style-type: none; /* enlève la bullet aux débuts des éléments \"list\"\n}\n\n.main {\n  margin-left: 300px; /* Same as the width of the sidenav */\n}\n@media screen and (max-height: 450px) {\n.sidenav {\n    padding-top: 15px;\n}\n.sidenav a {\n    font-size: 18px;\n}\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

@@ -6,7 +6,7 @@ import { ref } from "vue";
 
 <template>
   <div class="sidenav">
-    <div class="title">Simple sidebar</div>
+    <!-- <div class="title">Simple sidebar</div> -->
     <div class="menu-items">
       <nav>
         <ul>
@@ -34,7 +34,7 @@ import { ref } from "vue";
 .sidenav {
   /* visibility: hidden; */
   height: 100%;
-  width: 200px;
+  width: 250px; /* devra être 2 douzième de la largeur de l'écran */
   position: fixed;
   z-index: 1;
   top: 0;
@@ -42,22 +42,27 @@ import { ref } from "vue";
   background-color: #111;
   overflow-x: hidden;
   padding-top: 20px;
+  
 }
 
 .sidenav a {
   padding: 6px 6px 6px 32px;
   text-decoration: none;
   font-size: 25px;
-  color: #818181;
+  color: #fff;
   display: block;
 }
 
 .sidenav a:hover {
-  color: #f1f1f1;
+  color: #FF0000;
+}
+
+li {
+  list-style-type: none; /* enlève la bullet aux débuts des éléments "list"
 }
 
 .main {
-  margin-left: 200px; /* Same as the width of the sidenav */
+  margin-left: 300px; /* Same as the width of the sidenav */
 }
 
 @media screen and (max-height: 450px) {
