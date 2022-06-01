@@ -22703,7 +22703,23 @@ __webpack_require__.r(__webpack_exports__);
     var expose = _ref.expose;
     expose(); // const users = ref(usersNoms);
 
-    var __returned__ = {};
+    var cols = 7;
+    var rows = 8;
+    var grille = document.getElementById("grille");
+
+    for (var row = 0; row < rows; row++) {
+      for (var col = 0; col < cols; col++) {
+        var div = document.createElement("div");
+        div.classList.add("grid-item");
+        grille.appendChild(div);
+      }
+    }
+
+    var __returned__ = {
+      cols: cols,
+      rows: rows,
+      grille: grille
+    };
     Object.defineProperty(__returned__, '__isScriptSetup', {
       enumerable: false,
       value: true
@@ -22742,8 +22758,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
+
+var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  id: "grille"
+}, null, -1
+/* HOISTED */
+);
+
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["logo"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["grille"])], 64
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["logo"]), _hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["grille"])], 64
   /* STABLE_FRAGMENT */
   );
 }
@@ -22761,15 +22784,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "render": () => (/* binding */ render)
 /* harmony export */ });
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
-
-
-var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"grille\"><div class=\"grid-item\"></div><div class=\"grid-item\"></div><div class=\"grid-item\"></div><div class=\"grid-item\"></div><div class=\"grid-item\"></div><div class=\"grid-item\"></div><div class=\"grid-item\"></div><div class=\"grid-item\"></div><div class=\"grid-item\"></div><div class=\"grid-item\"></div><div class=\"grid-item\"></div><div class=\"grid-item\"></div><div class=\"grid-item\"></div><div class=\"grid-item\"></div><div class=\"grid-item\"></div><div class=\"grid-item\"></div><div class=\"grid-item\"></div><div class=\"grid-item\"></div><div class=\"grid-item\"></div><div class=\"grid-item\"></div><div class=\"grid-item\"></div><div class=\"grid-item\"></div><div class=\"grid-item\"></div><div class=\"grid-item\"></div><div class=\"grid-item\"></div><div class=\"grid-item\"></div><div class=\"grid-item\"></div><div class=\"grid-item\"></div><div class=\"grid-item\"></div><div class=\"grid-item\"></div><div class=\"grid-item\"></div><div class=\"grid-item\"></div><div class=\"grid-item\"></div><div class=\"grid-item\"></div><div class=\"grid-item\"></div><div class=\"grid-item\"></div><div class=\"grid-item\"></div><div class=\"grid-item\"></div><div class=\"grid-item\"></div><div class=\"grid-item\"></div><div class=\"grid-item\"></div><div class=\"grid-item\"></div><div class=\"grid-item\"></div><div class=\"grid-item\"></div><div class=\"grid-item\"></div><div class=\"grid-item\"></div><div class=\"grid-item\"></div><div class=\"grid-item\"></div><div class=\"grid-item\"></div><div class=\"grid-item\"></div><div class=\"grid-item\"></div><div class=\"grid-item\"></div><div class=\"grid-item\"></div><div class=\"grid-item\"></div><div class=\"grid-item\"></div><div class=\"grid-item\"></div></div>", 1);
-
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [_hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <h1>Test</h1> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div v-for=\"user of users\" :key=\"user\">\r\n    <h1> {{user}} </h1>\r\n  </div> ")], 2112
-  /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */
-  );
+  return null;
 }
 
 /***/ }),
@@ -27919,7 +27935,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.grille {\r\n  max-width: 1300;\r\n  width: 100%;\r\n  height: auto;\r\n  margin: 30px auto;\r\n  display: grid;\r\n  grid-template-columns: repeat(7, 120px);\r\n  justify-content: center;\r\n\r\n  grid-gap: 20px;\n}\n.grid-item {\r\n  width: 120px;\r\n  height: 100px;\r\n  background: #eae9e9;\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n#grille {\r\n  max-width: 1300;\r\n  width: 100%;\r\n  height: auto;\r\n  margin: 30px auto;\r\n  display: grid;\r\n  grid-template-columns: repeat(7, 120px);\r\n  justify-content: center;\r\n\r\n  grid-gap: 20px;\n}\n.grid-item {\r\n  width: 120px;\r\n  height: 100px;\r\n  background: #eae9e9;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
