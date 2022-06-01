@@ -1,12 +1,19 @@
 <script setup >
-  import logo from "./components/logo.vue";
+import { ref } from "vue";
+import logo from "./components/logo.vue";
+
+const users = ref(usersNoms)
+
+
 </script>
 
 <template>
-<logo></logo>
-    @foreach($users as $user)
-    <h1><?php $user ?></h1>
-    @endforeach
+  <logo></logo>
+
+    <div v-for="user of usersNoms">
+    <p> {{user}}</p>
+  </div>
+
 </template>
     
 

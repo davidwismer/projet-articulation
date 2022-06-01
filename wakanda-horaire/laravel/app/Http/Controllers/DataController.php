@@ -12,5 +12,8 @@ class DataController extends Controller
         $users=DB::select('select * from users');
 
        return view('vue', ['users' => $users]);
+
     }
+
+
 }
