@@ -17,6 +17,8 @@ class Cour extends Model
         'start',
         'end',
         'hasRendu',
+        'periodeStart',
+        'periodeDuree',
         'branche_id'
     ];
 
@@ -28,5 +30,10 @@ class Cour extends Model
     //Definition avec Absences (Un cours est concerné par plusieur absences)
     public function absences(){
         return $this->hasMany(Absence::class);
+    }
+
+    //Definition avec Commentaire (Un cours est concerné par plusieur commentaires)
+    public function commentaires(){
+        return $this->hasMany(Commentaire::class);
     }
 }

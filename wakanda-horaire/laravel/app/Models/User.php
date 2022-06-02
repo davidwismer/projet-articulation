@@ -85,4 +85,19 @@ class User extends Authenticatable
     {
         return $this->hasMany(Note::class);
     }
+
+    //Définition de la relation avec Commentaire (un utilisateur peut écrire plusieurs commentaires)
+    public function commentaires(){
+        return $this->hasMany(Commentaire::class);
+    }
+
+    //Définition de la relation avec Modules (un utilisateur participe à plusieurs modules)
+    public function modules(){
+        return $this->belongsToMany(Module::class);
+    }
+
+    //Définition de la relation avec Branche (un utilisateur participe à plusieurs branches)
+    public function branches(){
+        return $this->belongsToMany(Branche::class);
+    }
 }
