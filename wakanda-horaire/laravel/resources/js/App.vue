@@ -9,6 +9,7 @@ import horaires from "./components/horaires.vue";
 import notes from "./components/notes.vue";
 
 const users = ref(usersNoms);
+
 </script>
 
 <template>
@@ -25,21 +26,22 @@ const users = ref(usersNoms);
     <notes></notes>
   </div>
 
-  <div v-show="page === '#evenements'">
-    <h1>Evenements</h1>
+  <div v-show="page === '#infos'">
+    <h1>informations</h1>
   </div>
 
   <div v-show="page === '#notifications'">
     <h1>Notifications</h1>
   </div>
+
+    <div v-show="page === '#user'">
+    <h1>Mon compte</h1>
+  </div>
 </template>
 
 <style lang="css">
-.userTest {
-  margin-left: 15%;
-}
 
 body {
-  margin-left: 300px; /* Same as the width of the sidenav */
+  margin-left: 200px; /* Same as the width of the sidenav */
 }
 </style> 

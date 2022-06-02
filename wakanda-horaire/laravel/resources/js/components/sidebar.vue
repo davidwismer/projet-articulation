@@ -2,36 +2,34 @@
 import { ref } from "vue";
 import { page } from "../state.js";
 
-
 window.addEventListener("hashchange", () => {
   page.value = window.location.hash;
 });
-
 </script>
 
 
 
 <template>
   <div class="sidenav">
-    <!-- <div class="title">Simple sidebar</div> -->
-    <div class="menu-items">
-      <nav>
-        <ul>
-          <li>
-            <a href="#horaires">Horaires</a>
-          </li>
-          <li>
-            <a href="#notes">Notes</a>
-          </li>
-          <li>
-            <a href="#evenements">Evénements</a>
-          </li>
-          <li>
-            <a href="#notifications">Notifications</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
+    <nav>
+      <ul>
+        <li class="menu-items">
+          <a href="#horaires">Horaires</a>
+        </li>
+        <li class="menu-items">
+          <a href="#notes">Notes</a>
+        </li>
+        <li class="menu-items">
+          <a href="#infos">Informations</a>
+        </li>
+        <li class="menu-items">
+          <a href="#notifications">Notifications</a>
+        </li>
+        <li class="menu-items" id="li-user">
+          <a href="#user">Mon compte</a>
+        </li>
+      </ul>
+    </nav>
   </div>
 </template>
 
@@ -41,7 +39,7 @@ window.addEventListener("hashchange", () => {
 .sidenav {
   /* visibility: hidden; */
   height: 100%;
-  width: 250px; /* devra être 2 douzième de la largeur de l'écran */
+  width: 200px; /* devra être 2 douzième de la largeur de l'écran */
   position: fixed;
   z-index: 1;
   top: 0;
@@ -49,27 +47,27 @@ window.addEventListener("hashchange", () => {
   background-color: #111;
   overflow-x: hidden;
   padding-top: 20px;
-  
 }
 
 .sidenav a {
-  padding: 6px 6px 6px 32px;
+  padding: 24px 6px 24px 0px;
   text-decoration: none;
-  font-size: 25px;
+  font-size: 20px;
   color: #fff;
   display: block;
 }
 
 .sidenav a:hover {
-  color: #FF0000;
+  color: #ff0000;
 }
 
 li {
-  list-style-type: none; /* enlève la bullet aux débuts des éléments "list"
+  list-style-type: none; /* enlève la bullet aux débuts des éléments "list" */
 }
 
-.main {
-  margin-left: 300px; /* Same as the width of the sidenav */
+#li-user {
+  position: absolute;
+  bottom: 32px;
 }
 
 @media screen and (max-height: 450px) {
