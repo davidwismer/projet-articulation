@@ -1,9 +1,9 @@
 <script setup >
-import grille from './grille.vue';
+import grille from "./grille.vue";
 </script>
 
-
 <template>
-<grille></grille>
+  <grille></grille>
+  <p>qiwfniwnefiuwfiuwbfinxwineoiewnibvuiewbviuerbvinwoiendoiendoiwdoimw</p>
 </template>
     

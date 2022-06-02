@@ -3,30 +3,17 @@
 
 const cols = 7;
 const rows = 8;
-
-const app = document.querySelector('#app > #app');
-const divGrille = document.createElement("div");
-divGrille.classList.add("grille")
-
-app.appendChild(divGrille)
-
-for (let row = 0; row < rows; row++) {
-  for (let col = 0; col < cols; col++) {
-    const div = document.createElement("div");
-    div.classList.add("grid-item");
-    divGrille.appendChild(div);
-  }
-}
-
 </script>
 
-
 <template>
-
-
+<div class="grille">
+  <template v-for="index in rows">
+      <template v-for="index in cols">
+    <div class="grid-item"></div>
+      </template>
+  </template>
+</div>
 </template>
-    
-
     
 <style lang="css">
 .grille {

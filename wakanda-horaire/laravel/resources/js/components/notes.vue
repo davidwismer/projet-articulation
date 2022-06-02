@@ -1,9 +1,11 @@
 <script setup >
-
 </script>
 
 
 <template>
-<h1>helloooo bitch</h1>
+  <div>
+    <h1>helloooo bitch</h1>
+    <p>Y en a maaaare</p>
+  </div>
 </template>
     
