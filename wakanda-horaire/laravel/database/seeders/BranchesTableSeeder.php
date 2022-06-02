@@ -33,7 +33,8 @@ class BranchesTableSeeder extends Seeder
                     "nom" => $data['2'],
                     'description' => 'blab lablab lablabla balblabalba lbalab',
                     'annee' => 2021,
-                    "anneeFormation" => $data['3']
+                    "anneeFormation" => $data['3'],
+                    'modalite' => 'Examen: 50%, Projet Pratique: 50%'
                 ]);
             }
             $firstline = false;
