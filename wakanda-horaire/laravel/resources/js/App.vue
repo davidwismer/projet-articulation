@@ -5,8 +5,6 @@ import grille from "./components/grille.vue";
 import DataExemple from "./components/DataExemple.vue";
 import sidebar from "./components/sidebar.vue";
 import { page } from "./state.js";
-import horaires from "./components/horaires.vue";
-import notes from "./components/notes.vue";
 import AppHoraire from "./AppHoraire.vue";
 import AppNotes from "./AppNotes.vue";
 import AppInformations from "./AppInformations.vue";

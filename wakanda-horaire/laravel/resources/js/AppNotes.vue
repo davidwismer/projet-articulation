@@ -1,9 +1,9 @@
 <script setup >
-console.log('NOTES');
+console.log("NOTES");
 </script>
 
 <template>
-  <grille></grille>
   <p>Nous sommes dans NOTES</p>
+  <h1>helloooo bitch</h1>
+  <p>Y en a maaaare</p>
 </template>
-
