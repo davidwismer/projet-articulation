@@ -1,5 +1,5 @@
 <script setup >
-import { ref } from "vue";
+import { ref, computed } from "vue";
 import logo from "./components/logo.vue";
 import grille from "./components/grille.vue";
 import DataExemple from "./components/DataExemple.vue";
@@ -7,40 +7,57 @@ import sidebar from "./components/sidebar.vue";
 import { page } from "./state.js";
 import horaires from "./components/horaires.vue";
 import notes from "./components/notes.vue";
+import AppHoraire from "./AppHoraire.vue";
+import AppNotes from "./AppNotes.vue";
+import AppInformations from "./AppInformations.vue";
+import AppNotifications from "./AppNotifications.vue";
+import AppUser from "./AppUser.vue";
 
 const users = ref(usersNoms);
 
+const routes = {
+  "#horaires": {
+    label: "Horaires",
+    component: AppHoraire,
+  },
+  "#notes": {
+    label: "Notes",
+    component: AppNotes,
+  },
+  "#infos": {
+    label: "Informations",
+    component: AppInformations,
+  },
+  "#notifications": {
+    label: "Notifications",
+    component: AppNotifications,
+  },
+  "#user": {
+    label: "Mon compte",
+    component: AppUser,
+  },
+};
+
+const hash = ref(window.location.hash);
+
+window.addEventListener(
+  "hashchange",
+  () => (hash.value = window.location.hash)
+);
+
+  const curHash = computed(() => routes[hash.value] ? hash.value : Object.keys(routes)[0]);
+  const curComponent = computed(() => routes[curHash.value].component);
 </script>
 
 <template>
-  <sidebar></sidebar>
+  <sidebar :routes="routes" :curHash="curHash"></sidebar>
   <logo></logo>
-
-  <div v-show="page === '#horaires'">
-    <h1>Horaires</h1>
-    <horaires></horaires>
-  </div>
-
-  <div v-show="page === '#notes'">
-    <h1>Notes</h1>
-    <notes></notes>
-  </div>
-
-  <div v-show="page === '#infos'">
-    <h1>informations</h1>
-  </div>
-
-  <div v-show="page === '#notifications'">
-    <h1>Notifications</h1>
-  </div>
-
-    <div v-show="page === '#user'">
-    <h1>Mon compte</h1>
-  </div>
+    <main>
+    <component :is="curComponent" />
+  </main>
 </template>
 
 <style lang="css">
-
 body {
   margin-left: 200px; /* Same as the width of the sidenav */
 }

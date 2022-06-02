@@ -5,26 +5,28 @@ import { page } from "../state.js";
 window.addEventListener("hashchange", () => {
   page.value = window.location.hash;
 });
+
+const props = defineProps({
+    routes: {
+      type: Object,
+      required: true
+    },
+    curHash: {
+      type: String,
+      required: true
+    }
+  });
 </script>
-
-
 
 <template>
   <div class="sidenav">
     <nav>
       <ul>
-        <li class="menu-items">
-          <a href="#horaires">Horaires</a>
-        </li>
-        <li class="menu-items">
-          <a href="#notes">Notes</a>
-        </li>
-        <li class="menu-items">
-          <a href="#infos">Informations</a>
-        </li>
-        <li class="menu-items">
-          <a href="#notifications">Notifications</a>
-        </li>
+        <li class="menu-items" v-for="(route, hash) of routes">     
+        <a :href="hash" :class="{ active: hash == curHash }">
+          {{ route.label }}
+        </a>
+      </li>
         <li class="menu-items" id="li-user">
           <a href="#user">Mon compte</a>
         </li>
@@ -32,8 +34,6 @@ window.addEventListener("hashchange", () => {
     </nav>
   </div>
 </template>
-
-
     
 <style lang="css">
 .sidenav {
