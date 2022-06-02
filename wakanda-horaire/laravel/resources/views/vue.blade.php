@@ -23,11 +23,12 @@ foreach ($users as $user) {
 
 <body>
 
-<script>
+    <script>
         const usersNoms = <?php echo json_encode($tabUsers); ?>
     </script>
 
     <div id="app">
+
     </div>
 
 

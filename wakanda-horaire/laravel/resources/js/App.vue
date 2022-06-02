@@ -5,7 +5,6 @@ import grille from "./components/grille.vue";
 import DataExemple from "./components/DataExemple.vue";
 import sidebar from "./components/sidebar.vue";
 import { page } from "./state.js";
-import horaires from "./components/horaires.vue";
 import notes from "./components/notes.vue";
 
 const users = ref(usersNoms);
@@ -15,18 +14,15 @@ const users = ref(usersNoms);
   <sidebar></sidebar>
   <logo></logo>
 
-   <div id="grille"></div>
-   
-  <div v-show="page === '#notes'">
+  <div v-show="page === '#horaire'">
+    <grille></grille>
+  </div>
+
+    <div v-show="page === '#notes'">
     <notes></notes>
   </div>
 
-  <div v-show="page === '#horaires'">
-    <horaires></horaires>
-  </div>
 
-  <!-- 
-<data-exemple></data-exemple> -->
 </template>
 
 

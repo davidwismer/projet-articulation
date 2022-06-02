@@ -22668,9 +22668,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_DataExemple_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/DataExemple.vue */ "./resources/js/components/DataExemple.vue");
 /* harmony import */ var _components_sidebar_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/sidebar.vue */ "./resources/js/components/sidebar.vue");
 /* harmony import */ var _state_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./state.js */ "./resources/js/state.js");
-/* harmony import */ var _components_horaires_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/horaires.vue */ "./resources/js/components/horaires.vue");
-/* harmony import */ var _components_notes_vue__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/notes.vue */ "./resources/js/components/notes.vue");
-
+/* harmony import */ var _components_notes_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/notes.vue */ "./resources/js/components/notes.vue");
 
 
 
@@ -22691,8 +22689,7 @@ __webpack_require__.r(__webpack_exports__);
       DataExemple: _components_DataExemple_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
       sidebar: _components_sidebar_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
       page: _state_js__WEBPACK_IMPORTED_MODULE_5__.page,
-      horaires: _components_horaires_vue__WEBPACK_IMPORTED_MODULE_6__["default"],
-      notes: _components_notes_vue__WEBPACK_IMPORTED_MODULE_7__["default"]
+      notes: _components_notes_vue__WEBPACK_IMPORTED_MODULE_6__["default"]
     };
     Object.defineProperty(__returned__, '__isScriptSetup', {
       enumerable: false,
@@ -22754,50 +22751,24 @@ __webpack_require__.r(__webpack_exports__);
 
     var cols = 7;
     var rows = 8;
-    var grille = document.getElementById("grille");
+    var app = document.querySelector('#app > #app');
+    var divGrille = document.createElement("div");
+    divGrille.classList.add("grille");
+    app.appendChild(divGrille);
 
     for (var row = 0; row < rows; row++) {
       for (var col = 0; col < cols; col++) {
         var div = document.createElement("div");
         div.classList.add("grid-item");
-        grille.appendChild(div);
+        divGrille.appendChild(div);
       }
     }
 
     var __returned__ = {
       cols: cols,
       rows: rows,
-      grille: grille
-    };
-    Object.defineProperty(__returned__, '__isScriptSetup', {
-      enumerable: false,
-      value: true
-    });
-    return __returned__;
-  }
-});
-
-/***/ }),
-
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/horaires.vue?vue&type=script&setup=true&lang=js":
-/*!*************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/horaires.vue?vue&type=script&setup=true&lang=js ***!
-  \*************************************************************************************************************************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _grille_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./grille.vue */ "./resources/js/components/grille.vue");
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  setup: function setup(__props, _ref) {
-    var expose = _ref.expose;
-    expose();
-    var __returned__ = {
-      grille: _grille_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+      app: app,
+      divGrille: divGrille
     };
     Object.defineProperty(__returned__, '__isScriptSetup', {
       enumerable: false,
@@ -22873,19 +22844,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
-
-var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  id: "grille"
-}, null, -1
-/* HOISTED */
-);
-
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["sidebar"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["logo"]), _hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["notes"])], 512
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["sidebar"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["logo"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["grille"])], 512
   /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vShow, $setup.page === '#notes']]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["horaires"])], 512
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vShow, $setup.page === '#horaire']]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["notes"])], 512
   /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vShow, $setup.page === '#horaires']]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \r\n<data-exemple></data-exemple> ")], 64
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vShow, $setup.page === '#notes']])], 64
   /* STABLE_FRAGMENT */
   );
 }
@@ -22932,25 +22896,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return null;
-}
-
-/***/ }),
-
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/horaires.vue?vue&type=template&id=d9da9e50":
-/*!******************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/horaires.vue?vue&type=template&id=d9da9e50 ***!
-  \******************************************************************************************************************************************************************************************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* binding */ render)
-/* harmony export */ });
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
-
-function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)($setup["grille"]);
 }
 
 /***/ }),
@@ -28185,7 +28130,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n#grille {\r\n  max-width: 1300;\r\n  width: 100%;\r\n  height: auto;\r\n  margin: 30px auto;\r\n  display: grid;\r\n  grid-template-columns: repeat(7, 120px);\r\n  justify-content: center;\r\n\r\n  grid-gap: 20px;\n}\n.grid-item {\r\n  width: 120px;\r\n  height: 100px;\r\n  background: #eae9e9;\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.grille {\r\n  max-width: 1300;\r\n  width: 100%;\r\n  height: auto;\r\n  margin: 30px auto;\r\n  display: grid;\r\n  grid-template-columns: repeat(7, 120px);\r\n  justify-content: center;\r\n\r\n  grid-gap: 20px;\n}\n.grid-item {\r\n  width: 120px;\r\n  height: 100px;\r\n  background: #eae9e9;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -46246,34 +46191,6 @@ if (false) {}
 
 /***/ }),
 
-/***/ "./resources/js/components/horaires.vue":
-/*!**********************************************!*\
-  !*** ./resources/js/components/horaires.vue ***!
-  \**********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _horaires_vue_vue_type_template_id_d9da9e50__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./horaires.vue?vue&type=template&id=d9da9e50 */ "./resources/js/components/horaires.vue?vue&type=template&id=d9da9e50");
-/* harmony import */ var _horaires_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./horaires.vue?vue&type=script&setup=true&lang=js */ "./resources/js/components/horaires.vue?vue&type=script&setup=true&lang=js");
-/* harmony import */ var C_Users_Maril_Documents_projet_articulation_wakanda_horaire_laravel_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
-
-
-
-
-;
-const __exports__ = /*#__PURE__*/(0,C_Users_Maril_Documents_projet_articulation_wakanda_horaire_laravel_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_horaires_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_horaires_vue_vue_type_template_id_d9da9e50__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/horaires.vue"]])
-/* hot reload */
-if (false) {}
-
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);
-
-/***/ }),
-
 /***/ "./resources/js/components/logo.vue":
 /*!******************************************!*\
   !*** ./resources/js/components/logo.vue ***!
@@ -46410,22 +46327,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/components/horaires.vue?vue&type=script&setup=true&lang=js":
-/*!*********************************************************************************!*\
-  !*** ./resources/js/components/horaires.vue?vue&type=script&setup=true&lang=js ***!
-  \*********************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_horaires_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
-/* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_horaires_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./horaires.vue?vue&type=script&setup=true&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/horaires.vue?vue&type=script&setup=true&lang=js");
- 
-
-/***/ }),
-
 /***/ "./resources/js/components/logo.vue?vue&type=script&lang=js":
 /*!******************************************************************!*\
   !*** ./resources/js/components/logo.vue?vue&type=script&lang=js ***!
@@ -46502,22 +46403,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_grille_vue_vue_type_template_id_039a585c__WEBPACK_IMPORTED_MODULE_0__.render)
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_grille_vue_vue_type_template_id_039a585c__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./grille.vue?vue&type=template&id=039a585c */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/grille.vue?vue&type=template&id=039a585c");
-
-
-/***/ }),
-
-/***/ "./resources/js/components/horaires.vue?vue&type=template&id=d9da9e50":
-/*!****************************************************************************!*\
-  !*** ./resources/js/components/horaires.vue?vue&type=template&id=d9da9e50 ***!
-  \****************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_horaires_vue_vue_type_template_id_d9da9e50__WEBPACK_IMPORTED_MODULE_0__.render)
-/* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_horaires_vue_vue_type_template_id_d9da9e50__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./horaires.vue?vue&type=template&id=d9da9e50 */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/horaires.vue?vue&type=template&id=d9da9e50");
 
 
 /***/ }),
