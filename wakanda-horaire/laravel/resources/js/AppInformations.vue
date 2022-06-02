@@ -1,8 +1,12 @@
 <script setup >
-console.log('INFORMATIONS');
+import EventDetails from './components/EventDetails.vue'
 </script>
 
 <template>
-  <p>Nous sommes dans INFORMATIONS</p>
+  <h1>INFORMATIONS</h1>
+  <event-details></event-details>
 </template>
 
+<style scoped>
+  
+</style>

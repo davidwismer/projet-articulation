@@ -15,7 +15,8 @@ class Branche extends Model
         'nom',
         'description',
         'annee',
-        'anneeFormation'
+        'anneeFormation',
+        'modalite'
     ];
 
     //Definition avec module (une branche appartient à un module)
