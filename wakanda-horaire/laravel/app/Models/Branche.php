@@ -32,4 +32,10 @@ class Branche extends Model
     public function cours(){
         return $this->hasMany(Cours::class);
     }
+
+    //Définition de la relation avec Users (une branche accueil plusieurs users)
+    public function users()
+    {
+        return $this->belongsToMany(User::class);
+    }
 }

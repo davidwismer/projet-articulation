@@ -25,4 +25,9 @@ class Filiere extends Model
     public function groups(){
         return $this->hasMany(Group::class);
     }
+
+    //Définition de la relation avec Modules (une filière peut avoir plusieur modules)
+    public function modules(){
+        return $this->belongsToMany(Module::class);
+    }
 }

@@ -20,7 +20,8 @@ class UsersTableSeeder extends Seeder
         //Nombre de groups (classes) / filières
         $nbFilieres = count(DB::select('SELECT * FROM filieres'));
         $nbGroups = count(DB::select('SELECT * FROM groups'));
-        //Créer 30 utilisateurs
+
+        //Créer 30 utilisateurs randoms
         for ($i = 1; $i <= 30; $i++) {
             DB::table('users')->insert([
                 'nom' => 'Nom' . $i,
@@ -36,5 +37,28 @@ class UsersTableSeeder extends Seeder
                 'group_id' => rand(1, $nbGroups)
             ]);
         }
+
+        //Quelques utilisateurs (cas réels groupe wakanda)
+        $csvFile = fopen(base_path("database/data/usersWakanda.csv"), "r");
+        $firstline = true;
+        while (($data = fgetcsv($csvFile, 100, ",")) !== FALSE) {
+            if (!$firstline) {
+                DB::table('users')->insert([
+                    'nom' => $data['0'],
+                    'prenom' => $data['1'],
+                    'dateNaissance' =>  $data['2'],
+                    'email' => $data['3'],
+                    'password' => Hash::make($data['1']),
+                    'noTel' => $data['4'],
+                    'adresse' => $data['5'],
+                    'photo' => 'photo.jpg',
+                    'filiere_id' => 1,
+                    'role_id' => 3,
+                    'group_id' => 3
+                ]);
+            }
+            $firstline = false;
+        }
+        fclose($csvFile);
     }
 }

@@ -3,7 +3,6 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use Illuminate\Support\Facades\DB;
 
 return new class extends Migration
 {
@@ -14,21 +13,19 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('cours', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('label');
-            $table->string('room');
-            $table->dateTimeTz('start');
-            $table->dateTimeTz('end');
-            $table->boolean('hasRendu');
-            $table->integer('periodeStart');
-            $table->integer('periodeDuree');
+        Schema::create('branche_user', function (Blueprint $table) {
+            $table->id();
             $table->timestamps();
-            //Lien
             $table->integer('branche_id')->unsigned();
             $table->foreign('branche_id')
                 ->references('id')
                 ->on('branches')
+                ->onDelete('restrict')
+                ->onUpdate('restrict');
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('users')
                 ->onDelete('restrict')
                 ->onUpdate('restrict');
         });
@@ -41,11 +38,6 @@ return new class extends Migration
      */
     public function down()
     {
-        if (DB::getDriverName() !== 'mysql') {
-            Schema::table('cours', function (Blueprint $table) {
-                $table->dropForeign('cours_branches_id_foreign');
-            });
-        }
-        Schema::dropIfExists('cours');
+        Schema::dropIfExists('branche_user');
     }
 };
