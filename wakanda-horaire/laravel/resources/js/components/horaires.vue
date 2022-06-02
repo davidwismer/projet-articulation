@@ -4,6 +4,6 @@ import grille from './grille.vue';
 
 
 <template>
-  <grille></grille>
+<grille></grille>
 </template>
     

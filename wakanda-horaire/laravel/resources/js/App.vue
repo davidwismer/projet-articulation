@@ -14,17 +14,18 @@ const users = ref(usersNoms);
 <template>
   <sidebar></sidebar>
   <logo></logo>
- <div id="grille"></div>
 
+   <div id="grille"></div>
+   
   <div v-show="page === '#notes'">
     <notes></notes>
   </div>
 
-  <div v-show="page === '#horaires'"> 
+  <div v-show="page === '#horaires'">
     <horaires></horaires>
   </div>
-  
-<!-- 
+
+  <!-- 
 <data-exemple></data-exemple> -->
 </template>
 

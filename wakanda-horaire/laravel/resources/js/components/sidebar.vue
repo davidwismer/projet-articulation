@@ -1,5 +1,12 @@
 <script setup >
 import { ref } from "vue";
+import { page } from "../state.js";
+
+
+window.addEventListener("hashchange", () => {
+  page.value = window.location.hash;
+});
+
 </script>
 
 
