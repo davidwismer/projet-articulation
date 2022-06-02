@@ -7,6 +7,7 @@ import sidebar from "./components/sidebar.vue";
 import { page } from "./state.js";
 import horaires from "./components/horaires.vue";
 import notes from "./components/notes.vue";
+import calendrier from "./components/calendrier.vue";
 
 const users = ref(usersNoms);
 </script>
@@ -15,18 +16,12 @@ const users = ref(usersNoms);
 
   <sidebar></sidebar>
   <logo></logo>
+  <calendrier></calendrier>
+
 
   <div v-show="page === '#horaires'">
     <h1>Horaires</h1>
-<<<<<<< HEAD
-    <grille></grille>
-  </div>
-
-  <div v-show="page === '#notes'">
-    <notes></notes>
-  </div>
-  
-=======
+    
     <horaires></horaires>
   </div>
 
@@ -42,7 +37,6 @@ const users = ref(usersNoms);
   <div v-show="page === '#notifications'">
     <h1>Notifications</h1>
   </div>
->>>>>>> 52072d3bf17b6ef259091138f95673cec6f62a69
 </template>
 
 <style lang="css">

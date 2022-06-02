@@ -1,3 +1,3 @@
 import { ref } from "vue";
 
-export const page = ref('/');
+export const page = ref('horaires');

@@ -4,6 +4,5 @@ import grille from "./grille.vue";
 
 <template>
   <grille></grille>
-  <p>qiwfniwnefiuwfiuwbfinxwineoiewnibvuiewbviuerbvinwoiendoiendoiwdoimw</p>
 </template>
     
