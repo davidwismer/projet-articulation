@@ -3,8 +3,8 @@ import DataExemple from "./components/DataExemple.vue";
 import CelluleNotesParBranche from "./components/CelluleNotesParBranche.vue";
 import { ref } from "vue";
 
-const branches = ref(userBranches);
-const modules = ref(userModules);
+const branches = ref(tabBranches);
+const modules = ref(tabModules);
 
 console.log("NOTES");
 </script>

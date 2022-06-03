@@ -22827,8 +22827,8 @@ __webpack_require__.r(__webpack_exports__);
   setup: function setup(__props, _ref) {
     var expose = _ref.expose;
     expose();
-    var branches = (0,vue__WEBPACK_IMPORTED_MODULE_2__.ref)(userBranches);
-    var modules = (0,vue__WEBPACK_IMPORTED_MODULE_2__.ref)(userModules);
+    var branches = (0,vue__WEBPACK_IMPORTED_MODULE_2__.ref)(tabBranches);
+    var modules = (0,vue__WEBPACK_IMPORTED_MODULE_2__.ref)(tabModules);
     console.log("NOTES");
     var __returned__ = {
       branches: branches,
@@ -23211,7 +23211,7 @@ __webpack_require__.r(__webpack_exports__);
   setup: function setup(__props, _ref) {
     var expose = _ref.expose;
     expose();
-    var branches = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)(userBranches);
+    var branches = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)(tabBranches);
     var __returned__ = {
       branches: branches,
       ref: vue__WEBPACK_IMPORTED_MODULE_0__.ref

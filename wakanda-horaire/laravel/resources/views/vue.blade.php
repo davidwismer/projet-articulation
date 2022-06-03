@@ -2,7 +2,7 @@
 
 $tabUsers = [];
 foreach ($datas['users'] as $user) {
-    array_push($tabUsers, $user->nom);
+    array_push($tabUsers, $user);
 }
 
 $tabBranches = [];
@@ -34,9 +34,9 @@ foreach ($datas['modules'] as $module) {
 
     <script>
 
-        const usersNoms = <?php echo json_encode($tabUsers); ?>;
-        const userBranches = <?php echo json_encode($tabBranches); ?>;
-        const userModules = <?php echo json_encode($tabModules); ?>;
+        const tabUsers = <?php echo json_encode($tabUsers); ?>;
+        const tabBranches = <?php echo json_encode($tabBranches); ?>;
+        const tabModules = <?php echo json_encode($tabModules); ?>;
     </script>
 
 
