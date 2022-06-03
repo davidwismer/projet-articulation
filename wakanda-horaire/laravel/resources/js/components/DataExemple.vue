@@ -1,11 +1,13 @@
 <script setup>
+
 import { ref } from 'vue';
-const users = ref(usersNoms);
+
+const branches = ref(tabBranches);
     
     </script>
  
 <template>
-  <div v-for="user of users" :key="user">
-    <h1>{{ user }}</h1>
+  <div v-for="branche of branches">
+     <h1>{{branche.dimin}}</h1> <!-- diminutif -->
   </div>
 </template>

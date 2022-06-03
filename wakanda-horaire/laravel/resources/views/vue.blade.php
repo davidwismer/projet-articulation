@@ -1,13 +1,23 @@
 <?php
 //Users
 $tabUsers = [];
-foreach ($users as $user) {
-    array_push($tabUsers, $user->nom);
+foreach ($datas['users'] as $user) {
+    array_push($tabUsers, $user);
 }
 //Evenements
 $tabEvents = [];
 foreach ($events as $event) {
     array_push($tabEvents, $event);
+}
+
+$tabBranches = [];
+foreach ($datas['branches'] as $branche) {
+    array_push($tabBranches, $branche);
+}
+
+$tabModules = [];
+foreach ($datas['modules'] as $module) {
+    array_push($tabModules, $module);
 }
 ?>
 
@@ -28,9 +38,11 @@ foreach ($events as $event) {
 <body>
 
     <script>
-        const usersNoms = <?php echo json_encode($tabUsers); ?>
         //Evenements
         const eventsTab = <?php echo json_encode($tabEvents); ?>
+        const tabUsers = <?php echo json_encode($tabUsers); ?>;
+        const tabBranches = <?php echo json_encode($tabBranches); ?>;
+        const tabModules = <?php echo json_encode($tabModules); ?>;
     </script>
 
 
