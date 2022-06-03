@@ -14,7 +14,7 @@ console.log("NOTES");
   <div v-for="module of modules">
     <h1>{{ module.nom }}</h1>
     <div v-for="branche of branches" v-show="branche.module_id === module.id">
-      <!-- Ici, la valeur sera choisie par l'utilisateur. -->
+      <!--Ici la valeur sera choisie par l'utilisateur. -->
       <cellule-notes-par-branche :branche="branche"></cellule-notes-par-branche>
     </div>
     <hr>
