@@ -11,7 +11,7 @@ import AppInformations from "./AppInformations.vue";
 import AppNotifications from "./AppNotifications.vue";
 import AppUser from "./AppUser.vue";
 
-const users = ref(usersNoms);
+
 
 const routes = {
   "#horaires": {
@@ -52,9 +52,11 @@ const curComponent = computed(() => routes[curHash.value].component);
 <template>
      <logo></logo>
 
+
   <sidebar :routes="routes" :curHash="curHash"></sidebar>
  
   <component :is="curComponent" />
+ 
 </template>
 
 <style lang="css">
