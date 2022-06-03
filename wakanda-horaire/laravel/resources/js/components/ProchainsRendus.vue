@@ -4,7 +4,7 @@
 <template>
   <div class="bloc" width="250px">
     <div class="text-rendus">
-      <h3 classe ="titre-principal" >Prochains rendus</h3>
+      <h3 classe="titre-principal">Prochains rendus</h3>
       <p>17.05 - VisualDon</p>
       <p>25.05 - LabVeilSoc</p>
       <p>25.05 - LabVeilSoc</p>
@@ -14,21 +14,19 @@
 </template>
 
 <style scoped>
-<<<<<<< HEAD
-.blok {
-=======
 .bloc {
->>>>>>> bc81fc90daa86b232db0e78e6ae426a8b2330bc0
   background-color: #e17c70;
   border-radius: 20px;
   width: 200px;
   height: 670px;
-float:right;
+  float: right;
 }
-.titre-principal{
+
+.titre-principal {
   text-align: center;
   margin-top: 0;
 }
+
 .text-rendus {
   margin: 20px;
   color: white;

@@ -6,7 +6,7 @@ foreach ($datas['users'] as $user) {
 }
 //Evenements
 $tabEvents = [];
-foreach ($events as $event) {
+foreach ($datas['events'] as $event) {
     array_push($tabEvents, $event);
 }
 

@@ -12,7 +12,7 @@ class DataController extends Controller
         $users=DB::select('select * from users');
         $branches=DB::select('select * from branches');
         $modules=DB::select('select * from modules');
-        $events=DB::select('SELECT * FROM events');
+        $events=DB::select('SELECT * FROM evenements');
 
         $datas = [
             'users' => $users,
