@@ -1,6 +1,6 @@
 <template>
 <div id="app">
-    <img src="./assets/logo.svg" />
+    <img id="logoHEIG" src="./assets/logo.svg" />
     </div>
 </template>
     
@@ -11,7 +11,7 @@ export default {};
     
 
 <style>
-img {
+#logoHEIG {
   position: fixed;
   right: 10px;
   top: 10px;
