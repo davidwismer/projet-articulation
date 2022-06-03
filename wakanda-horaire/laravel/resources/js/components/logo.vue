@@ -11,6 +11,9 @@ export default {};
 
 <style>
 img {
+  position: fixed;
+  right: 10px;
+  top: 10px;
   float: right;
   width: 150px;
   height: 150px;
