@@ -1,10 +1,14 @@
 <?php
-
+//Users
 $tabUsers = [];
 foreach ($users as $user) {
     array_push($tabUsers, $user->nom);
 }
-
+//Evenements
+$tabEvents = [];
+foreach ($events as $event) {
+    array_push($tabEvents, $event);
+}
 ?>
 
 
@@ -25,6 +29,8 @@ foreach ($users as $user) {
 
     <script>
         const usersNoms = <?php echo json_encode($tabUsers); ?>
+        //Evenements
+        const eventsTab = <?php echo json_encode($tabEvents); ?>
     </script>
 
 

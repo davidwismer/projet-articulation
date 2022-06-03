@@ -10,8 +10,12 @@ class DataController extends Controller
     public function index()
     {
         $users=DB::select('select * from users');
+        $events=DB::select('SELECT * FROM evenements');
 
-       return view('vue', ['users' => $users]);
+       return view('vue', [
+           'users' => $users,
+           'events' => $events
+        ]);
 
     }
 

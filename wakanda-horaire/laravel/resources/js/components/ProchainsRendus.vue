@@ -13,7 +13,7 @@
   </div>
 </template>
 
-<style>
+<style scoped>
 .blok {
   background-color: #e17c70;
   border-radius: 20px;

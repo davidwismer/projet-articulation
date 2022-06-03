@@ -7,8 +7,7 @@
 <style scoped>
 img {
   float: right;
-  float:right;
-  width: 150px;
-  height: 150px;
+  width: 50px;
+  height: 50px;
 }
 </style> 
