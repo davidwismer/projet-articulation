@@ -15,7 +15,7 @@ const rows = 8;
 </div>
 </template>
     
-<style lang="css">
+<style lang="css" scoped>
 .grille {
   max-width: 1300;
   width: 100%;

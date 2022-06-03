@@ -15,7 +15,7 @@ class Branche extends Model
         'nom',
         'description',
         'annee',
-        'anneeFormation',
+        'semestreFormation',
         'modalite'
     ];
 

@@ -20,7 +20,6 @@ class BranchesTableSeeder extends Seeder
 
         //IngeMedia
         $csvFile = fopen(base_path("database/data/branche.csv"), "r");
-
         $firstline = true;
         while (($data = fgetcsv($csvFile, 2000, ";")) !== FALSE) {
             if (!$firstline) {
@@ -31,15 +30,26 @@ class BranchesTableSeeder extends Seeder
                     "module_id" => $module->id,
                     "coefficient" => $data['4'],
                     "nom" => $data['2'],
-                    'description' => 'blab lablab lablabla balblabalba lbalab',
+                    'description' => '',
                     'annee' => 2021,
-                    "anneeFormation" => $data['3'],
+                    "semestreFormation" => $data['3'],
                     'modalite' => 'Examen: 50%, Projet Pratique: 50%'
                 ]);
             }
             $firstline = false;
         }
-
         fclose($csvFile);
+        //Ajouter la description
+        $csvFileDesc = fopen(base_path("database/data/description.csv"), "r");
+        $firstlineDesc = true;
+        while (($dataDesc = fgetcsv($csvFileDesc, 2000, ";")) !== FALSE) {
+            if (!$firstlineDesc) {
+                $diminBranche = $dataDesc['0'];
+                $description = $dataDesc['1'];
+                DB::table('branches')->where('dimin', '=', $diminBranche)->update(['description' => $description]);
+            }
+            $firstlineDesc = false;
+        }
+        fclose($csvFileDesc);
     }
 }

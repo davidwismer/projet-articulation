@@ -29,7 +29,7 @@ class ModulesTableSeeder extends Seeder
                     "nom" => $data['1'],
                     "annee" => 2021,
                     "nbCredits" => $data['3'],
-                    "anneeFormation" => $data['2']
+                    "semestreFormation" => $data['2']
                 ]);
             }
             $id++;

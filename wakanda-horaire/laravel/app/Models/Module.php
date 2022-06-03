@@ -14,7 +14,7 @@ class Module extends Model
         'nom',
         'annee',
         'nbCredits',
-        'anneeFormation',
+        'semestreFormation',
     ];
 
     //Definition avec branche (un module a 1 ou plusieur branches)

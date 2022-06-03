@@ -3,13 +3,8 @@
     <img src="./assets/logo.svg" />
   </div>
 </template>
-    
-<script >
-export default {};
-</script>
-    
 
-<style>
+<style scoped>
 img {
   float: right;
   width: 150px;
