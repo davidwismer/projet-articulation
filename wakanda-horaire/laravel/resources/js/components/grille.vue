@@ -20,7 +20,7 @@ const rows = 8;
 
 
     
-<style lang="css">
+<style lang="css" scoped>
 .grille {
   max-width: 1300;
   width: 100%;

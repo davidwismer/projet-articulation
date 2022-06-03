@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('nom');
             $table->integer('annee');
             $table->integer('nbCredits');
-            $table->integer('anneeFormation');
+            $table->integer('semestreFormation');
             $table->timestamps();
         });
     }

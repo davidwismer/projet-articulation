@@ -37,7 +37,7 @@ const props = defineProps({
   </div>
 </template>
     
-<style lang="css">
+<style lang="css" scoped>
 .sidenav {
   /* visibility: hidden; */
   height: 100%;

@@ -20,19 +20,19 @@ class BrancheUserTableSeeder extends Seeder
         $users = DB::select('SELECT * FROM users');
 
         foreach ($users as $user) {
-            //Avoir l'annee de formation de l'élève
+            //Avoir le semestre de formation (à ce moment c'est 2 pour les 1e, 4 pour les 2e et 6 pour les 3e)
             $class = DB::table('groups')->where('id', '=', $user->group_id)->first();
             $classNom = $class->nom;
             $numClasse = substr($classNom, 1, 2);
             switch ($numClasse) {
                 case '50':
-                    $anneeFormation = 1;
+                    $semestreFormation = 2;
                     break;
                 case '49':
-                    $anneeFormation = 2;
+                    $semestreFormation = 4;
                     break;
                 case '48':
-                    $anneeFormation = 3;
+                    $semestreFormation = 6;
                     break;
             }
 
@@ -41,7 +41,7 @@ class BrancheUserTableSeeder extends Seeder
             foreach ($modulesUser as $value) {
                 $moduleId = $value->module_id;
                 $module = DB::table('modules')->where('id', '=', $moduleId)->first();
-                if ($module->anneeFormation == $anneeFormation) {
+                if ($module->semestreFormation == $semestreFormation) {
                     $branches = DB::select('SELECT * FROM branches');
                     foreach ($branches as $branche) {
                         if($branche->module_id == $moduleId){

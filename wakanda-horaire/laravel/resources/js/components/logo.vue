@@ -3,18 +3,9 @@
     <img id="logoHEIG" src="./assets/logo.svg" />
     </div>
 </template>
-    
-<script >
-export default {};
 
-</script>
-    
-
-<style>
-#logoHEIG {
-  position: fixed;
-  right: 10px;
-  top: 10px;
+<style scoped>
+img {
   float: right;
   float:right;
   width: 150px;

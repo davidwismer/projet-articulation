@@ -19,9 +19,9 @@ return new class extends Migration
             $table->string('dimin');
             $table->integer('coefficient');
             $table->string('nom');
-            $table->string('description');
+            $table->string('description', 2000);
             $table->integer('annee');
-            $table->integer('anneeFormation');
+            $table->integer('semestreFormation');
             $table->string('modalite');
             $table->timestamps();
             //Lien
