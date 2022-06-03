@@ -11,9 +11,15 @@ class DataController extends Controller
     {
         $users=DB::select('select * from users');
         $branches=DB::select('select * from branches');
+        $modules=DB::select('select * from modules');
 
-        return view('vue', ['users' => $users], ['branches' => $branches]);
+        $datas = [
+            'users' => $users,
+            'branches' => $branches,
+            'modules' => $modules
+        ];
 
+        return view('vue', ['datas' => $datas]);
     }
 
 
