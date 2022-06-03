@@ -1,12 +1,13 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.svg" />
-  </div>
+<div id="app">
+    <img id="logoHEIG" src="./assets/logo.svg" />
+    </div>
 </template>
 
 <style scoped>
 img {
   float: right;
+  float:right;
   width: 150px;
   height: 150px;
 }

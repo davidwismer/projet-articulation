@@ -43,20 +43,23 @@ window.addEventListener(
   () => (hash.value = window.location.hash)
 );
 
-  const curHash = computed(() => routes[hash.value] ? hash.value : Object.keys(routes)[0]);
-  const curComponent = computed(() => routes[curHash.value].component);
+const curHash = computed(() =>
+  routes[hash.value] ? hash.value : Object.keys(routes)[0]
+);
+const curComponent = computed(() => routes[curHash.value].component);
 </script>
 
 <template>
+     <logo></logo>
+
   <sidebar :routes="routes" :curHash="curHash"></sidebar>
-  <logo></logo>
-    <main>
-    <component :is="curComponent" />
-  </main>
+ 
+  <component :is="curComponent" />
 </template>
 
 <style lang="css">
 body {
-  margin-left: 200px; /* Same as the width of the sidenav */
+  margin-left: 200px; /*  Same as the width of the sidenav */
+  background-color: #f6f6f6;
 }
 </style> 
