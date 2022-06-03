@@ -1,11 +1,12 @@
 <template>
-  <div id="app">
+<div id="app">
     <img src="./assets/logo.svg" />
-  </div>
+    </div>
 </template>
     
 <script >
 export default {};
+
 </script>
     
 
@@ -15,6 +16,7 @@ img {
   right: 10px;
   top: 10px;
   float: right;
+  float:right;
   width: 150px;
   height: 150px;
 }

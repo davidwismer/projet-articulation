@@ -5,6 +5,8 @@ const cols = 7;
 const rows = 8;
 </script>
 
+
+
 <template>
 <div class="grille">
   <template v-for="index in rows">
@@ -14,6 +16,9 @@ const rows = 8;
   </template>
 </div>
 </template>
+
+
+
     
 <style lang="css">
 .grille {

@@ -7,26 +7,28 @@ window.addEventListener("hashchange", () => {
 });
 
 const props = defineProps({
-    routes: {
-      type: Object,
-      required: true
-    },
-    curHash: {
-      type: String,
-      required: true
-    }
-  });
+  routes: {
+    type: Object,
+    required: true,
+  },
+  curHash: {
+    type: String,
+    required: true,
+  },
+});
 </script>
 
 <template>
   <div class="sidenav">
     <nav>
       <ul>
-        <li class="menu-items" v-for="(route, hash) of routes">     
-        <a :href="hash" :class="{ active: hash == curHash }">
-          {{ route.label }}
-        </a>
-      </li>
+        <li class="menu-items" v-for="(route, hash) of routes">
+          <div>
+            <a :href="hash" :class="{ active: hash == curHash }">
+              {{ route.label }}
+            </a>
+          </div>
+        </li>
         <li class="menu-items" id="li-user">
           <a href="#user">Mon compte</a>
         </li>
@@ -44,17 +46,19 @@ const props = defineProps({
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: #111;
+  background-color: #444444;
   overflow-x: hidden;
   padding-top: 20px;
 }
 
 .sidenav a {
-  padding: 24px 6px 24px 0px;
+  padding: 24px 15px 24px 15px;
   text-decoration: none;
+
   font-size: 20px;
   color: #fff;
   display: block;
+
 }
 
 .sidenav a:hover {
@@ -77,5 +81,12 @@ li {
   .sidenav a {
     font-size: 18px;
   }
+}
+
+div > .active {
+  
+  background-color: #f6f6f6;
+  border-radius: 20px 0px 0px 20px;
+  color: black;
 }
 </style> 

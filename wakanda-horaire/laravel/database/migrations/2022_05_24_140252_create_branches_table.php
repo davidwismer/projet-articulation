@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('description');
             $table->integer('annee');
             $table->integer('anneeFormation');
+            $table->string('modalite');
             $table->timestamps();
             //Lien
             $table->integer('module_id')->unsigned();
