@@ -6,6 +6,7 @@
 
 <style scoped>
 img {
+  position: sticky;
   float: right;
   float:right;
   width: 150px;
