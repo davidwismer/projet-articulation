@@ -51,8 +51,6 @@ export default {
 <style scoped>
 .calendar-date-selector {
   width:100%;
-  padding-left: 210px;
-  padding-right: 210px;
   display:flex;
   width: 80px;
 

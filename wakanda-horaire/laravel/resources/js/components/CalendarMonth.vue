@@ -35,7 +35,6 @@ import CalendarDateIndicator from "./CalendarDateIndicator";
 import CalendarDateSelector from "./CalendarDateSelector";
 import CalendarWeekdays from "./CalendarWeekdays";
 
-
 dayjs.extend(weekday);
 dayjs.extend(weekOfYear);
 
@@ -161,38 +160,35 @@ export default {
 
 <style scoped>
 .calendar-month {
-  position: relative;
+block-size:140px;
+margin-left:80px;
+width: 70%;
+  position:relative; 
+
 }
 
 .day-of-week {
   font-size: 18px;
   padding-bottom: 5px;
   padding-top: 10px;
-
 }
 
 .calendar-month-header {
-      background-color: #F6F6F6;
-      display:flex;
-          /* justify-content:space-between; */
-     
+  background-color: #f6f6f6;
 
+  
 }
 
 .day-of-week,
 .days-grid {
- margin: 30px auto;
-  width: 65%;
+  margin: 30px auto;
   height: auto;
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   justify-content: center;
-
 }
 
 .days-grid {
   grid-gap: 25px;
-
 }
-
 </style>

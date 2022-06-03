@@ -27,8 +27,7 @@ export default {
   font-size: 24px;
   font-weight: 600;
   color: var(--grey-00);
-  padding-left: 180px;
-  padding-right: 180px;
+
   display:flex;
 }
 </style>

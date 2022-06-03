@@ -39,19 +39,23 @@ const options = reactive ({
 
 <script>
 import CalendarMonth from "./components/CalendarMonth";
+import ProchainsRendus from './components/ProchainsRendus.vue';
 
 export default {
   name: "App",
 
   components: {
-    CalendarMonth
+    CalendarMonth,
+    ProchainsRendus
   }
 };
 </script>
 
 <template>
   <div id="app">
-    <CalendarMonth/>
+    <CalendarMonth></CalendarMonth>
+     <prochains-rendus/>
+    
   </div>
 </template>
 
