@@ -7,9 +7,9 @@ console.log(evenements);
 </script>
 
 <template>
-  <h1>Evénements à la HEIG</h1>
   <div class='block-tout'>
     <div class="event">
+      <h1>Evénements à la HEIG</h1>
       <event-details v-for="evenement of evenements" :key="evenements" :titre="evenement.titre" :description="evenement.description"></event-details>
     </div>
     <div class="menu">
