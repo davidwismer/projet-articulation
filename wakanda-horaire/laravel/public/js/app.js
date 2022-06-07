@@ -22795,8 +22795,7 @@ __webpack_require__.r(__webpack_exports__);
   setup: function setup(__props, _ref) {
     var expose = _ref.expose;
     expose();
-    var evenements = (0,vue__WEBPACK_IMPORTED_MODULE_1__.ref)(eventsTab).value;
-    console.log(evenements);
+    var evenements = (0,vue__WEBPACK_IMPORTED_MODULE_1__.ref)(tabEvents);
     var __returned__ = {
       evenements: evenements,
       EventDetails: _components_EventDetails_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
@@ -29376,7 +29375,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.block-tout[data-v-9804954c] {\n  display: flex;\n}\n.evenements[data-v-9804954c] {\n  height: 100%;\n  display: flex;\n  flex-wrap: wrap;\n}\nbutton[data-v-9804954c] {\n  background-color: #C83C2B;\n  color: white;\n  border: 0px;\n  border-radius: 20px;\n  padding: 5px 10px;\n}\n.event[data-v-9804954c] {\n  width: 75%;\n  height: 100%;\n}\n.menu[data-v-9804954c] {\n  background-color: #EAE9E9;\n  height: 100%;\n  width: 25%;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.block-tout[data-v-9804954c] {\n  display: flex;\n}\n.evenements[data-v-9804954c] {\n  height: 100%;\n  display: flex;\n  flex-wrap: wrap;\n  gap: 20%;\n}\nbutton[data-v-9804954c] {\n  background-color: #C83C2B;\n  color: white;\n  border: 0px;\n  border-radius: 20px;\n  padding: 5px 10px;\n}\n.event[data-v-9804954c] {\n  width: 75%;\n  height: 100%;\n}\n.menu[data-v-9804954c] {\n  background-color: #EAE9E9;\n  height: 100%;\n  width: 25%;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

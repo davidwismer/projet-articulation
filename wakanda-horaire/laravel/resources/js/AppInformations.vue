@@ -2,8 +2,7 @@
 import EventDetails from './components/EventDetails.vue';
 import { ref } from 'vue';
 
-const evenements = ref(eventsTab).value;
-console.log(evenements)
+const evenements = ref(tabEvents);
 </script>
 
 <template>
@@ -33,6 +32,7 @@ console.log(evenements)
   height: 100%;
   display: flex;
   flex-wrap: wrap;
+  gap: 20%;
 }
 
 button {
