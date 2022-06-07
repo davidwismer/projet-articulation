@@ -23273,7 +23273,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  props: ['titre', 'description']
+  props: ['titre', 'description', 'lieu', 'dateDebut', 'dateFin']
 });
 
 /***/ }),
@@ -23433,41 +23433,63 @@ var _withScopeId = function _withScopeId(n) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.pushScopeId)("data-v-9804954c"), n = n(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.popScopeId)(), n;
 };
 
-var _hoisted_1 = /*#__PURE__*/_withScopeId(function () {
+var _hoisted_1 = {
+  "class": "block-tout"
+};
+var _hoisted_2 = {
+  "class": "event"
+};
+
+var _hoisted_3 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", null, "Evénements à la HEIG", -1
   /* HOISTED */
   );
 });
 
-var _hoisted_2 = {
-  "class": "block-tout"
-};
-var _hoisted_3 = {
-  "class": "event"
+var _hoisted_4 = /*#__PURE__*/_withScopeId(function () {
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+    "class": "propose"
+  }, "PROPOSER UN EVENEMENT", -1
+  /* HOISTED */
+  );
+});
+
+var _hoisted_5 = {
+  "class": "evenements"
 };
 
-var _hoisted_4 = /*#__PURE__*/_withScopeId(function () {
+var _hoisted_6 = /*#__PURE__*/_withScopeId(function () {
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+    href: "",
+    "class": "suivant"
+  }, "Evénement suivants", -1
+  /* HOISTED */
+  );
+});
+
+var _hoisted_7 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
     "class": "menu"
-  }, null, -1
+  }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", null, "Menus de la semaine")], -1
   /* HOISTED */
   );
 });
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [_hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($setup.evenements, function (evenement) {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [_hoisted_3, _hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($setup.evenements, function (evenement) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)($setup["EventDetails"], {
-      key: $setup.evenements,
+      key: evenement,
       titre: evenement.titre,
-      description: evenement.description
+      description: evenement.description,
+      lieu: evenement.lieu,
+      dateDebut: evenement.dateDebut,
+      dateFin: evenement.dateFin
     }, null, 8
     /* PROPS */
-    , ["titre", "description"]);
+    , ["titre", "description", "lieu", "dateDebut", "dateFin"]);
   }), 128
   /* KEYED_FRAGMENT */
-  ))]), _hoisted_4])], 64
-  /* STABLE_FRAGMENT */
-  );
+  ))]), _hoisted_6]), _hoisted_7]);
 }
 
 /***/ }),
@@ -23866,19 +23888,19 @@ var _hoisted_2 = /*#__PURE__*/_withScopeId(function () {
 var _hoisted_3 = {
   "class": "contenu"
 };
-
-var _hoisted_4 = /*#__PURE__*/_withScopeId(function () {
-  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", null, "S'INSCRIRE", -1
-  /* HOISTED */
-  );
-});
-
+var _hoisted_4 = {
+  "class": "liste"
+};
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.titre), 1
   /* TEXT */
-  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.description), 1
+  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, "du " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.dateDebut) + " au " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.dateFin), 1
   /* TEXT */
-  ), _hoisted_4])]);
+  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.lieu), 1
+  /* TEXT */
+  )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.description), 1
+  /* TEXT */
+  )])]);
 }
 
 /***/ }),
@@ -29265,7 +29287,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.block-tout[data-v-9804954c] {\n  display: flex;\n}\n.event[data-v-9804954c] {\n  height: 100%;\n  width: 50%;\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: space-between;\n}\n.menu[data-v-9804954c] {\n  background-color: grey;\n  height: 100%;\n  width: 50%;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.block-tout[data-v-9804954c] {\n  display: flex;\n}\n.evenements[data-v-9804954c] {\n  height: 100%;\n  display: flex;\n  flex-wrap: wrap;\n}\nbutton[data-v-9804954c] {\n  background-color: #C83C2B;\n  color: white;\n  border: 0px;\n  border-radius: 20px;\n  padding: 5px 10px;\n}\n.event[data-v-9804954c] {\n  width: 75%;\n  height: 100%;\n}\n.menu[data-v-9804954c] {\n  background-color: #EAE9E9;\n  height: 100%;\n  width: 25%;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -29433,7 +29455,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.block[data-v-57ea339a] {\n    background-color: #EAE9E9;\n    border-radius: 20px;\n    width: 200px;\n    display: flex;\n    flex-direction: column;\n}\nh2[data-v-57ea339a] {\n    text-align: center;\n    margin-top: 0;\n}\n.contenu[data-v-57ea339a] {\n    margin: 20px;\n    align-items: center;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n}\n.imgEvent[data-v-57ea339a] {\n    width: 100%;\n    height: 25%;\n    border-radius: 20px 20px 0px 0px;\n}\nbutton[data-v-57ea339a] {\n    background-color: #C83C2B;\n    color: white;\n    text-align: center;\n    padding: 5px 10px;\n    border: 0px;\n    border-radius: 20px;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.block[data-v-57ea339a] {\n    background-color: #EAE9E9;\n    border-radius: 20px;\n    width: 30%;\n    display: flex;\n    flex-direction: column;\n}\nh2[data-v-57ea339a] {\n    text-align: center;\n    margin-top: 0;\n}\n.contenu[data-v-57ea339a] {\n    margin: 20px;\n    align-items: center;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n}\n.imgEvent[data-v-57ea339a] {\n    width: 100%;\n    height: 150px;\n    border-radius: 20px 20px 0px 0px;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

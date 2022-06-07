@@ -20,6 +20,7 @@ return new class extends Migration
             $table->integer('annee');
             $table->integer('nbCredits');
             $table->integer('semestreFormation');
+            $table->string('couleur');
             $table->timestamps();
         });
     }

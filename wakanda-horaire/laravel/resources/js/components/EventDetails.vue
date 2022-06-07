@@ -1,6 +1,6 @@
 <script>
 export default {
-    props: ['titre', 'description'],
+    props: ['titre', 'description', 'lieu', 'dateDebut', 'dateFin'],
 }
 </script>
 
@@ -10,8 +10,11 @@ export default {
             src="https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg">
         <div class="contenu">
             <h2>{{ titre }}</h2>
+            <ul class="liste">
+                <li>du {{ dateDebut }} au {{ dateFin }}</li>
+                <li>{{ lieu }}</li>
+            </ul>
             <p>{{ description }}</p>
-            <button>S'INSCRIRE</button>
         </div>
     </div>
 </template>
@@ -20,7 +23,7 @@ export default {
 .block {
     background-color: #EAE9E9;
     border-radius: 20px;
-    width: 200px;
+    width: 30%;
     display: flex;
     flex-direction: column;
 }
@@ -40,16 +43,7 @@ h2 {
 
 .imgEvent {
     width: 100%;
-    height: 25%;
+    height: 150px;
     border-radius: 20px 20px 0px 0px;
-}
-
-button {
-    background-color: #C83C2B;
-    color: white;
-    text-align: center;
-    padding: 5px 10px;
-    border: 0px;
-    border-radius: 20px;
 }
 </style>
