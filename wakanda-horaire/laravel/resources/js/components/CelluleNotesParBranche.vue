@@ -13,33 +13,54 @@ const props = defineProps({
     required: true,
   },
 });
+
+const toggle = ref(true);
 </script>
  
 <template>
   <div id="divMom" :id="branche.id">
-    <toggle-button></toggle-button>
+    <button @click="toggle = !toggle">
+      <!-- or viewLess -->
+      <img
+        v-if="toggle"
+        class="viewMoreImg"
+        src="./assets/vectorNotesViewMore.svg"
+      />
+      <img
+        v-if="!toggle"
+        class="viewMoreImg"
+        src="./assets/vectorNotesViewLess.svg"
+      />
+    </button>
     <table style="width: 100%">
       <tr>
-        <th id="titre">{{ branche.dimin }}</th>
+        <th class="titreLigne" id="titre">{{ branche.dimin }}</th>
         <th>Note 1</th>
         <th>Note 2</th>
         <th>Note 3</th>
         <!-- eventually add note 3 -->
       </tr>
       <tr>
-        <td id="titreNotes">Notes :</td>
+        <td class="titreLigne" id="titreNotes">Notes :</td>
         <td>4.0</td>
         <td>4.8</td>
         <td>4.4</td>
-        <!-- eventually add note 3 -->
+        <!-- eventually add note -->
         <td>Moyenne : 4.4</td>
+      </tr>
+      <tr v-if="!toggle">
+        <td class="titreLigne">Pondérations :</td>
+        <td>10%</td>
+        <td>40%</td>
+        <td>50%</td>
+        <!-- eventually add ponderation -->
+        <td>coefficiant : 50</td>
       </tr>
     </table>
   </div>
 </template>
 
 <style scoped>
-
 /* table, th, td {
   border:1px solid black;
 } */
@@ -61,19 +82,26 @@ table {
   box-shadow: 0.2em 0em 1em silver;
 }
 
-#titre {
-  text-transform: uppercase;
-  color: v-bind("module.couleur");
+.titreLigne {
   width: 200px;
   text-align: left;
 }
 
-#titreNotes {
-  width: 200px;
-  text-align: left;
+#titre {
+  text-transform: uppercase;
+  color: v-bind("module.couleur");
 }
 
 td {
   font-style: italic;
+}
+
+button {
+  cursor: pointer;
+  border: 0px;
+  background-color: transparent;
+  position: relative;
+  left: 97%;
+  top: 3%;
 }
 </style>
