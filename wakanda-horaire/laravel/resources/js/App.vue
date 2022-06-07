@@ -61,6 +61,7 @@ const curComponent = computed(() => routes[curHash.value].component);
 </template>
 
 <style lang="css">
+
 body {
   margin-left: 200px; /*  Same as the width of the sidenav */
   background-color: #f6f6f6;

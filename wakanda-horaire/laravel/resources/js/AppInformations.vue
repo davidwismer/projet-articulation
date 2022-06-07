@@ -12,7 +12,7 @@ const evenements = ref(tabEvents);
       <h1>Evénements à la HEIG</h1>
       <button class="propose">PROPOSER UN EVENEMENT</button>
       <div class="evenements">
-        <event-details v-for="evenement of evenements" :key="evenement" :titre="evenement.titre"
+        <event-details class="eventDetails" v-for="evenement of evenements" :key="evenement" :titre="evenement.titre"
           :description="evenement.description" :lieu="evenement.lieu" :dateDebut="evenement.dateDebut" :dateFin="evenement.dateFin"></event-details>
       </div>
       <a href="" class="suivant">Evénement suivants</a>
@@ -26,13 +26,25 @@ const evenements = ref(tabEvents);
 <style scoped>
 .block-tout {
   display: flex;
+  margin-left: 100px;
+  margin-top: 50px;
+  gap: 50px;
 }
 
 .evenements {
   height: 100%;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
   gap: 20%;
+}
+
+.eventDetails {
+  width: 40%;
+}
+
+h1 {
+  display: inline-block;
 }
 
 button {
@@ -52,5 +64,12 @@ button {
   background-color: #EAE9E9;
   height: 100%;
   width: 25%;
+  display: flex;
+  justify-content: center;
+  border-radius: 20px 0 0 20px;
+}
+
+.propose{
+  float: right;
 }
 </style>

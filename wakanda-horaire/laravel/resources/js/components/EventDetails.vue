@@ -1,7 +1,19 @@
-<script>
-export default {
-    props: ['titre', 'description', 'lieu', 'dateDebut', 'dateFin'],
-}
+<script setup>
+const props = defineProps(['titre', 'description', 'lieu', 'dateDebut', 'dateFin']);
+
+//Description format
+const shortDesc = props.description.substr(0, 80)
+//Date Debut format
+const dateD = new Date(props.dateDebut);
+const monthDeb = ["janvier", "fevrier", "mars", "avril", "mai", "juin",
+    "juillet", "aout", "septembre", "octobre", "novembre", "decembre"][dateD.getMonth()];
+const dateDeb = dateD.getDate() + ' ' + monthDeb;
+//DateFin format
+const dateF = new Date(props.dateFin);
+const monthFin = ["janvier", "fevrier", "mars", "avril", "mai", "juin",
+    "juillet", "aout", "septembre", "octobre", "novembre", "decembre"][dateF.getMonth()];
+const dateFin = dateF.getDate() + ' ' + monthFin;
+const annee = dateF.getFullYear();
 </script>
 
 <template>
@@ -11,10 +23,10 @@ export default {
         <div class="contenu">
             <h2>{{ titre }}</h2>
             <ul class="liste">
-                <li>du {{ dateDebut }} au {{ dateFin }}</li>
+                <li>du {{ dateDeb }} au {{ dateFin }} {{ annee }}</li>
                 <li>{{ lieu }}</li>
             </ul>
-            <p>{{ description }}</p>
+            <p>{{ shortDesc }}... <a href="" class="lireSuite">Lire la suite</a></p>
         </div>
     </div>
 </template>
@@ -23,22 +35,24 @@ export default {
 .block {
     background-color: #EAE9E9;
     border-radius: 20px;
-    width: 30%;
     display: flex;
     flex-direction: column;
+    margin-bottom: 50px;
 }
 
 h2 {
-    text-align: center;
     margin-top: 0;
+}
+
+.liste {
+    list-style-type: '- ';
 }
 
 .contenu {
     margin: 20px;
-    align-items: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: left;
 }
 
 .imgEvent {

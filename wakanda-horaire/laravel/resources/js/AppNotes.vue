@@ -10,7 +10,7 @@ const modules = ref(tabModules);
 
 console.log("NOTES");
 
-let count = ref(1);
+let count = ref(4);
 
 function plusPetit() {
   count.value--;
@@ -38,7 +38,7 @@ function plusGrand() {
   <div v-for="module of modules" v-show="module.semestreFormation === count">
     <h2>{{ module.nom }}</h2>
     <div v-for="branche of branches" v-show="branche.module_id === module.id">
-      <cellule-notes-par-branche :branche="branche"></cellule-notes-par-branche>
+      <cellule-notes-par-branche :module="module" :branche="branche"></cellule-notes-par-branche>
     </div>
     <hr />
   </div>
