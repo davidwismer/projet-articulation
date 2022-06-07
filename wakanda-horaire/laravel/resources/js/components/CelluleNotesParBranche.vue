@@ -10,6 +10,10 @@ const props = defineProps({
  
 <template>
   <div :id="branche.id">
-    <h1>{{ branche.dimin }}</h1>
+    <h3>{{ branche.dimin }}</h3>
   </div>
 </template>
+
+<style scoped>
+
+</style>
