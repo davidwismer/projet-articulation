@@ -1,4 +1,6 @@
 <script setup>
+import ToggleButton from "./ToggleButton.vue";
+
 import { ref } from "vue";
 
 const props = defineProps({
@@ -15,86 +17,63 @@ const props = defineProps({
  
 <template>
   <div id="divMom" :id="branche.id">
-    <button class="viewMoreButton"> <!-- or viewLess -->
-      <img class="viewMoreImg" src="./assets/vectorNotesViewMore.svg" />
-    </button>
-    <div id="firstFloor">
-      <div id="titre" class="compoBox titre">
-        <h1>{{ branche.dimin }}</h1>
-      </div>
-      <div class="compoBox note1">
-        <p>Note 1</p>
-      </div>
-      <div class="compoBox note2">
-        <p>Note 2</p>
-      </div>
-      <div class="compoBox note3">
-        <p>Note 3</p>
-      </div>
-      <div class="compoBox moyenne">
-        <p>Moyenne</p>
-      </div>
-    </div>
-    <!-- Deuxième niveau :-->
-    <div id="secondFloor">
-      <div class="compoBox titre">
-        <p>Notes :</p>
-        <!-- ça affiche ce que je veux correctement -->
-      </div>
-      <div class="compoBox note1">
-        <p>une note</p>
-      </div>
-      <div class="compoBox note2">
-        <p>une note</p>
-      </div>
-      <div class="compoBox note3">
-        <p>une note</p>
-      </div>
-      <div class="compoBox moyenne">
-        <p>une moyenne</p>
-      </div>
-    </div>
+    <toggle-button></toggle-button>
+    <table style="width: 100%">
+      <tr>
+        <th id="titre">{{ branche.dimin }}</th>
+        <th>Note 1</th>
+        <th>Note 2</th>
+        <th>Note 3</th>
+        <!-- eventually add note 3 -->
+      </tr>
+      <tr>
+        <td id="titreNotes">Notes :</td>
+        <td>4.0</td>
+        <td>4.8</td>
+        <td>4.4</td>
+        <!-- eventually add note 3 -->
+        <td>Moyenne : 4.4</td>
+      </tr>
+    </table>
   </div>
 </template>
 
 <style scoped>
-.compoBox {
-  display: inline-block;
+
+/* table, th, td {
+  border:1px solid black;
+} */
+
+tr {
+  height: 50px;
+}
+
+table {
   text-align: center;
-}
-
-.titre {
-  margin-left: 10px;
-}
-
-.note1 {
-  margin-left: 50px;
-}
-
-.note2 {
-  margin-left: 100px;
-}
-
-.note3 {
-  margin-left: 150px;
-}
-
-.moyenne {
-  margin-left: 200px;
 }
 
 #divMom {
   width: 80%;
-  padding: 10px;
-  border: 5px solid v-bind("module.couleur");
-  margin: 0;
+  padding: 15px;
+  border-left: 10px solid v-bind("module.couleur");
+  border-radius: 25px;
+  margin: 25px 25px 50px;
+  box-shadow: 0.2em 0em 1em silver;
 }
 
-h1 {
+#titre {
+  text-transform: uppercase;
   color: v-bind("module.couleur");
+  width: 200px;
+  text-align: left;
 }
 
-p {
+#titreNotes {
+  width: 200px;
+  text-align: left;
+}
+
+td {
   font-style: italic;
 }
 </style>

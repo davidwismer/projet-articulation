@@ -23202,6 +23202,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+/* harmony import */ var _ToggleButton_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ToggleButton.vue */ "./resources/js/components/ToggleButton.vue");
+
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -23228,6 +23230,7 @@ __webpack_require__.r(__webpack_exports__);
 
     var __returned__ = {
       props: props,
+      ToggleButton: _ToggleButton_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
       ref: vue__WEBPACK_IMPORTED_MODULE_0__.ref
     };
     Object.defineProperty(__returned__, '__isScriptSetup', {
@@ -23285,6 +23288,36 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: ['titre', 'description', 'lieu', 'dateDebut', 'dateFin']
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/ToggleButton.vue?vue&type=script&setup=true&lang=js":
+/*!*****************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/ToggleButton.vue?vue&type=script&setup=true&lang=js ***!
+  \*****************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  setup: function setup(__props, _ref) {
+    var expose = _ref.expose;
+    expose();
+    var __returned__ = {
+      ref: vue__WEBPACK_IMPORTED_MODULE_0__.ref
+    };
+    Object.defineProperty(__returned__, '__isScriptSetup', {
+      enumerable: false,
+      value: true
+    });
+    return __returned__;
+  }
 });
 
 /***/ }),
@@ -23826,8 +23859,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "render": () => (/* binding */ render)
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
-/* harmony import */ var _assets_vectorNotesViewMore_svg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./assets/vectorNotesViewMore.svg */ "./resources/js/components/assets/vectorNotesViewMore.svg");
-
 
 
 var _withScopeId = function _withScopeId(n) {
@@ -23835,66 +23866,47 @@ var _withScopeId = function _withScopeId(n) {
 };
 
 var _hoisted_1 = ["id"];
+var _hoisted_2 = {
+  style: {
+    "width": "100%"
+  }
+};
+var _hoisted_3 = {
+  id: "titre"
+};
 
-var _hoisted_2 = /*#__PURE__*/_withScopeId(function () {
-  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-    "class": "viewMoreButton"
-  }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" or viewLess "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-    "class": "viewMoreImg",
-    src: _assets_vectorNotesViewMore_svg__WEBPACK_IMPORTED_MODULE_1__["default"]
-  })], -1
+var _hoisted_4 = /*#__PURE__*/_withScopeId(function () {
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "Note 1", -1
   /* HOISTED */
   );
 });
 
-var _hoisted_3 = {
-  id: "firstFloor"
-};
-var _hoisted_4 = {
-  id: "titre",
-  "class": "compoBox titre"
-};
-
 var _hoisted_5 = /*#__PURE__*/_withScopeId(function () {
-  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-    "class": "compoBox note1"
-  }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, "Note 1")], -1
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "Note 2", -1
   /* HOISTED */
   );
 });
 
 var _hoisted_6 = /*#__PURE__*/_withScopeId(function () {
-  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-    "class": "compoBox note2"
-  }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, "Note 2")], -1
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "Note 3", -1
   /* HOISTED */
   );
 });
 
 var _hoisted_7 = /*#__PURE__*/_withScopeId(function () {
-  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-    "class": "compoBox note3"
-  }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, "Note 3")], -1
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", {
+    id: "titreNotes"
+  }, "Notes :"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "4.0"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "4.8"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "4.4"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" eventually add note 3 "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "Moyenne : 4.4")], -1
   /* HOISTED */
   );
 });
-
-var _hoisted_8 = /*#__PURE__*/_withScopeId(function () {
-  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-    "class": "compoBox moyenne"
-  }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, "Moyenne")], -1
-  /* HOISTED */
-  );
-});
-
-var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div id=\"secondFloor\" data-v-3bc4d7c2><div class=\"compoBox titre\" data-v-3bc4d7c2><p data-v-3bc4d7c2>Notes :</p><!-- ça affiche ce que je veux correctement --></div><div class=\"compoBox note1\" data-v-3bc4d7c2><p data-v-3bc4d7c2>une note</p></div><div class=\"compoBox note2\" data-v-3bc4d7c2><p data-v-3bc4d7c2>une note</p></div><div class=\"compoBox note3\" data-v-3bc4d7c2><p data-v-3bc4d7c2>une note</p></div><div class=\"compoBox moyenne\" data-v-3bc4d7c2><p data-v-3bc4d7c2>une moyenne</p></div></div>", 1);
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
     id: "divMom"
-  }, [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.branche.dimin), 1
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["ToggleButton"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("table", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", _hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.branche.dimin), 1
   /* TEXT */
-  )]), _hoisted_5, _hoisted_6, _hoisted_7, _hoisted_8]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Deuxième niveau :"), _hoisted_9], 8
+  ), _hoisted_4, _hoisted_5, _hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" eventually add note 3 ")]), _hoisted_7])], 8
   /* PROPS */
   , _hoisted_1);
 }
@@ -24014,6 +24026,41 @@ var _hoisted_2 = /*#__PURE__*/_withScopeId(function () {
 var _hoisted_3 = [_hoisted_2];
 function render(_ctx, _cache) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, _hoisted_3);
+}
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/ToggleButton.vue?vue&type=template&id=114f9ede&scoped=true":
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/ToggleButton.vue?vue&type=template&id=114f9ede&scoped=true ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render)
+/* harmony export */ });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+/* harmony import */ var _assets_vectorNotesViewMore_svg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./assets/vectorNotesViewMore.svg */ "./resources/js/components/assets/vectorNotesViewMore.svg");
+
+
+
+var _withScopeId = function _withScopeId(n) {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.pushScopeId)("data-v-114f9ede"), n = n(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.popScopeId)(), n;
+};
+
+var _hoisted_1 = /*#__PURE__*/_withScopeId(function () {
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+    "class": "viewMoreImg",
+    src: _assets_vectorNotesViewMore_svg__WEBPACK_IMPORTED_MODULE_1__["default"]
+  }, null, -1
+  /* HOISTED */
+  );
+});
+
+function render(_ctx, _cache, $props, $setup, $data, $options) {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" or viewLess "), _hoisted_1]);
 }
 
 /***/ }),
@@ -29543,7 +29590,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.compoBox[data-v-3bc4d7c2] {\n  display: inline-block;\n  text-align: center;\n}\n.titre[data-v-3bc4d7c2] {\n  margin-left: 10px;\n}\n.note1[data-v-3bc4d7c2] {\n  margin-left: 50px;\n}\n.note2[data-v-3bc4d7c2] {\n  margin-left: 100px;\n}\n.note3[data-v-3bc4d7c2] {\n  margin-left: 150px;\n}\n.moyenne[data-v-3bc4d7c2] {\n  margin-left: 200px;\n}\n#divMom[data-v-3bc4d7c2] {\n  width: 80%;\n  padding: 10px;\n  border: 5px solid var(--3bc4d7c2-module_couleur);\n  margin: 0;\n}\nh1[data-v-3bc4d7c2] {\n  color: var(--3bc4d7c2-module_couleur);\n}\np[data-v-3bc4d7c2] {\n  font-style: italic;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n\n/* table, th, td {\n  border:1px solid black;\n} */\ntr[data-v-3bc4d7c2] {\n  height: 50px;\n}\ntable[data-v-3bc4d7c2] {\n  text-align: center;\n}\n#divMom[data-v-3bc4d7c2] {\n  width: 80%;\n  padding: 15px;\n  border-left: 10px solid var(--3bc4d7c2-module_couleur);\n  border-radius: 25px;\n  margin: 25px 25px 50px;\n  box-shadow: 0.2em 0em 1em silver;\n}\n#titre[data-v-3bc4d7c2] {\n  text-transform: uppercase;\n  color: var(--3bc4d7c2-module_couleur);\n  width: 200px;\n  text-align: left;\n}\n#titreNotes[data-v-3bc4d7c2] {\n  width: 200px;\n  text-align: left;\n}\ntd[data-v-3bc4d7c2] {\n  font-style: italic;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -29592,6 +29639,30 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, "\n.bloc[data-v-5c5b2c8b] {\n  background-color: #e17c70;\n  border-radius: 20px;\n  width: 200px;\n  height: 670px;\n  float: right;\n}\n.titre-principal[data-v-5c5b2c8b] {\n  text-align: center;\n  margin-top: 0;\n}\n.text-rendus[data-v-5c5b2c8b] {\n  margin: 20px;\n  color: white;\n  text-align: left;\n}\n", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/ToggleButton.vue?vue&type=style&index=0&id=114f9ede&scoped=true&lang=css":
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/ToggleButton.vue?vue&type=style&index=0&id=114f9ede&scoped=true&lang=css ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/laravel-mix/node_modules/css-loader/dist/runtime/api.js */ "./node_modules/laravel-mix/node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, "\nbutton[data-v-114f9ede] {\n  cursor: pointer;\n  border: 0px;\n  background-color: transparent;\n  position: relative;\n  left: 97%;\n  top: 3%;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -29663,7 +29734,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.sidenav[data-v-5b987ee1] {\n  /* visibility: hidden; */\n  height: 100%;\n  width: 200px; /* devra être 2 douzième de la largeur de l'écran */\n  position: fixed;\n  z-index: 1;\n  top: 0;\n  left: 0;\n  background-color: #444444;\n  overflow-x: hidden;\n  padding-top: 20px;\n}\n.sidenav a[data-v-5b987ee1] {\n  padding: 24px 15px 24px 15px;\n  text-decoration: none;\n\n  font-size: 20px;\n  color: #fff;\n  display: block;\n}\n.sidenav a[data-v-5b987ee1]:hover {\n  color: #ff0000;\n}\nli[data-v-5b987ee1] {\n  list-style-type: none; /* enlève la bullet aux débuts des éléments \"list\" */\n}\n#li-user[data-v-5b987ee1] {\n  position: absolute;\n  bottom: 32px;\n}\n@media screen and (max-height: 450px) {\n.sidenav[data-v-5b987ee1] {\n    padding-top: 15px;\n}\n.sidenav a[data-v-5b987ee1] {\n    font-size: 18px;\n}\n}\ndiv > .active[data-v-5b987ee1] {\n  \n  background-color: #f6f6f6;\n  border-radius: 20px 0px 0px 20px;\n  color: black;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.sidenav[data-v-5b987ee1] {\n  /* visibility: hidden; */\n  height: 100%;\n  width: 180px; /* devra être 2 douzième de la largeur de l'écran */\n  position: fixed;\n  z-index: 1;\n  top: 0;\n  left: 0;\n  background-color: #444444;\n  overflow-x: hidden;\n  padding-top: 20px;\n}\n.sidenav a[data-v-5b987ee1] {\n  padding: 24px 15px 24px 15px;\n  text-decoration: none;\n  font-size: 20px;\n  color: #fff;\n  display: block;\n}\n.sidenav a[data-v-5b987ee1]:hover {\n  color: #ff0000;\n}\nli[data-v-5b987ee1] {\n  list-style-type: none; /* enlève la bullet aux débuts des éléments \"list\" */\n}\n#li-user[data-v-5b987ee1] {\n  position: absolute;\n  bottom: 32px;\n}\n@media screen and (max-height: 450px) {\n.sidenav[data-v-5b987ee1] {\n    padding-top: 15px;\n}\n.sidenav a[data-v-5b987ee1] {\n    font-size: 18px;\n}\n}\ndiv > .active[data-v-5b987ee1] {\n  \n  background-color: #f6f6f6;\n  border-radius: 20px 0px 0px 20px;\n  color: black;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -47525,6 +47596,36 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 /***/ }),
 
+/***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/ToggleButton.vue?vue&type=style&index=0&id=114f9ede&scoped=true&lang=css":
+/*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/ToggleButton.vue?vue&type=style&index=0&id=114f9ede&scoped=true&lang=css ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_laravel_mix_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_ToggleButton_vue_vue_type_style_index_0_id_114f9ede_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!../../../node_modules/vue-loader/dist/stylePostLoader.js!../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./ToggleButton.vue?vue&type=style&index=0&id=114f9ede&scoped=true&lang=css */ "./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/ToggleButton.vue?vue&type=style&index=0&id=114f9ede&scoped=true&lang=css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_laravel_mix_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_ToggleButton_vue_vue_type_style_index_0_id_114f9ede_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_laravel_mix_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_ToggleButton_vue_vue_type_style_index_0_id_114f9ede_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ }),
+
 /***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/grille.vue?vue&type=style&index=0&id=039a585c&lang=css&scoped=true":
 /*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/grille.vue?vue&type=style&index=0&id=039a585c&lang=css&scoped=true ***!
@@ -48370,6 +48471,37 @@ if (false) {}
 
 /***/ }),
 
+/***/ "./resources/js/components/ToggleButton.vue":
+/*!**************************************************!*\
+  !*** ./resources/js/components/ToggleButton.vue ***!
+  \**************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _ToggleButton_vue_vue_type_template_id_114f9ede_scoped_true__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ToggleButton.vue?vue&type=template&id=114f9ede&scoped=true */ "./resources/js/components/ToggleButton.vue?vue&type=template&id=114f9ede&scoped=true");
+/* harmony import */ var _ToggleButton_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ToggleButton.vue?vue&type=script&setup=true&lang=js */ "./resources/js/components/ToggleButton.vue?vue&type=script&setup=true&lang=js");
+/* harmony import */ var _ToggleButton_vue_vue_type_style_index_0_id_114f9ede_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ToggleButton.vue?vue&type=style&index=0&id=114f9ede&scoped=true&lang=css */ "./resources/js/components/ToggleButton.vue?vue&type=style&index=0&id=114f9ede&scoped=true&lang=css");
+/* harmony import */ var _Users_teodolci_Desktop_HEIG_VD_ProjArt_projet_articulation_wakanda_horaire_laravel_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+
+
+
+
+;
+
+
+const __exports__ = /*#__PURE__*/(0,_Users_teodolci_Desktop_HEIG_VD_ProjArt_projet_articulation_wakanda_horaire_laravel_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__["default"])(_ToggleButton_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_ToggleButton_vue_vue_type_template_id_114f9ede_scoped_true__WEBPACK_IMPORTED_MODULE_0__.render],['__scopeId',"data-v-114f9ede"],['__file',"resources/js/components/ToggleButton.vue"]])
+/* hot reload */
+if (false) {}
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);
+
+/***/ }),
+
 /***/ "./resources/js/components/grille.vue":
 /*!********************************************!*\
   !*** ./resources/js/components/grille.vue ***!
@@ -48685,6 +48817,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/ToggleButton.vue?vue&type=script&setup=true&lang=js":
+/*!*************************************************************************************!*\
+  !*** ./resources/js/components/ToggleButton.vue?vue&type=script&setup=true&lang=js ***!
+  \*************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_ToggleButton_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_ToggleButton_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./ToggleButton.vue?vue&type=script&setup=true&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/ToggleButton.vue?vue&type=script&setup=true&lang=js");
+ 
+
+/***/ }),
+
 /***/ "./resources/js/components/grille.vue?vue&type=script&setup=true&lang=js":
 /*!*******************************************************************************!*\
   !*** ./resources/js/components/grille.vue?vue&type=script&setup=true&lang=js ***!
@@ -48957,6 +49105,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/ToggleButton.vue?vue&type=template&id=114f9ede&scoped=true":
+/*!********************************************************************************************!*\
+  !*** ./resources/js/components/ToggleButton.vue?vue&type=template&id=114f9ede&scoped=true ***!
+  \********************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_ToggleButton_vue_vue_type_template_id_114f9ede_scoped_true__WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_ToggleButton_vue_vue_type_template_id_114f9ede_scoped_true__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./ToggleButton.vue?vue&type=template&id=114f9ede&scoped=true */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/ToggleButton.vue?vue&type=template&id=114f9ede&scoped=true");
+
+
+/***/ }),
+
 /***/ "./resources/js/components/grille.vue?vue&type=template&id=039a585c&scoped=true":
 /*!**************************************************************************************!*\
   !*** ./resources/js/components/grille.vue?vue&type=template&id=039a585c&scoped=true ***!
@@ -49157,6 +49321,19 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_laravel_mix_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_ProchainsRendus_vue_vue_type_style_index_0_id_5c5b2c8b_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/style-loader/dist/cjs.js!../../../node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!../../../node_modules/vue-loader/dist/stylePostLoader.js!../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./ProchainsRendus.vue?vue&type=style&index=0&id=5c5b2c8b&scoped=true&lang=css */ "./node_modules/style-loader/dist/cjs.js!./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/ProchainsRendus.vue?vue&type=style&index=0&id=5c5b2c8b&scoped=true&lang=css");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/ToggleButton.vue?vue&type=style&index=0&id=114f9ede&scoped=true&lang=css":
+/*!**********************************************************************************************************!*\
+  !*** ./resources/js/components/ToggleButton.vue?vue&type=style&index=0&id=114f9ede&scoped=true&lang=css ***!
+  \**********************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_laravel_mix_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_ToggleButton_vue_vue_type_style_index_0_id_114f9ede_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/style-loader/dist/cjs.js!../../../node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!../../../node_modules/vue-loader/dist/stylePostLoader.js!../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./ToggleButton.vue?vue&type=style&index=0&id=114f9ede&scoped=true&lang=css */ "./node_modules/style-loader/dist/cjs.js!./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/ToggleButton.vue?vue&type=style&index=0&id=114f9ede&scoped=true&lang=css");
 
 
 /***/ }),
