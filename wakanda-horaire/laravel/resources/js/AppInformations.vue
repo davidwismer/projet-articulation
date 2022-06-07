@@ -3,6 +3,7 @@ import EventDetails from './components/EventDetails.vue';
 import { ref } from 'vue';
 
 const evenements = ref(eventsTab).value;
+console.log(evenements)
 </script>
 
 <template>
@@ -13,7 +14,7 @@ const evenements = ref(eventsTab).value;
       <button class="propose">PROPOSER UN EVENEMENT</button>
       <div class="evenements">
         <event-details v-for="evenement of evenements" :key="evenement" :titre="evenement.titre"
-          :description="evenement.description"></event-details>
+          :description="evenement.description" :lieu="evenement.lieu" :dateDebut="evenement.dateDebut" :dateFin="evenement.dateFin"></event-details>
       </div>
       <a href="" class="suivant">Evénement suivants</a>
     </div>
@@ -44,6 +45,7 @@ button {
 
 .event {
   width: 75%;
+  height: 100%;
 }
 
 .menu {

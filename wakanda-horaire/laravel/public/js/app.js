@@ -22796,6 +22796,7 @@ __webpack_require__.r(__webpack_exports__);
     var expose = _ref.expose;
     expose();
     var evenements = (0,vue__WEBPACK_IMPORTED_MODULE_1__.ref)(eventsTab).value;
+    console.log(evenements);
     var __returned__ = {
       evenements: evenements,
       EventDetails: _components_EventDetails_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
@@ -23274,7 +23275,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  props: ['titre', 'description']
+  props: ['titre', 'description', 'lieu', 'dateDebut', 'dateFin']
 });
 
 /***/ }),
@@ -23481,10 +23482,13 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)($setup["EventDetails"], {
       key: evenement,
       titre: evenement.titre,
-      description: evenement.description
+      description: evenement.description,
+      lieu: evenement.lieu,
+      dateDebut: evenement.dateDebut,
+      dateFin: evenement.dateFin
     }, null, 8
     /* PROPS */
-    , ["titre", "description"]);
+    , ["titre", "description", "lieu", "dateDebut", "dateFin"]);
   }), 128
   /* KEYED_FRAGMENT */
   ))]), _hoisted_6]), _hoisted_7]);
@@ -23882,10 +23886,17 @@ var _hoisted_2 = /*#__PURE__*/_withScopeId(function () {
 var _hoisted_3 = {
   "class": "contenu"
 };
+var _hoisted_4 = {
+  "class": "liste"
+};
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.titre), 1
   /* TEXT */
-  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.description), 1
+  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, "du " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.dateDebut) + " au " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.dateFin), 1
+  /* TEXT */
+  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.lieu), 1
+  /* TEXT */
+  )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.description), 1
   /* TEXT */
   )])]);
 }
@@ -29274,7 +29285,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.block-tout[data-v-9804954c] {\r\n  display: flex;\n}\n.evenements[data-v-9804954c] {\r\n  height: 100%;\r\n  display: flex;\r\n  flex-wrap: wrap;\n}\nbutton[data-v-9804954c] {\r\n  background-color: #C83C2B;\r\n  color: white;\r\n  border: 0px;\r\n  border-radius: 20px;\r\n  padding: 5px 10px;\n}\n.event[data-v-9804954c] {\r\n  width: 75%;\n}\n.menu[data-v-9804954c] {\r\n  background-color: #EAE9E9;\r\n  height: 100%;\r\n  width: 25%;\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.block-tout[data-v-9804954c] {\r\n  display: flex;\n}\n.evenements[data-v-9804954c] {\r\n  height: 100%;\r\n  display: flex;\r\n  flex-wrap: wrap;\n}\nbutton[data-v-9804954c] {\r\n  background-color: #C83C2B;\r\n  color: white;\r\n  border: 0px;\r\n  border-radius: 20px;\r\n  padding: 5px 10px;\n}\n.event[data-v-9804954c] {\r\n  width: 75%;\r\n  height: 100%;\n}\n.menu[data-v-9804954c] {\r\n  background-color: #EAE9E9;\r\n  height: 100%;\r\n  width: 25%;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -29418,7 +29429,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.block[data-v-57ea339a] {\r\n    background-color: #EAE9E9;\r\n    border-radius: 20px;\r\n    width: 200px;\r\n    display: flex;\r\n    flex-direction: column;\n}\nh2[data-v-57ea339a] {\r\n    text-align: center;\r\n    margin-top: 0;\n}\n.contenu[data-v-57ea339a] {\r\n    margin: 20px;\r\n    align-items: center;\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: center;\n}\n.imgEvent[data-v-57ea339a] {\r\n    width: 100%;\r\n    height: 25%;\r\n    border-radius: 20px 20px 0px 0px;\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.block[data-v-57ea339a] {\r\n    background-color: #EAE9E9;\r\n    border-radius: 20px;\r\n    width: 30%;\r\n    display: flex;\r\n    flex-direction: column;\n}\nh2[data-v-57ea339a] {\r\n    text-align: center;\r\n    margin-top: 0;\n}\n.contenu[data-v-57ea339a] {\r\n    margin: 20px;\r\n    align-items: center;\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: center;\n}\n.imgEvent[data-v-57ea339a] {\r\n    width: 100%;\r\n    height: 150px;\r\n    border-radius: 20px 20px 0px 0px;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
