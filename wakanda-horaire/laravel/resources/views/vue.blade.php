@@ -35,6 +35,7 @@ foreach ($datas['modules'] as $module) {
     <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
 </head>
 
+
 <body>
 
     <script>
@@ -50,7 +51,17 @@ foreach ($datas['modules'] as $module) {
 
     </div>
 
+
+
     <script src="{{ asset('js/app.js') }}"></script>
 </body>
 
 </html>
+
+<style>
+    .buttons {
+
+        position: flex;
+
+    }
+</style>
