@@ -3,6 +3,7 @@ import DataExemple from "./components/DataExemple.vue";
 import CelluleNotesParBranche from "./components/CelluleNotesParBranche.vue";
 import Vue from "vue";
 import { ref } from "vue";
+import {user} from "./state.js";
 
 const users = ref(tabUsers);
 const branches = ref(tabBranches);
@@ -30,14 +31,15 @@ function plusGrand() {
 </script>
 
 <template>
-<table>
+<table id="tableIntro">
   <tr>
-    <th>Notes de JeanMichel</th>
-    <th><h1>
+    <th id="titreUser"><h2>Notes de {{user.prenom}} {{user.nom}}</h2></th>
+    <th id="buttonSem"><h2>
     <button v-on:click="plusPetit()" v-show="count != 1">&lt;</button>
     Semèstre {{ count }}
-    <button v-on:click="plusGrand()" v-show="count != 6">&gt;</button>
-  </h1></th>
+    <button v-on:click="plusGrand()" v-if="count != 6">&gt;</button>
+    <button class="invisible" v-on:click="plusGrand()" v-else>&gt;</button>
+  </h2></th>
   </tr>
 </table>
   <div v-for="module of modules" v-show="module.semestreFormation === count">
@@ -50,7 +52,23 @@ function plusGrand() {
 </template>
 
 <style scoped>
- h1 {
-  text-align: center;
- } 
+ #tableIntro {
+   margin: 3% 0% 3% 0%;
+   width: 83%;
+ }
+
+ #buttonSem {
+    text-align: right;
+ }
+
+ button {
+  cursor: pointer;
+  border: 0px;
+  background-color: transparent;
+  color : red;
+ }
+
+ .invisible {
+  visibility: hidden;
+ }
 </style>
