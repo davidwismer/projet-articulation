@@ -35,7 +35,7 @@ const date = [day, month, year].join(".");
           <img id="imgModifMDP" src="./components/assets/modifMotDePasse.svg" />
         </th>
         <th>
-           <p id="buttonMotDepasse">Modifier mon mot de passe</p>
+          <p id="buttonMotDepasse">Modifier mon mot de passe</p>
         </th>
       </tr>
     </table>
@@ -45,7 +45,11 @@ const date = [day, month, year].join(".");
     <h2>Formulaire d'absence</h2>
     <p>
       La présence aux cours est obligatoire, toute absence doit être annoncée
-      (voir aussi art. 7 et 8 du règlement HEIG-VD).
+      (<a
+        href="https://heig-vd.ch/docs/default-source/doc-a-propos/r%C3%A9glementation/rglt-etudes-heig-vd.pdf"
+        target="_blank"
+        >voir aussi art. 7 et 8 du règlement HEIG-VD</a
+      >).
     </p>
     <a
       href="https://intra.heig-vd.ch/academique/formulaire-absence/Pages/default.aspx"
@@ -59,7 +63,11 @@ const date = [day, month, year].join(".");
     <h2>Taux d'absence</h2>
     <p>
       Une unité d’enseignement peut être considérée comme échouée si le taux
-      d’absence dépasse 15% (voir aussi art. 7 et 8 du règlement HEIG-VD).
+      d’absence dépasse 15% (<a
+        href="https://heig-vd.ch/docs/default-source/doc-a-propos/r%C3%A9glementation/rglt-etudes-heig-vd.pdf"
+        target="_blank"
+        >voir aussi art. 7 et 8 du règlement HEIG-VD</a
+      >).
     </p>
   </div>
 </template>
@@ -98,6 +106,10 @@ div {
   border-radius: 25px;
   cursor: pointer;
   background-color: transparent;
+}
+
+a {
+  color: red;
 }
 </style>
 
