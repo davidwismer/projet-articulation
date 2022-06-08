@@ -40,7 +40,7 @@ foreach ($datas['modules'] as $module) {
 
     <script>
         //Evenements
-        const eventsTab = <?php echo json_encode($tabEvents); ?>;
+        const tabEvents = <?php echo json_encode($tabEvents); ?>;
         const tabUsers = <?php echo json_encode($tabUsers); ?>;
         const tabBranches = <?php echo json_encode($tabBranches); ?>;
         const tabModules = <?php echo json_encode($tabModules); ?>;

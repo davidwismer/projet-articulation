@@ -10,36 +10,42 @@ const modules = ref(tabModules);
 
 console.log("NOTES");
 
-let count = 1;
+let count = ref(4);
 
 function plusPetit() {
-  count--;
-  if (count < 1) {
-    count = 1;
+  count.value--;
+  if (count.value < 1) {
+    count.value = 1;
   }
-  console.log(count);
-  document.getElementById("numSem").innerHTML = count;
+  console.log(count.value);
 }
 
 function plusGrand() {
-  count++;
-  if (count > 6) {
-    count = 6;
+  count.value++;
+  if (count.value > 6) {
+    count.value = 6;
   }
-  console.log(count);
-  document.getElementById("numSem").innerHTML = count;
+  console.log(count.value);
 }
 </script>
 
 <template>
   <h1>
-    <button v-on:click="plusPetit()"> &lt; </button>Semèstre <span id="numSem"> {{ count }} </span><button v-on:click="plusGrand()"> &gt; </button>
+    <button v-on:click="plusPetit()" v-show="count != 1">&lt;</button>
+    Semèstre {{ count }}
+    <button v-on:click="plusGrand()" v-show="count != 6">&gt;</button>
   </h1>
   <div v-for="module of modules" v-show="module.semestreFormation === count">
-    <h1>{{ module.nom }}</h1>
+    <h2>{{ module.nom }}</h2>
     <div v-for="branche of branches" v-show="branche.module_id === module.id">
-      <cellule-notes-par-branche :branche="branche"></cellule-notes-par-branche>
+      <cellule-notes-par-branche :module="module" :branche="branche"></cellule-notes-par-branche>
     </div>
     <hr />
   </div>
 </template>
+
+<style scoped>
+ h1 {
+  text-align: center;
+ } 
+</style>
