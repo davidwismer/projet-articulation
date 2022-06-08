@@ -21,7 +21,8 @@ export default {
         const userdata = await axios.post("/mylogin", this.form); //a faire en global et en mode ref pour que ça change
         window.location = "/"
 
-        user.value = (userdata.data);
+        user.value = userdata.data;
+      
       } catch (error) {
         // this.errors = error.response.data.errors;
         console.log(error);

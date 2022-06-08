@@ -12,37 +12,66 @@ import AppInformations from "./AppInformations.vue";
 import AppNotifications from "./AppNotifications.vue";
 import AppUser from "./AppUser.vue";
 import LoginFormVue from "./components/LoginForm.vue";
+import LogoutFormVue from "./components/LogoutForm.vue";
 import { user } from "./state.js";
 
 
 
 watchEffect(() => console.log(user.value));
 
+
 const routes = {
 
   "#horaires": {
     label: "Horaires",
+    id: "horaires",
     component: AppHoraire,
   },
   "#notes": {
     label: "Notes",
+    id: "notes",
     component: AppNotes,
   },
   "#infos": {
     label: "Informations",
+     id: "informations",
     component: AppInformations,
   },
   "#notifications": {
     label: "Notifications",
+     id: "notifications",
     component: AppNotifications,
   },
   "#user": {
     label: "Mon compte",
+     id: "moncompte",
     component: AppUser,
   },
 
   "#login": {
-    label: "Login",
+    label: "Se connecter",
+    id: "login",
+    component: LoginFormVue,
+  },
+};
+
+const routes2 = {
+
+  "#horaires": {
+    label: "Horaires",
+    id: "horaires",
+    component: AppHoraire,
+  },
+
+  "#infos": {
+    label: "Informations",
+     id: "informations",
+    component: AppInformations,
+  },
+
+  "#login": {
+    label: "Se connecter",
+    id: "login",
     component: LoginFormVue,
   },
 };
@@ -60,13 +89,20 @@ const curHash = computed(() =>
 const curComponent = computed(() => routes[curHash.value].component);
 </script>
 
+
 <template>
   <logo></logo>
 
-  <sidebar :routes="routes" :curHash="curHash"></sidebar>
-  <component :is="curComponent" />
-</template>
+  <div v-if="user.role_id === 3">
+    <sidebar :routes="routes" :curHash="curHash"></sidebar>
+  </div>
+  <div v-else>
+    <sidebar :routes="routes2" :curHash="curHash"></sidebar>
+  </div>
 
+  <component :is="curComponent" />
+
+</template>
 
 <style lang="css">
 
