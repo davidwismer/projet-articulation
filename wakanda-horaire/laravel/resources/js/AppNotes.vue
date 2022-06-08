@@ -36,7 +36,7 @@ function plusGrand() {
     <th id="titreUser"><h2>Notes de {{user.prenom}} {{user.nom}}</h2></th>
     <th id="buttonSem"><h2>
     <button v-on:click="plusPetit()" v-show="count != 1">&lt;</button>
-    Semèstre {{ count }}
+    Semestre {{ count }}
     <button v-on:click="plusGrand()" v-if="count != 6">&gt;</button>
     <button class="invisible" v-on:click="plusGrand()" v-else>&gt;</button>
   </h2></th>
@@ -54,7 +54,7 @@ function plusGrand() {
 <style scoped>
  #tableIntro {
    margin: 3% 0% 3% 0%;
-   width: 83%;
+   width: 82%;
  }
 
  #buttonSem {
