@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DataController;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\MyAuthController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,3 +22,9 @@ use App\Http\Controllers\DataController;
 
 
 Route::get('/', [DataController::class,'index']);
+
+Auth::routes();
+
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::post('/mylogin', [MyAuthController::class,'login']);

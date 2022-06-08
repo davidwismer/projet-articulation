@@ -1,5 +1,5 @@
 <script setup >
-import { ref, computed } from "vue";
+import { ref, computed, watchEffect} from "vue";
 import logo from "./components/logo.vue";
 import grille from "./components/grille.vue";
 import DataExemple from "./components/DataExemple.vue";
@@ -11,8 +11,12 @@ import AppNotes from "./AppNotes.vue";
 import AppInformations from "./AppInformations.vue";
 import AppNotifications from "./AppNotifications.vue";
 import AppUser from "./AppUser.vue";
+import LoginFormVue from "./components/LoginForm.vue";
+import { user } from "./state.js";
 
 
+
+watchEffect(() => console.log(user.value));
 
 const routes = {
   "#horaires": {
@@ -35,6 +39,11 @@ const routes = {
     label: "Mon compte",
     component: AppUser,
   },
+
+  "#login": {
+    label: "Login",
+    component: LoginFormVue,
+  },
 };
 
 const hash = ref(window.location.hash);
@@ -51,14 +60,13 @@ const curComponent = computed(() => routes[curHash.value].component);
 </script>
 
 <template>
-     <logo></logo>
-
+  <logo></logo>
 
   <sidebar :routes="routes" :curHash="curHash"></sidebar>
- 
+
   <component :is="curComponent" />
- 
 </template>
+
 
 <style lang="css">
 body {

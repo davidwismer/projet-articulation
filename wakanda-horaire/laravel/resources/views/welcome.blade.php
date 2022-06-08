@@ -10,11 +10,15 @@
 <body>
 
     <!-- L'élément HTML d'identifiant "app" -->
-    <div id="app"></div>
+    <div id="app">
+        
+    </div>
 
     <!-- On importe le fichier « /public/js/app.js » -->
+    
     <script type="text/javascript   " src="{{ asset('js/app.js') }}"></script>
 
 </body>
+
 
 </html>
