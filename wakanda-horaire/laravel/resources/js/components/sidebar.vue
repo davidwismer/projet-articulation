@@ -21,6 +21,7 @@ const props = defineProps({
 <template>
   <div class="sidenav">
     <nav>
+      
       <ul>
         <li class="menu-items" v-for="(route, hash) of routes">
           <div>

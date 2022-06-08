@@ -19,6 +19,7 @@ import { user } from "./state.js";
 watchEffect(() => console.log(user.value));
 
 const routes = {
+
   "#horaires": {
     label: "Horaires",
     component: AppHoraire,
@@ -63,7 +64,6 @@ const curComponent = computed(() => routes[curHash.value].component);
   <logo></logo>
 
   <sidebar :routes="routes" :curHash="curHash"></sidebar>
-
   <component :is="curComponent" />
 </template>
 

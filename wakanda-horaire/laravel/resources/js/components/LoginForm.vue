@@ -20,7 +20,8 @@ export default {
         await axios.get("/sanctum/csrf-cookie");
         const userdata = await axios.post("/mylogin", this.form); //a faire en global et en mode ref pour que ça change
         // window.location = "/"
-        user.value = ({role_id: userdata.data.role_id, nom:userdata.data.nom, prenom:userdata.data.prenom});
+
+        user.value = (userdata.data);
       } catch (error) {
         // this.errors = error.response.data.errors;
         console.log(error);
@@ -61,4 +62,4 @@ export default {
 
     
 <style lang="css" scoped>
-</style> 
+</style>
