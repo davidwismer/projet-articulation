@@ -54,7 +54,7 @@ const toggle = ref(true);
         <td>40%</td>
         <td>50%</td>
         <!-- eventually add ponderation -->
-        <td>coefficiant : 50</td>
+        <td>Coefficiant : 50</td>
       </tr>
     </table>
   </div>
