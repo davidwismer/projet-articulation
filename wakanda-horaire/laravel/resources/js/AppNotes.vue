@@ -30,11 +30,16 @@ function plusGrand() {
 </script>
 
 <template>
-  <h1>
+<table>
+  <tr>
+    <th>Notes de JeanMichel</th>
+    <th><h1>
     <button v-on:click="plusPetit()" v-show="count != 1">&lt;</button>
     Semèstre {{ count }}
     <button v-on:click="plusGrand()" v-show="count != 6">&gt;</button>
-  </h1>
+  </h1></th>
+  </tr>
+</table>
   <div v-for="module of modules" v-show="module.semestreFormation === count">
     <h2>{{ module.nom }}</h2>
     <div v-for="branche of branches" v-show="branche.module_id === module.id">
