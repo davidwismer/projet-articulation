@@ -15,7 +15,7 @@ const evenements = ref(tabEvents);
         <event-details class="eventDetails" v-for="evenement of evenements" :key="evenement" :titre="evenement.titre"
           :description="evenement.description" :lieu="evenement.lieu" :dateDebut="evenement.dateDebut" :dateFin="evenement.dateFin"></event-details>
       </div>
-      <a href="" class="suivant">Evénement suivants</a>
+      <a href="" class="affichePlus">Afficher plus</a>
     </div>
     <div class="menu">
       <h1>Menus de la semaine</h1>
@@ -28,7 +28,8 @@ const evenements = ref(tabEvents);
   display: flex;
   margin-left: 100px;
   margin-top: 50px;
-  gap: 50px;
+  margin-bottom: 50px;
+  gap: 100px;
 }
 
 .evenements {
@@ -36,11 +37,10 @@ const evenements = ref(tabEvents);
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 20%;
 }
 
 .eventDetails {
-  width: 40%;
+  width: 45%;
 }
 
 h1 {
@@ -67,9 +67,23 @@ button {
   display: flex;
   justify-content: center;
   border-radius: 20px 0 0 20px;
+  text-align: center;
 }
 
 .propose{
   float: right;
+  bottom: 20px;
+}
+
+.affichePlus {
+  text-align: center;
+  display: block;
+  color: #C83C2B;
+}
+
+* {
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 </style>

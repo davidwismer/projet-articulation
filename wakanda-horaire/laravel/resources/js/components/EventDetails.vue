@@ -2,7 +2,7 @@
 const props = defineProps(['titre', 'description', 'lieu', 'dateDebut', 'dateFin']);
 
 //Description format
-const shortDesc = props.description.substr(0, 80)
+const shortDesc = props.description.substr(0, 100)
 //Date Debut format
 const dateD = new Date(props.dateDebut);
 const monthDeb = ["janvier", "fevrier", "mars", "avril", "mai", "juin",
@@ -59,5 +59,9 @@ h2 {
     width: 100%;
     height: 150px;
     border-radius: 20px 20px 0px 0px;
+}
+
+.lireSuite {
+    color: #C83C2B;
 }
 </style>
