@@ -32,9 +32,9 @@ const toggle = ref(true);
         src="./assets/vectorNotesViewLess.svg"
       />
     </button>
-    <table style="width: 100%">
+    <table id="tableNotes" style="width: 100%">
       <tr>
-        <th class="titreLigne" id="titre">{{ branche.dimin }}</th>
+        <th class="titreLigne" id="titreBranche">{{ branche.dimin }}</th>
         <th>Note 1</th>
         <th>Note 2</th>
         <th>Note 3</th>
@@ -73,6 +73,10 @@ table {
   text-align: center;
 }
 
+#tableNotes {
+  margin: -3% 0% 0% 0%;
+}
+
 #divMom {
   width: 80%;
   padding: 15px;
@@ -87,8 +91,9 @@ table {
   text-align: left;
 }
 
-#titre {
+#titreBranche {
   text-transform: uppercase;
+  font-size: 1.5em;
   color: v-bind("module.couleur");
 }
 
