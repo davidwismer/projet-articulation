@@ -18,7 +18,6 @@ fetch(url, {
   .then(function (data) {
     console.log(data);
     const days = data.days;
-    console.log(days)
   })
   .catch(function (error) {
     console.log(error);
@@ -35,11 +34,10 @@ fetch(url, {
           :description="evenement.description" :lieu="evenement.lieu" :dateDebut="evenement.dateDebut"
           :dateFin="evenement.dateFin"></event-details>
       </div>
-      <a href="" class="affichePlus">Afficher plus</a>
     </div>
     <div class="menu">
       <h1>Menus de la semaine</h1>
-      <menu-day class="menuJour" v-for="day of days" :key="day" :day="day.day"></menu-day>
+      <menu-day class="menuJour" v-for="day of days" :key="day"></menu-day>
     </div>
   </div>
 </template>
@@ -95,12 +93,6 @@ button {
 .propose {
   float: right;
   bottom: 20px;
-}
-
-.affichePlus {
-  text-align: center;
-  display: block;
-  color: #C83C2B;
 }
 
 * {
