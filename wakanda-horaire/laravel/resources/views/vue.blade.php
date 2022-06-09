@@ -19,6 +19,11 @@ $tabModules = [];
 foreach ($datas['modules'] as $module) {
     array_push($tabModules, $module);
 }
+
+$tabNotes = [];
+foreach ($datas['notes'] as $note) {
+    array_push($tabNotes, $note);
+}
 ?>
 
 
@@ -35,6 +40,7 @@ foreach ($datas['modules'] as $module) {
     <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
 </head>
 
+
 <body>
 
     <script>
@@ -43,6 +49,7 @@ foreach ($datas['modules'] as $module) {
         const tabUsers = <?php echo json_encode($tabUsers); ?>;
         const tabBranches = <?php echo json_encode($tabBranches); ?>;
         const tabModules = <?php echo json_encode($tabModules); ?>;
+        const tabNotes = <?php echo json_encode($tabNotes); ?>;
     </script>
 
 
@@ -50,7 +57,17 @@ foreach ($datas['modules'] as $module) {
 
     </div>
 
+
+
     <script src="{{ asset('js/app.js') }}"></script>
 </body>
 
 </html>
+
+<style>
+    .buttons {
+
+        position: flex;
+
+    }
+</style>

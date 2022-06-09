@@ -21,6 +21,7 @@ return new class extends Migration
             $table->date('dateFin');
             $table->string('lieu');
             $table->string('lienURL');
+            $table->string('image');
             $table->timestamps();
         });
     }

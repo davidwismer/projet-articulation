@@ -16,5 +16,6 @@ class Evenement extends Model
         'dateFin',
         'lieu',
         'lienURL',
+        'image'
     ];
 }

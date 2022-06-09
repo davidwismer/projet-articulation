@@ -8,7 +8,9 @@
 img {
   position: sticky;
   float: right;
-  width: 50px;
-  height: 50px;
+  width: 75px;
+  height: 75px;
+  right: 50px;
+  top: 50px;
 }
 </style> 

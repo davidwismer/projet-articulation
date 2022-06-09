@@ -16,21 +16,21 @@ const props = defineProps({
     required: true,
   },
 });
+
+
 </script>
 
 <template>
   <div class="sidenav">
     <nav>
+      
       <ul>
         <li class="menu-items" v-for="(route, hash) of routes">
           <div>
-            <a :href="hash" :class="{ active: hash == curHash }">
+            <a :id="route.id" :href="hash" :class="{ active: hash == curHash }">
               {{ route.label }}
             </a>
           </div>
-        </li>
-        <li class="menu-items" id="li-user">
-          <a href="#user">Mon compte</a>
         </li>
       </ul>
     </nav>
@@ -68,7 +68,7 @@ li {
   list-style-type: none; /* enlève la bullet aux débuts des éléments "list" */
 }
 
-#li-user {
+#login {
   position: absolute;
   bottom: 32px;
 }

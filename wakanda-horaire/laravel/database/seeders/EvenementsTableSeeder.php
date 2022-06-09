@@ -24,7 +24,8 @@ class EvenementsTableSeeder extends Seeder
             'dateDebut' => '2022-08-26',
             'dateFin' => '2022-08-29',
             'lieu' => "Centre-ville d'Yverdon-les-Bains",
-            'lienURL' => 'https://www.numerik-games.ch/'
+            'lienURL' => 'https://www.numerik-games.ch/',
+            'image' => "https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg"
         ]);
 
         //2e event
@@ -34,7 +35,8 @@ class EvenementsTableSeeder extends Seeder
             'dateDebut' => '2022-11-25',
             'dateFin' => '2022-11-26',
             'lieu' => "EXPLORiT",
-            'lienURL' => 'https://heig-vd.ch/evenements/2022/11/25/default-calendar/colloque-sia-remu-robert-stephan'
+            'lienURL' => 'https://heig-vd.ch/evenements/2022/11/25/default-calendar/colloque-sia-remu-robert-stephan',
+            'image' => "https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg"
         ]);
 
         //3e event
@@ -45,7 +47,8 @@ class EvenementsTableSeeder extends Seeder
             'dateFin' => '2022-06-23',
             'lieu' => "HEIG-VD, Avenue des Sports 20, 1400 Yverdon-les-Bains
             Salle R102, à côté de la réception",
-            'lienURL' => 'https://heig-vd.ch/campus/vie-sur-le-campus/manifestations/management-de-demain-dans-le-secteur-de-la-sante'
+            'lienURL' => 'https://heig-vd.ch/campus/vie-sur-le-campus/manifestations/management-de-demain-dans-le-secteur-de-la-sante',
+            'image' => "https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg"
         ]);
 
         //4e event
@@ -58,7 +61,8 @@ class EvenementsTableSeeder extends Seeder
             Salle des fêtes
             Allée Ernest Ansermet 3
             1003 Lausanne",
-            'lienURL' => 'https://heig-vd.ch/campus/vie-sur-le-campus/manifestations/dho-2022'
+            'lienURL' => 'https://heig-vd.ch/campus/vie-sur-le-campus/manifestations/dho-2022',
+            'image' => "https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg"
         ]);
 
         //5e event
@@ -68,7 +72,8 @@ class EvenementsTableSeeder extends Seeder
             'dateDebut' => '2022-07-20',
             'dateFin' => '2022-07-27',
             'lieu' => "Vieille ville d'Yverdon",
-            'lienURL' => 'https://www.loutre-festival.ch/'
+            'lienURL' => 'https://www.loutre-festival.ch/',
+            'image' => "https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg"
         ]);
     }
 }
