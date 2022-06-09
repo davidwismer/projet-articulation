@@ -19,7 +19,7 @@ export default {
       try {
         await axios.get("/sanctum/csrf-cookie");
         const userdata = await axios.post("/mylogin", this.form); //a faire en global et en mode ref pour que ça change
-        window.location = "/"
+        // window.location = "/"
 
         user.value = userdata.data;
       

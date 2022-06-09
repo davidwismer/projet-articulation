@@ -1,5 +1,5 @@
 <script setup >
-import { ref, computed, watchEffect} from "vue";
+import { ref, computed, watchEffect } from "vue";
 import logo from "./components/logo.vue";
 import grille from "./components/grille.vue";
 import DataExemple from "./components/DataExemple.vue";
@@ -15,13 +15,10 @@ import LoginFormVue from "./components/LoginForm.vue";
 import LogoutFormVue from "./components/LogoutForm.vue";
 import { user } from "./state.js";
 
-
-
 watchEffect(() => console.log(user.value));
 
 
 const routes = {
-
   "#horaires": {
     label: "Horaires",
     id: "horaires",
@@ -34,29 +31,29 @@ const routes = {
   },
   "#infos": {
     label: "Informations",
-     id: "informations",
+    id: "informations",
     component: AppInformations,
   },
   "#notifications": {
     label: "Notifications",
-     id: "notifications",
+    id: "notifications",
     component: AppNotifications,
   },
   "#user": {
     label: "Mon compte",
-     id: "moncompte",
+    id: "moncompte",
     component: AppUser,
   },
 
-  "#login": {
-    label: "Se connecter",
+  "#logout": {
+    label: "Se déconnecter",
     id: "login",
-    component: LoginFormVue,
+    component: LogoutFormVue,
   },
 };
 
-const routes2 = {
 
+const routes2 = {
   "#horaires": {
     label: "Horaires",
     id: "horaires",
@@ -65,7 +62,7 @@ const routes2 = {
 
   "#infos": {
     label: "Informations",
-     id: "informations",
+    id: "informations",
     component: AppInformations,
   },
 
@@ -83,10 +80,29 @@ window.addEventListener(
   () => (hash.value = window.location.hash)
 );
 
-const curHash = computed(() =>
+
+let curHash = null;
+let curComponent = null;
+
+if (user.value === null) {
+  curHash = computed(() =>
+  routes2[hash.value] ? hash.value : Object.keys(routes2)[0]
+);
+
+curComponent = computed(() => routes2[curHash.value].component);
+
+} else {
+  curHash = computed(() =>
   routes[hash.value] ? hash.value : Object.keys(routes)[0]
 );
-const curComponent = computed(() => routes[curHash.value].component);
+
+curComponent = computed(() => routes[curHash.value].component);
+}
+
+
+
+
+
 </script>
 
 
@@ -101,11 +117,9 @@ const curComponent = computed(() => routes[curHash.value].component);
   </div>
 
   <component :is="curComponent" />
-
 </template>
 
 <style lang="css">
-
 body {
   margin-left: 200px; /*  Same as the width of the sidenav */
   background-color: #f6f6f6;
