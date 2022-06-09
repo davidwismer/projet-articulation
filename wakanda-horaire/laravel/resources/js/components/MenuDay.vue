@@ -5,13 +5,25 @@ const toggle = ref(true);
 </script>
 
 <template>
-    <div>
-        <button @click="toggle = !toggle">
+    <div class="menuJour">
+        <p class="jour">jour</p>
+        <button class="deroulement" @click="toggle = !toggle">
             <img v-if="toggle" class="viewMoreImg" src="./assets/vectorMenuViewMore.svg" />
             <img v-if="!toggle" class="viewMoreImg" src="./assets/vectorMenuViewLess.svg" />
         </button>
     </div>
 </template>
 
-<style>
+<style scoped>
+.menuJour {
+    background-color: #444444;
+}
+
+.deroulement {
+  cursor: pointer;
+  border: 0px;
+  background-color: transparent;
+  position: relative;
+  float: right;
+}
 </style>

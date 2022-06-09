@@ -16,7 +16,16 @@ class DataController extends Controller
             $module_user = DB::select("select * from module_user where user_id = '$userId'");
             $branche_user = DB::select("select * from branche_user where user_id = '$userId'");
             $absences = DB::select("select * from absences where user_id = '$userId'");
+<<<<<<< HEAD
             $notes = DB::select("select * from notes where user_id = '$userId'");
+=======
+            $notes = DB::table('notes')->where('user_id', '=', $userId)->get();
+        } else {
+            $module_user = DB::select("select * from module_user");
+            $branche_user = DB::select("select * from branche_user");
+            $absences = DB::select("select * from absences");
+            $notes = DB::select("select * from notes");
+>>>>>>> 8a681bbc05fccfe89c8706a2d5b588a0002d56c3
         }
 
         $users = DB::select('select * from users');
@@ -29,10 +38,14 @@ class DataController extends Controller
         $groups = DB::select('select * from groups');
         $roles = DB::select('select * from roles');
         $filiere_module = DB::select('select * from filiere_module');
+<<<<<<< HEAD
         $module_user = DB::select("select * from module_user");
         $branche_user = DB::select("select * from branche_user");
         $absences = DB::select("select * from absences");
         $notes = DB::select("select * from notes");
+=======
+
+>>>>>>> 8a681bbc05fccfe89c8706a2d5b588a0002d56c3
 
 
         $datas = [
@@ -54,4 +67,8 @@ class DataController extends Controller
 
         return view('vue', ['datas' => $datas]);
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 8a681bbc05fccfe89c8706a2d5b588a0002d56c3

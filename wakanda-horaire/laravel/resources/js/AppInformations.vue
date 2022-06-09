@@ -1,6 +1,6 @@
 <script setup>
 import EventDetails from './components/EventDetails.vue';
-import MenuWeek from './components/MenuWeek.vue';
+import MenuDay from './components/MenuDay.vue';
 import { ref } from 'vue';
 
 const evenements = ref(tabEvents);
@@ -17,8 +17,7 @@ fetch(url, {
   .then(resp => resp.json())
   .then(function (data) {
     console.log(data);
-    const MONDAY = data.monday;
-    const FRIDAY = data.friday;
+    const days = data.days;
   })
   .catch(function (error) {
     console.log(error);
@@ -26,7 +25,6 @@ fetch(url, {
 </script>
 
 <template>
-
   <div class='block-tout'>
     <div class="event">
       <h1>Evénements à la HEIG</h1>
@@ -36,11 +34,10 @@ fetch(url, {
           :description="evenement.description" :lieu="evenement.lieu" :dateDebut="evenement.dateDebut"
           :dateFin="evenement.dateFin"></event-details>
       </div>
-      <a href="" class="affichePlus">Afficher plus</a>
     </div>
     <div class="menu">
       <h1>Menus de la semaine</h1>
-      <menu-week></menu-week>
+      <menu-day class="menuJour" v-for="day of days" :key="day"></menu-day>
     </div>
   </div>
 </template>
@@ -96,12 +93,6 @@ button {
 .propose {
   float: right;
   bottom: 20px;
-}
-
-.affichePlus {
-  text-align: center;
-  display: block;
-  color: #C83C2B;
 }
 
 * {
