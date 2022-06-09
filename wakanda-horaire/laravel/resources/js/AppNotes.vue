@@ -3,7 +3,7 @@ import DataExemple from "./components/DataExemple.vue";
 import CelluleNotesParBranche from "./components/CelluleNotesParBranche.vue";
 import Vue from "vue";
 import { ref } from "vue";
-import {user} from "./state.js";
+import { user } from "./state.js";
 
 const users = ref(tabUsers);
 const branches = ref(tabBranches);
@@ -31,44 +31,53 @@ function plusGrand() {
 </script>
 
 <template>
-<table id="tableIntro">
-  <tr>
-    <th id="titreUser"><h2>Notes de {{user.prenom}} {{user.nom}}</h2></th>
-    <th id="buttonSem"><h2>
-    <button v-on:click="plusPetit()" v-show="count != 1">&lt;</button>
-    Semestre {{ count }}
-    <button v-on:click="plusGrand()" v-if="count != 6">&gt;</button>
-    <button class="invisible" v-on:click="plusGrand()" v-else>&gt;</button>
-  </h2></th>
-  </tr>
-</table>
+  <table id="tableIntro">
+    <tr>
+      <th id="titreUser">
+        <h2>Notes de {{ user.prenom }} {{ user.nom }}</h2>
+      </th>
+      <th id="buttonSem">
+        <h2>
+          <button v-on:click="plusPetit()" v-show="count != 1">&lt;</button>
+          Semestre {{ count }}
+          <button v-on:click="plusGrand()" v-if="count != 6">&gt;</button>
+          <button class="invisible" v-on:click="plusGrand()" v-else>
+            &gt;
+          </button>
+        </h2>
+      </th>
+    </tr>
+  </table>
   <div v-for="module of modules" v-show="module.semestreFormation === count">
     <h2>{{ module.nom }}</h2>
     <div v-for="branche of branches" v-show="branche.module_id === module.id">
-      <cellule-notes-par-branche :module="module" :branche="branche"></cellule-notes-par-branche>
+      <cellule-notes-par-branche
+        :module="module"
+        :branche="branche"
+      ></cellule-notes-par-branche>
     </div>
     <hr />
   </div>
 </template>
 
 <style scoped>
- #tableIntro {
-   margin: 3% 0% 3% 0%;
-   width: 82%;
- }
+#tableIntro {
+  margin: 3% 0% 3% 0%;
+  width: 82%;
+}
 
- #buttonSem {
-    text-align: right;
- }
+#buttonSem {
+  text-align: right;
+}
 
- button {
+button {
   cursor: pointer;
   border: 0px;
   background-color: transparent;
-  color : red;
- }
+  color: red;
+}
 
- .invisible {
+.invisible {
   visibility: hidden;
- }
+}
 </style>

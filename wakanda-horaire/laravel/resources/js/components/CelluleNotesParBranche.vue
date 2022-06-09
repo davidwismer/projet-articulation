@@ -1,7 +1,8 @@
 <script setup>
 import {user} from "../state.js";
-
 import { ref } from "vue";
+
+const notes = ref(tabNotes);
 
 const props = defineProps({
   branche: {
@@ -15,6 +16,28 @@ const props = defineProps({
 });
 
 const toggle = ref(true);
+
+function toPercent(number) {
+  let countNotes = 0;
+  notes.value.forEach(note => {
+    if (note.branche_id === props.branche.id) {
+      countNotes++;
+    }
+  });
+  return ((number * 100)/countNotes).toFixed(2);
+}
+
+function average(brancheId) {
+  let sum = 0;
+  let countNotes = 0;
+  notes.value.forEach(note => {
+    if (note.branche_id === brancheId) {
+      sum += note.valeur * note.coefficient;
+      countNotes++;
+    }
+  });
+  return (sum/countNotes).toFixed(1);
+}
 </script>
  
 <template>
@@ -35,26 +58,20 @@ const toggle = ref(true);
     <table id="tableNotes" style="width: 100%">
       <tr>
         <th class="titreLigne" id="titreBranche">{{ branche.dimin }}</th>
-        <th>Note 1</th>
-        <th>Note 2</th>
-        <th>Note 3</th>
+        <th v-for="note of notes" v-show="note.branche_id === branche.id && note.isExam === 0">Note</th>
+        <th v-for="note of notes" v-show="note.branche_id === branche.id && note.isExam != 0">Examen</th>
         <!-- eventually add note 3 -->
       </tr>
       <tr>
         <td class="titreLigne" id="titreNotes">Notes :</td>
-        <td>4.0</td>
-        <td>4.8</td>
-        <td>4.4</td>
-        <!-- eventually add note -->
-        <td>Moyenne : 4.4</td>
+        <th v-for="note of notes" v-show="note.branche_id === branche.id">{{note.valeur}}</th>
+        <td>{{average(branche.id)}}</td>
       </tr>
       <tr v-if="!toggle">
         <td class="titreLigne">Pondérations :</td>
-        <td>10%</td>
-        <td>40%</td>
-        <td>50%</td>
+        <td v-for="note of notes" v-show="note.branche_id === branche.id">{{toPercent(note.coefficient)}}%</td>
         <!-- eventually add ponderation -->
-        <td>Coefficiant : 50</td>
+        <td>Coefficiant : {{branche.coefficient}}</td>
       </tr>
     </table>
   </div>
@@ -96,6 +113,10 @@ table {
   font-size: 1.5em;
   color: v-bind("module.couleur");
 }
+
+/* table, th, td {
+  border: 1px solid;
+} */
 
 td {
   font-style: italic;
