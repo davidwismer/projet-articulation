@@ -27,7 +27,7 @@ class GroupsTableSeeder extends Seeder
                     switch ($annee) {
                         case 2019:
                             DB::table('groups')->insert([
-                                'nom' => 'M48-1',
+                                'nom' => 'M48',
                                 'anneeDebut' => $annee,
                                 'filiere_id' => $filiere
                             ]);

@@ -1,6 +1,7 @@
 <script setup >
 import { ref } from "vue";
 import { page } from "../state.js";
+import {user} from "../state.js";
 
 window.addEventListener("hashchange", () => {
   page.value = window.location.hash;
@@ -15,7 +16,16 @@ const props = defineProps({
     type: String,
     required: true,
   },
+
+  
 });
+
+async function logout() {
+
+    await axios.get("/sanctum/csrf-cookie");
+    const userdata = await axios.get("/logout");
+    window.location="/";
+}
 
 
 </script>
@@ -23,7 +33,6 @@ const props = defineProps({
 <template>
   <div class="sidenav">
     <nav>
-      
       <ul>
         <li class="menu-items" v-for="(route, hash) of routes">
           <div>
@@ -32,6 +41,11 @@ const props = defineProps({
             </a>
           </div>
         </li>
+
+        <div v-if ="user !== null" @click="logout()">
+        <button id="logout" a href="#logout">Déconnexion</button>
+        </div>
+        
       </ul>
     </nav>
   </div>
@@ -64,11 +78,11 @@ const props = defineProps({
   color: #ff0000;
 }
 
-li {
+li, #logout {
   list-style-type: none; /* enlève la bullet aux débuts des éléments "list" */
 }
 
-#login {
+#login, #logout {
   position: absolute;
   bottom: 32px;
 }
@@ -82,7 +96,7 @@ li {
   }
 }
 
-div > .active {
+div > .active, #logout {
   
   background-color: #f6f6f6;
   border-radius: 20px 0px 0px 20px;
