@@ -1,15 +1,22 @@
 <script setup >
 import DataExemple from "./components/DataExemple.vue";
-import CelluleNotesParBranche from "./components/CelluleNotesParBranche.vue";
+import CelluleModule from "./components/CelluleModule.vue";
 import Vue from "vue";
 import { ref } from "vue";
 import { user } from "./state.js";
 
-const users = ref(tabUsers);
 const branches = ref(tabBranches);
 const modules = ref(tabModules);
+const moduleUser = ref(tabModuleUser);
+const notes = ref(tabNotes);
 
-console.log("NOTES");
+//Les modules suivis par l'user connecté
+let modulesSuivis = []
+modules.value.forEach(module => {
+  moduleUser.value.forEach(connect => {
+    if(connect.user_id == user.value.id && connect.module_id == module.id) modulesSuivis.push(module)
+  })
+})
 
 let count = ref(4);
 
@@ -18,7 +25,6 @@ function plusPetit() {
   if (count.value < 1) {
     count.value = 1;
   }
-  console.log(count.value);
 }
 
 function plusGrand() {
@@ -26,7 +32,6 @@ function plusGrand() {
   if (count.value > 6) {
     count.value = 6;
   }
-  console.log(count.value);
 }
 </script>
 
@@ -48,16 +53,7 @@ function plusGrand() {
       </th>
     </tr>
   </table>
-  <div v-for="module of modules" v-show="module.semestreFormation === count">
-    <h2>{{ module.nom }}</h2>
-    <div v-for="branche of branches" v-show="branche.module_id === module.id">
-      <cellule-notes-par-branche
-        :module="module"
-        :branche="branche"
-      ></cellule-notes-par-branche>
-    </div>
-    <hr />
-  </div>
+  <cellule-module v-for="module of modulesSuivis" v-show="module.semestreFormation === count" :module="module"></cellule-module>
 </template>
 
 <style scoped>
