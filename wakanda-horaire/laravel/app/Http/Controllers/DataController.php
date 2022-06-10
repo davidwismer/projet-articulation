@@ -36,7 +36,6 @@ class DataController extends Controller
         $filiere_module = DB::select('select * from filiere_module');
 
 
-
         $datas = [
             'users' => $users,
             'branches' => $branches,

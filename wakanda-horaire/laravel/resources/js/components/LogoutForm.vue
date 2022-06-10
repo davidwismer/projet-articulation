@@ -1,4 +1,18 @@
 <script>
+import Vue from "vue";
+
+
+
+
+async function logout() {
+
+    await axios.get("/sanctum/csrf-cookie");
+    const userdata = await axios.get("/logout");
+    window.location="/";
+}
+
+
+
 
 
 

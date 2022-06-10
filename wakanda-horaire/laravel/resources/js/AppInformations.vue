@@ -1,43 +1,53 @@
 <script setup>
-import EventDetails from './components/EventDetails.vue';
-import MenuDay from './components/MenuDay.vue';
-import { ref } from 'vue';
+import EventDetails from "./components/EventDetails.vue";
+import MenuDay from "./components/MenuDay.vue";
+import { ref, watchEffect } from "vue";
 
 const evenements = ref(tabEvents);
 
-const url = "https://top-chef-intra-api.blacktree.io/weeks/current";
-fetch(url, {
-  method: "GET",
-  withCredentials: true,
-  headers: {
-    "x-api-key": "xY79sN6FDiN6PXucrsBiQBeWkasTLCEn9hcD@dGBcH2Q22f*zs9LHzsfdshT_JBV.Td_ZRdCqQdm4RNFY8JTE!tLK@.GA!2YLNoo",
-    "Content-Type": "application/json"
-  }
-})
-  .then(resp => resp.json())
-  .then(function (data) {
-    console.log(data);
-    const days = data.days;
-  })
-  .catch(function (error) {
-    console.log(error);
+const currentWeek = ref(null);
+
+async function init() {
+  const url = "https://top-chef-intra-api.blacktree.io/weeks/current";
+  const rep = await fetch(url, {
+    method: "GET",
+    withCredentials: true,
+    headers: {
+      "x-api-key":
+        "xY79sN6FDiN6PXucrsBiQBeWkasTLCEn9hcD@dGBcH2Q22f*zs9LHzsfdshT_JBV.Td_ZRdCqQdm4RNFY8JTE!tLK@.GA!2YLNoo",
+      "Content-Type": "application/json",
+    },
   });
+  currentWeek.value = await rep.json();
+}
+
+init();
+
+watchEffect(() => console.log(currentWeek.value));
 </script>
 
 <template>
-  <div class='block-tout'>
+  <div class="block-tout">
     <div class="event">
       <h1>Evénements à la HEIG</h1>
       <button class="propose">PROPOSER UN EVENEMENT</button>
       <div class="evenements">
-        <event-details class="eventDetails" v-for="evenement of evenements" :key="evenement" :titre="evenement.titre"
-          :description="evenement.description" :lieu="evenement.lieu" :dateDebut="evenement.dateDebut"
-          :dateFin="evenement.dateFin"></event-details>
+        <event-details
+          class="eventDetails"
+          v-for="evenement of evenements"
+          :key="evenement"
+          :titre="evenement.titre"
+          :description="evenement.description"
+          :lieu="evenement.lieu"
+          :dateDebut="evenement.dateDebut"
+          :dateFin="evenement.dateFin"
+        ></event-details>
       </div>
     </div>
-    <div class="menu">
+    <div class="menu" v-show="currentWeek">
       <h1>Menus de la semaine</h1>
-      <menu-day class="menuJour" v-for="day of days" :key="day"></menu-day>
+      <p v-for="day of currentWeek.days">{{ day.day }}</p>
+      <!-- <menu-day class="menuJour" v-for="day of days" :key="day"></menu-day> -->
     </div>
   </div>
 </template>
@@ -67,7 +77,7 @@ h1 {
 }
 
 button {
-  background-color: #C83C2B;
+  background-color: #c83c2b;
   color: white;
   border: 0px;
   border-radius: 20px;
@@ -80,7 +90,7 @@ button {
 }
 
 .menu {
-  background-color: #EAE9E9;
+  background-color: #eae9e9;
   height: 100%;
   width: 25%;
   display: flex;

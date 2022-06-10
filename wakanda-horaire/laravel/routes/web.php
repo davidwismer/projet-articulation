@@ -28,3 +28,7 @@ Auth::routes();
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::post('/mylogin', [MyAuthController::class,'login']);
+
+Route::get('/isLogged', [MyAuthController::class,'isLogged']);
+
+Route::get('/logout', [MyAuthController::class,'deconnexion']);
