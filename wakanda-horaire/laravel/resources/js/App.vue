@@ -1,7 +1,6 @@
 <script setup >
 import { ref, computed, watchEffect, onMounted } from "vue";
 import logo from "./components/logo.vue";
-import grille from "./components/grille.vue";
 import DataExemple from "./components/DataExemple.vue";
 import sidebar from "./components/sidebar.vue";
 import { page } from "./state.js";

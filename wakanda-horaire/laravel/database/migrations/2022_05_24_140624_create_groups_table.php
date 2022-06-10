@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('nom', 50);
             $table->integer('anneeDebut');
             $table->timestamps();
+            //Lien
             $table->integer('filiere_id')->unsigned();
             $table->foreign('filiere_id')
                 ->references('id')

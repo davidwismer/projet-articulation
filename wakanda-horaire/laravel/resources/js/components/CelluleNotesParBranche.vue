@@ -111,7 +111,6 @@ table {
 #titreBranche {
   text-transform: uppercase;
   font-size: 1.5em;
-  color: v-bind("module.couleur");
 }
 
 /* table, th, td {

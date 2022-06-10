@@ -1,42 +1,3 @@
-<!-- <script setup >
-import grille from "./components/grille.vue";
-console.log('HORAIRE');
-</script>
-
-<template>
-  <grille></grille>
-  <p>Nous sommes dans HORAIRE</p>
-</template> -->
-
-<!-- <script setup>
-import {reactive} from 'vue'
-import '@fullcalendar/core/vdom' 
-import FullCalendar from '@fullcalendar/vue3'
-import dayGridPlugin from '@fullcalendar/daygrid'
-import timeGridPlugin from '@fullcalendar/timegrid'
-import listPlugin from '@fullcalendar/list'
-import interactionPlugin from '@fullcalendar/interaction'
-
-const options = reactive ({
-    plugins: [dayGridPlugin, timeGridPlugin, listPlugin, interactionPlugin],
-    initialView: 'dayGridMonth'
-})
-
-</script>
-
-<template>
-<FullCalendar v-bind:options ="options"></FullCalendar>
-</template>
-    
-
-    
-
-<style>
-
-</style>  -->
-
-
-
 <script>
 import CalendarMonth from "./components/CalendarMonth";
 import ProchainsRendus from './components/ProchainsRendus.vue';
@@ -49,16 +10,13 @@ export default {
     ProchainsRendus
   }
 };
-
-
 </script>
 
 <template>
-  <div id="app">
-    <CalendarMonth></CalendarMonth>
-     <prochains-rendus/>
-    
-  </div>
+  <button class="semaine">Semaine</button>
+  <button class="month">Mois</button>
+  <CalendarMonth></CalendarMonth>
+  <prochains-rendus />
 </template>
 
 <style scoped>
@@ -80,13 +38,6 @@ body {
   --grey-800: #3e4e63;
   --grid-gap: 1px;
   --day-label-size: 20px;
-}
-
-ol,
-li {
-  padding: 0;
-  margin: 0;
-  list-style: none;
 }
 
 .calendar-month-header {
