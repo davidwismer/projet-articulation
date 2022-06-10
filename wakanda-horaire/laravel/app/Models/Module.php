@@ -24,6 +24,12 @@ class Module extends Model
         return $this->hasMany(Branche::class);
     }
 
+    //Definition avec cours (un module a 1 ou plusieur cours)
+    public function cours()
+    {
+        return $this->hasMany(Cour::class);
+    }
+
     //Définition de la relation avec Filieres (un module peut avoir plusieur filieres)
     public function filieres()
     {

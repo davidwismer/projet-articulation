@@ -25,6 +25,10 @@ class CoursTableSeeder extends Seeder
 
         foreach ($cours as $value) {
             $branche = DB::table('branches')->where('dimin', '=', $value->label)->first();
+            //Gérer la classe avec l'id
+            $classe = DB::table('groups')->where('nom', '=', $value->class)->first();
+            //ModuleId
+            $module = DB::table('modules')->where('id', '=', $branche->module_id)->first();
             if ($value->class != 'IM49-2') {
                 //Gérer les dates des cours
                 $start = DateTime::createFromFormat('Y-m-d\TH:i:s\Z', $value->start)->format('Y-m-d H:i:s');
@@ -41,7 +45,9 @@ class CoursTableSeeder extends Seeder
                     'hasRendu' => rand(0, 1),
                     'periodeStart' => $periodStart,
                     'periodeDuree' => 4,
-                    'branche_id' => $branche->id
+                    'branche_id' => $branche->id,
+                    'group_id' => $classe->id,
+                    'module_id' => $module->id,
                 ]);
             } else {
                 //Gérer les dates des cours
@@ -59,7 +65,8 @@ class CoursTableSeeder extends Seeder
                         'hasRendu' => rand(0, 1),
                         'periodeStart' => 1,
                         'periodeDuree' => 4,
-                        'branche_id' => $branche->id
+                        'branche_id' => $branche->id,
+                        'group_id' => $classe->id
                     ]);
                 }else{ //Sinon c'est l'aprem -> 16:30
                     DB::table('cours')->insert([
@@ -70,7 +77,8 @@ class CoursTableSeeder extends Seeder
                         'hasRendu' => rand(0, 1),
                         'periodeStart' => 6,
                         'periodeDuree' => 4,
-                        'branche_id' => $branche->id
+                        'branche_id' => $branche->id,
+                        'group_id' => $classe->id
                     ]);
                 }
             }

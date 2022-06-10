@@ -5,10 +5,6 @@
   <div class="bloc" width="250px">
     <div class="text-rendus">
       <h3 classe="titre-principal">Prochains rendus</h3>
-      <p>17.05 - VisualDon</p>
-      <p>25.05 - LabVeilSoc</p>
-      <p>25.05 - LabVeilSoc</p>
-      <p>16.06 - ProjArt</p>
     </div>
   </div>
 </template>

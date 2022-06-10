@@ -31,6 +31,18 @@ return new class extends Migration
                 ->on('branches')
                 ->onDelete('restrict')
                 ->onUpdate('restrict');
+            $table->integer('group_id')->unsigned();
+            $table->foreign('group_id')
+                ->references('id')
+                ->on('groups')
+                ->onDelete('restrict')
+                ->onUpdate('restrict');
+            $table->integer('module_id')->unsigned();
+            $table->foreign('module_id')
+                ->references('id')
+                ->on('modules')
+                ->onDelete('restrict')
+                ->onUpdate('restrict');
         });
     }
 
@@ -44,6 +56,8 @@ return new class extends Migration
         if (DB::getDriverName() !== 'mysql') {
             Schema::table('cours', function (Blueprint $table) {
                 $table->dropForeign('cours_branches_id_foreign');
+                $table->dropForeign('cours_group_id_foreign');
+                $table->dropForeign('cours_module_id_foreign');
             });
         }
         Schema::dropIfExists('cours');

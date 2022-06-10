@@ -1,27 +1,12 @@
 <template>
   <div class="calendar-month">
     <div class="calendar-month-header">
-      <CalendarDateIndicator
-        :selected-date="selectedDate"
-        class="calendar-month-header-selected-month"
-      />
-
-      <CalendarDateSelector
-        :current-date="today"
-        :selected-date="selectedDate"
-        @dateSelected="selectDate"
-      />
+      <CalendarDateIndicator :selected-date="selectedDate" @dateSelected="selectDate" :current-date="today" class="calendar-month-header-selected-month" />
+      <!-- <CalendarDateSelector :current-date="today" :selected-date="selectedDate" @dateSelected="selectDate" /> -->
     </div>
-
     <CalendarWeekdays />
-
     <ol class="days-grid">
-      <CalendarMonthDayItem
-        v-for="day in days"
-        :key="day.date"
-        :day="day"
-        :is-today="day.date === today"
-      />
+      <CalendarMonthDayItem v-for="day in days" :key="day.date" :day="day" :is-today="day.date === today" />
     </ol>
   </div>
 </template>
@@ -32,7 +17,6 @@ import weekday from "dayjs/plugin/weekday";
 import weekOfYear from "dayjs/plugin/weekOfYear";
 import CalendarMonthDayItem from "./CalendarMonthDayItem";
 import CalendarDateIndicator from "./CalendarDateIndicator";
-import CalendarDateSelector from "./CalendarDateSelector";
 import CalendarWeekdays from "./CalendarWeekdays";
 
 dayjs.extend(weekday);
@@ -44,7 +28,6 @@ export default {
   components: {
     CalendarMonthDayItem,
     CalendarDateIndicator,
-    CalendarDateSelector,
     CalendarWeekdays,
   },
 
@@ -114,8 +97,7 @@ export default {
         (day, index) => {
           return {
             date: dayjs(
-              `${previousMonth.year()}-${previousMonth.month() + 1}-${
-                previousMonthLastMondayDayOfMonth + index
+              `${previousMonth.year()}-${previousMonth.month() + 1}-${previousMonthLastMondayDayOfMonth + index
               }`
             ).format("YYYY-MM-DD"),
             isCurrentMonth: false,
@@ -160,11 +142,10 @@ export default {
 
 <style scoped>
 .calendar-month {
-block-size:140px;
-margin-left:80px;
-width: 70%;
-  position:relative; 
-
+  block-size: 140px;
+  margin-left: 80px;
+  width: 70%;
+  position: relative;
 }
 
 .day-of-week {
@@ -175,8 +156,6 @@ width: 70%;
 
 .calendar-month-header {
   background-color: #f6f6f6;
-
-  
 }
 
 .day-of-week,
@@ -186,9 +165,5 @@ width: 70%;
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   justify-content: center;
-}
-
-.days-grid {
-  grid-gap: 25px;
 }
 </style>
