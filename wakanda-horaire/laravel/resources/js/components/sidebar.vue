@@ -43,7 +43,7 @@ async function logout() {
         </li>
 
         <div v-if ="user !== null" @click="logout()">
-        <button a href="#logout">Déconnexion</button>
+        <button id="logout" a href="#logout">Déconnexion</button>
         </div>
         
       </ul>
@@ -78,7 +78,7 @@ async function logout() {
   color: #ff0000;
 }
 
-li {
+li, #logout {
   list-style-type: none; /* enlève la bullet aux débuts des éléments "list" */
 }
 
@@ -96,7 +96,7 @@ li {
   }
 }
 
-div > .active {
+div > .active, #logout {
   
   background-color: #f6f6f6;
   border-radius: 20px 0px 0px 20px;
