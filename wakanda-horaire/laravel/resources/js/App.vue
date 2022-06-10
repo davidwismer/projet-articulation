@@ -1,5 +1,5 @@
 <script setup >
-import { ref, computed, watchEffect } from "vue";
+import { ref, computed, watchEffect, onMounted } from "vue";
 import logo from "./components/logo.vue";
 import grille from "./components/grille.vue";
 import DataExemple from "./components/DataExemple.vue";
@@ -12,11 +12,23 @@ import AppInformations from "./AppInformations.vue";
 import AppNotifications from "./AppNotifications.vue";
 import AppUser from "./AppUser.vue";
 import LoginFormVue from "./components/LoginForm.vue";
-import LogoutFormVue from "./components/LogoutForm.vue";
+// import LogoutFormVue from "./components/LogoutForm.vue";
 import { user } from "./state.js";
 
-watchEffect(() => console.log(user.value));
+const loading = ref(true);
 
+onMounted(async () => {
+  await axios.get("/sanctum/csrf-cookie");
+  const userdata = await axios.get("/isLogged");
+  if(userdata.data == ""){
+    user.value = null;
+  }else{
+    user.value =userdata.data;
+  } 
+  loading.value = false;
+});
+
+watchEffect(() => console.log(user.value));
 
 const routes = {
   "#horaires": {
@@ -45,13 +57,13 @@ const routes = {
     component: AppUser,
   },
 
-  "#logout": {
-    label: "Se déconnecter",
-    id: "login",
-    component: LogoutFormVue,
-  },
-};
+  // "#logout": {
+  //   label: "Se déconnecter",
+  //   id: "logout",
+  //   component :LogoutFormVue,
+  // },
 
+};
 
 const routes2 = {
   "#horaires": {
@@ -80,43 +92,39 @@ window.addEventListener(
   () => (hash.value = window.location.hash)
 );
 
+const curHash = computed(() => {
+  if (user.value === null) {
+    return routes2[hash.value] ? hash.value : Object.keys(routes2)[0];
+  } else {
+    return routes[hash.value] ? hash.value : Object.keys(routes)[0];
+  }
+});
 
-let curHash = null;
-let curComponent = null;
-
-if (user.value === null) {
-  curHash = computed(() =>
-  routes2[hash.value] ? hash.value : Object.keys(routes2)[0]
-);
-
-curComponent = computed(() => routes2[curHash.value].component);
-
-} else {
-  curHash = computed(() =>
-  routes[hash.value] ? hash.value : Object.keys(routes)[0]
-);
-
-curComponent = computed(() => routes[curHash.value].component);
-}
-
-
-
-
-
+const curComponent = computed(() => {
+  if (user.value === null) {
+    return routes2[curHash.value].component;
+  } else {
+    return routes[curHash.value].component;
+  }
+});
 </script>
 
 
 <template>
   <logo></logo>
 
-  <div v-if="user.role_id === 3">
-    <sidebar :routes="routes" :curHash="curHash"></sidebar>
+<div v-if="loading">Chargement en cours</div>
+<div v-if="loading == false">
+<div v-if="user === null">
+    <sidebar :routes="routes2" :curHash="curHash"></sidebar>
   </div>
   <div v-else>
-    <sidebar :routes="routes2" :curHash="curHash"></sidebar>
+    <sidebar :routes="routes" :curHash="curHash"></sidebar>
   </div>
 
   <component :is="curComponent" />
+</div>
+  
 </template>
 
 <style lang="css">
