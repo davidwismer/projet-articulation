@@ -1,6 +1,7 @@
 <script setup>
 import EventDetails from "./components/EventDetails.vue";
 import MenuDay from "./components/MenuDay.vue";
+import LoaderSection from "./components/LoaderSection.vue";
 import { ref, watchEffect } from "vue";
 
 const evenements = ref(tabEvents);
@@ -27,7 +28,7 @@ watchEffect(() => console.log(currentWeek.value));
 </script>
 
 <template>
-  <div class="block-tout">
+  <div id="mainDiv" v-if="currentWeek">
     <div class="event">
       <h1>Evénements à la HEIG</h1>
       <button class="propose">PROPOSER UN EVENEMENT</button>
@@ -44,16 +45,19 @@ watchEffect(() => console.log(currentWeek.value));
         ></event-details>
       </div>
     </div>
-    <div class="menu" v-show="currentWeek">
+    <div class="menu">
       <h1>Menus de la semaine</h1>
-      <p v-for="day of currentWeek.days">{{ day.day }}</p>
-      <!-- <menu-day class="menuJour" v-for="day of days" :key="day"></menu-day> -->
+      <div id="celluleMenu">
+        <menu-day class="menuJour"  v-for="day of currentWeek.days" :day="day"></menu-day>
+      </div>
     </div>
   </div>
+  <!-- CHARGEMENT -->
+  <loader-section id="loader" v-else></loader-section>
 </template>
 
 <style scoped>
-.block-tout {
+#mainDiv {
   display: flex;
   margin-left: 100px;
   margin-top: 50px;
@@ -105,9 +109,24 @@ button {
   bottom: 20px;
 }
 
+#celluleMenu {
+  background-color: #444444;
+  margin: 5%;
+  padding: 6% 5% 0% 5%;
+  align-items: center;
+  height: 100%;
+  border-radius: 10px;
+}
+
 * {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+#loader {
+  position: relative;
+  transform: translateY(400%);
+  left: 40%;
 }
 </style>
