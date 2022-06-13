@@ -1,13 +1,16 @@
 <script>
 import CalendarMonth from "./components/CalendarMonth";
 import ProchainsRendus from './components/ProchainsRendus.vue';
+import FiltresHoraireVue from "./components/FiltresHoraire.vue";
+import FiltresHoraire from './components/FiltresHoraire.vue';
 
 export default {
   name: "App",
 
   components: {
     CalendarMonth,
-    ProchainsRendus
+    ProchainsRendus,
+    FiltresHoraire
   }
 };
 </script>
@@ -16,7 +19,7 @@ export default {
   <button class="semaine">Semaine</button>
   <button class="month">Mois</button>
   <CalendarMonth></CalendarMonth>
-  <prochains-rendus />
+  <filtres-horaire></filtres-horaire>
 </template>
 
 <style scoped>
