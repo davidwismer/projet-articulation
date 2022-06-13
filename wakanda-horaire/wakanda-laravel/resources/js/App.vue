@@ -125,7 +125,7 @@ const curComponent = computed(() => {
 
 <style lang="css">
 body {
-  margin-left: 200px; /*  Same as the width of the sidenav */
+  margin-left: 180px; /*  Same as the width of the sidenav */
   background-color: #f6f6f6;
 }
 </style> 
