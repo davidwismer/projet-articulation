@@ -110,8 +110,7 @@ li {
 }
 
 .calendar-day--today>span {
-  color: #fff;
+  color: #ff0000;
   border-radius: 9999px;
-  background-color: #ff0000;
 }
 </style>
