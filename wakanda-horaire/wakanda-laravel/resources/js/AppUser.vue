@@ -1,12 +1,13 @@
 <script setup >
 import { user } from "./state.js";
 import { ref } from "vue";
-
-const filieres = ref(tabFilieres)
-let nomFiliere
-filieres.value.forEach(filiere => {
-  if (user.value.filiere_id == filiere.id) nomFiliere = filiere.nom
-})
+const users = ref(tabUsers);
+const filieres = ref(tabFilieres);
+let nomFiliere;
+filieres.value.forEach((filiere) => {
+  if (user.value.filiere_id == filiere.id) nomFiliere = filiere.nom;
+});
+console.log(user.value);
 
 const [year, month, day] = user.value.dateNaissance.split("-");
 const date = [day, month, year].join(".");
@@ -20,7 +21,7 @@ const date = [day, month, year].join(".");
   </div>
   <div id="allCellule">
     <div class="groupeDiv">
-      <div id="infosPers" class="cellulesUser">
+      <div id="infosPers" class="cellule">
         <h2>Informations personnelles</h2>
         <strong>Nom :</strong>
         <p>{{ user.prenom }} {{ user.nom }}</p>
@@ -40,7 +41,10 @@ const date = [day, month, year].join(".");
         <table>
           <tr>
             <th>
-              <img id="imgModifMDP" src="./components/assets/modifMotDePasse.svg" />
+              <img
+                id="imgModifMDP"
+                src="./components/assets/modifMotDePasse.svg"
+              />
             </th>
             <th>
               <p id="buttonMotDepasse">Modifier mon mot de passe</p>
@@ -54,9 +58,14 @@ const date = [day, month, year].join(".");
           La présence aux cours est obligatoire, toute absence doit être
           annoncée (<a
             href="https://heig-vd.ch/docs/default-source/doc-a-propos/r%C3%A9glementation/rglt-etudes-heig-vd.pdf"
-            target="_blank">voir aussi art. 7 et 8 du règlement HEIG-VD</a>).
+            target="_blank"
+            >voir aussi art. 7 et 8 du règlement HEIG-VD</a
+          >).
         </p>
-        <a href="https://intra.heig-vd.ch/academique/formulaire-absence/Pages/default.aspx" target="_blank">
+        <a
+          href="https://intra.heig-vd.ch/academique/formulaire-absence/Pages/default.aspx"
+          target="_blank"
+        >
           <button id="buttonFormAbsence">Formulaire d'absence</button>
         </a>
       </div>
@@ -67,7 +76,9 @@ const date = [day, month, year].join(".");
           Une unité d’enseignement peut être considérée comme échouée si le taux
           d’absence dépasse 15% (<a
             href="https://heig-vd.ch/docs/default-source/doc-a-propos/r%C3%A9glementation/rglt-etudes-heig-vd.pdf"
-            target="_blank">voir aussi art. 7 et 8 du règlement HEIG-VD</a>).
+            target="_blank"
+            >voir aussi art. 7 et 8 du règlement HEIG-VD</a
+          >).
         </p>
       </div>
     </div>
