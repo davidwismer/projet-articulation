@@ -2,7 +2,11 @@
 import { user } from "./state.js";
 import { ref } from "vue";
 const users = ref(tabUsers);
-
+const filieres = ref(tabFilieres);
+let nomFiliere;
+filieres.value.forEach((filiere) => {
+  if (user.value.filiere_id == filiere.id) nomFiliere = filiere.nom;
+});
 console.log(user.value);
 
 const [year, month, day] = user.value.dateNaissance.split("-");
@@ -10,9 +14,11 @@ const date = [day, month, year].join(".");
 </script>
 
 <template>
-  <svg height="300" width="300">
-    <circle cx="150" cy="150" r="140" stroke="black" stroke-width="3" />
-  </svg>
+  <div id="divImg">
+    <svg height="300" width="300">
+      <circle cx="50%" cy="50%" r="120" stroke="black" stroke-width="3" />
+    </svg>
+  </div>
   <div id="allCellule">
     <div class="groupeDiv">
       <div id="infosPers" class="cellule">
@@ -26,10 +32,12 @@ const date = [day, month, year].join(".");
         <strong>N° téléphone :</strong>
         <p>{{ user.noTel }}</p>
         <strong>Filière :</strong>
-        <p>{{ user.filiere_id }}</p>
+        <p>{{ nomFiliere }}</p>
       </div>
+    </div>
 
-      <div id="motDePasse" class="cellule">
+    <div class="groupeDiv">
+            <div id="motDePasse" class="cellule">
         <table>
           <tr>
             <th>
@@ -44,9 +52,6 @@ const date = [day, month, year].join(".");
           </tr>
         </table>
       </div>
-    </div>
-
-    <div class="groupeDiv">
       <div id="formAbsence" class="cellule">
         <h2>Formulaire d'absence</h2>
         <p>
@@ -82,8 +87,12 @@ const date = [day, month, year].join(".");
 
 <style scoped>
 svg {
-  margin: 20px auto 10px auto;
-  display: block;
+  margin: 0;
+  position: relative;
+  top: 49%;
+  left: 49%;
+  -ms-transform: translate(-49%);
+  transform: translate(-49%);
 }
 
 strong {
@@ -91,15 +100,15 @@ strong {
   color: grey;
 }
 
-#allCellule {
-margin: 0 2% auto;
-  width: 100%;
+#allCellule, #divImg {
+  margin: 0;
+  width: 98%;
 }
 
 .groupeDiv {
   vertical-align: top;
   display: inline-block;
-  width: 45%;
+  width: 49%;
   height: 75%;
 }
 
