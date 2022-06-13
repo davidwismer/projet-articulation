@@ -13,9 +13,11 @@ const date = [day, month, year].join(".");
 </script>
 
 <template>
-  <svg height="300" width="300">
-    <circle cx="150" cy="150" r="140" stroke="black" stroke-width="3" />
-  </svg>
+  <div id="divImg">
+    <svg height="300" width="300">
+      <circle cx="50%" cy="50%" r="120" stroke="black" stroke-width="3" />
+    </svg>
+  </div>
   <div id="allCellule">
     <div class="groupeDiv">
       <div id="infosPers" class="cellulesUser">
@@ -31,34 +33,21 @@ const date = [day, month, year].join(".");
         <strong>Filière :</strong>
         <p>{{ nomFiliere }}</p>
       </div>
-
-      <div id="motDePasse" class="cellulesUser">
-        <table>
-          <tr>
-            <th>
-              <img id="imgModifMDP" src="./components/assets/modifMotDePasse.svg" />
-            </th>
-            <th>
-              <p id="buttonMotDepasse">Modifier mon mot de passe</p>
-            </th>
-          </tr>
-        </table>
-      </div>
-      <div id="motDePasse" class="cellule">
-        <table>
-          <tr>
-            <th>
-              <img id="imgModifMDP" src="./components/assets/modifMotDePasse.svg" />
-            </th>
-            <th>
-              <p id="buttonMotDepasse">Modifier mon mot de passe</p>
-            </th>
-          </tr>
-        </table>
-      </div>
     </div>
 
     <div class="groupeDiv">
+            <div id="motDePasse" class="cellule">
+        <table>
+          <tr>
+            <th>
+              <img id="imgModifMDP" src="./components/assets/modifMotDePasse.svg" />
+            </th>
+            <th>
+              <p id="buttonMotDepasse">Modifier mon mot de passe</p>
+            </th>
+          </tr>
+        </table>
+      </div>
       <div id="formAbsence" class="cellule">
         <h2>Formulaire d'absence</h2>
         <p>
@@ -87,8 +76,12 @@ const date = [day, month, year].join(".");
 
 <style scoped>
 svg {
-  margin: 20px auto 10px auto;
-  display: block;
+  margin: 0;
+  position: relative;
+  top: 49%;
+  left: 49%;
+  -ms-transform: translate(-49%);
+  transform: translate(-49%);
 }
 
 strong {
@@ -96,15 +89,15 @@ strong {
   color: grey;
 }
 
-#allCellule {
-  margin: 0 2% auto;
-  width: 100%;
+#allCellule, #divImg {
+  margin: 0;
+  width: 98%;
 }
 
 .groupeDiv {
   vertical-align: top;
   display: inline-block;
-  width: 45%;
+  width: 49%;
   height: 75%;
 }
 
