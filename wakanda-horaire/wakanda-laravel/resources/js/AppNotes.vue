@@ -10,7 +10,6 @@ const modules = ref(tabModules);
 const moduleUser = ref(tabModuleUser);
 const notes = ref(tabNotes);
 
-//Les modules suivis par l'user connecté
 let modulesSuivis = []
 modules.value.forEach(module => {
   moduleUser.value.forEach(connect => {
@@ -58,8 +57,8 @@ function plusGrand() {
 
 <style scoped>
 #tableIntro {
-  margin: 3% 0% 3% 0%;
-  width: 82%;
+  margin: 3% 3% 3% 2%;
+  width: 90%;
 }
 
 #buttonSem {
