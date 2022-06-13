@@ -82,7 +82,7 @@ const date = [day, month, year].join(".");
 
 <style scoped>
 svg {
-  margin: 0 auto;
+  margin: 20px auto 10px auto;
   display: block;
 }
 
