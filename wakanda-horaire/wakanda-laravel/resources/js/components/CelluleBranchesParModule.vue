@@ -43,22 +43,22 @@ function average(brancheId) {
             </button>
             <table id="tableNotes" style="width: 100%">
                 <tr>
-                    <th class="titreLigne" id="titreBranche">{{ branche.dimin }}</th>
+                    <td class="titreLigne titreBranche">{{ branche.dimin }}</td>
                     <th v-for="note of notesConcernees" v-show="note.branche_id === branche.id && note.isExam === 0">Note</th>
                     <th v-for="note of notesConcernees" v-show="note.branche_id === branche.id && note.isExam != 0">Examen</th>
                     <!-- eventually add note 3 -->
                 </tr>
                 <tr>
-                    <td class="titreLigne" id="titreNotes">Notes :</td>
+                    <td class="titreLigne titreNotes">Notes :</td>
                     <th v-for="note of notesConcernees" v-show="note.branche_id === branche.id">{{ note.valeur }}</th>
-                    <td>Moyenne : {{ average(branche.id) }}</td>
+                    <td class="lastInfo">Moyenne : {{ average(branche.id) }}</td>
                 </tr>
                 <tr v-if="!toggle">
                     <td class="titreLigne">Pondérations :</td>
                     <td v-for="note of notesConcernees" v-show="note.branche_id === branche.id">{{ toPercent(note.coefficient) }}%
                     </td>
                     <!-- eventually add ponderation -->
-                    <td>Coefficiant : {{ branche.coefficient }}</td>
+                    <td class="lastInfo">Coefficiant : {{ branche.coefficient }}</td>
                 </tr>
             </table>
         </div>
@@ -74,11 +74,19 @@ tr {
     height: 50px;
 }
 
-table {
-    text-align: center;
+th {
+    text-align: left;
+    width: 150px;
 }
 
-#tableNotes {
+.lastInfo {
+    position: relative;
+    text-align: right;
+    right: 5%;
+}
+
+.tableNotes {
+    font-style: italic;
     margin: -3% 0% 0% 0%;
 }
 
@@ -92,21 +100,13 @@ table {
 }
 
 .titreLigne {
-    width: 200px;
+    width: 300px;
     text-align: left;
 }
 
-#titreBranche {
+.titreBranche {
     text-transform: uppercase;
     font-size: 1.5em;
-}
-
-/* table, th, td {
-  border: 1px solid;
-} */
-
-td {
-    font-style: italic;
 }
 
 button {
