@@ -1,12 +1,13 @@
 <template>
   <div class="calendar-month">
     <div class="calendar-month-header">
-      <CalendarDateIndicator :selected-date="selectedDate" @dateSelected="selectDate" :current-date="today" class="calendar-month-header-selected-month" />
-      <!-- <CalendarDateSelector :current-date="today" :selected-date="selectedDate" @dateSelected="selectDate" /> -->
+      <CalendarDateIndicator :selected-date="selectedDate" @dateSelected="selectDate" :current-date="today"
+        class="calendar-month-header-selected-month" />
     </div>
     <CalendarWeekdays />
     <ol class="days-grid">
-      <CalendarMonthDayItem v-for="day in days" :key="day.date" :day="day" :is-today="day.date === today" />
+      <CalendarMonthDayItem v-for="day in days" :key="day.date" :day="day" :is-today="day.date === today"
+      :isEventsChecked="eventsChecked" :isCoursChecked="coursChecked" :isRendusChecked="rendusChecked" />
     </ol>
   </div>
 </template>
@@ -31,6 +32,13 @@ export default {
     CalendarWeekdays,
   },
 
+  props: {
+    tabChecked: {
+      type: Array,
+      default: [1, 2, 3]
+    }
+  },
+
   data() {
     return {
       selectedDate: dayjs(),
@@ -38,6 +46,39 @@ export default {
   },
 
   computed: {
+    eventsChecked() {
+      let bool = false
+      if (this.tabChecked !== null) {
+        this.tabChecked.forEach(evt => {
+          console.log(evt)
+          if (evt == 'events') bool =true
+        })
+      }
+      return bool
+    },
+
+    coursChecked() {
+      let bool = false
+      if (this.tabChecked !== null) {
+        this.tabChecked.forEach(evt => {
+          console.log(evt)
+          if (evt == 'cours') bool = true
+        })
+      }
+      return bool
+    },
+
+    rendusChecked() {
+      let bool = false
+      if (this.tabChecked !== null) {
+        this.tabChecked.forEach(evt => {
+          console.log(evt)
+          if (evt == 'rendus') bool = true
+        })
+      }
+      return bool
+    },
+
     days() {
       return [
         ...this.previousMonthDays,
