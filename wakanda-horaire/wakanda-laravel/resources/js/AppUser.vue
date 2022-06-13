@@ -1,9 +1,12 @@
 <script setup >
 import { user } from "./state.js";
 import { ref } from "vue";
-const users = ref(tabUsers);
 
-console.log(user.value);
+const filieres = ref(tabFilieres)
+let nomFiliere
+filieres.value.forEach(filiere => {
+  if(user.value.filiere_id == filiere.id) nomFiliere = filiere.nom
+})
 
 const [year, month, day] = user.value.dateNaissance.split("-");
 const date = [day, month, year].join(".");
@@ -25,7 +28,7 @@ const date = [day, month, year].join(".");
     <strong>N° téléphone :</strong>
     <p>{{ user.noTel }}</p>
     <strong>Filière :</strong>
-    <p>{{ user.filiere_id }}</p>
+    <p>{{ nomFiliere }}</p>
   </div>
 
   <div id="motDePasse" class="cellulesUser">
