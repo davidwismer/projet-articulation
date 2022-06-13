@@ -71,7 +71,7 @@ async function logout() {
 
 #logo {
   position: absolute;
-  bottom: 10px;
+  bottom: 30px;
 }
 
 #logout {
@@ -101,7 +101,7 @@ li,
 
 #login, #logout {
   position: absolute;
-  bottom: 70px;
+  bottom: 90px;
 }
 
 @media screen and (max-height: 450px) {

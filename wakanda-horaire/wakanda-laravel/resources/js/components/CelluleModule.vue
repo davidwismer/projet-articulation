@@ -1,28 +1,39 @@
 <script setup>
 import CelluleBranchesParModule from "./CelluleBranchesParModule.vue";
-import { ref } from "vue"
-const props = defineProps(["module"])
+import { ref } from "vue";
+const props = defineProps(["module"]);
 
-const branches = ref(tabBranches)
+const branches = ref(tabBranches);
 //les branches concernées par le module
-let branchesConcernees = []
-branches.value.forEach(branche => {
-    if (branche.module_id == props.module.id) branchesConcernees.push(branche)
-})
+let branchesConcernees = [];
+branches.value.forEach((branche) => {
+  if (branche.module_id == props.module.id) branchesConcernees.push(branche);
+});
 </script>
 
 <template>
-    <div>
-        <h2>{{ module.nom }}</h2>
-        <cellule-branches-par-module v-for="branche of branchesConcernees" v-show="branche.module_id === module.id" :branche="branche" :module="module">
-        </cellule-branches-par-module>
-        <hr />
+  <div>
+    <div id="title">
+      <h2><span>•  </span>{{ module.nom }}</h2>
     </div>
+    <cellule-branches-par-module
+      v-for="branche of branchesConcernees"
+      v-show="branche.module_id === module.id"
+      :branche="branche"
+      :module="module"
+    >
+    </cellule-branches-par-module>
+  </div>
 </template>
 
 <style scoped>
+span {
+        margin: 0% 1% 0% 2%;
+   color: v-bind("module.couleur");
+}
+
 h2 {
-  margin: 0% 3% 0% 2%;
+    
   width: 90%;
 }
 </style>
