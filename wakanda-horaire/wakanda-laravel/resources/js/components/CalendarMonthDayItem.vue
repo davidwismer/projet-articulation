@@ -11,7 +11,7 @@ if(user.value !== null){
 }
 
 classeId = 3
-const classes = ref(tabcClasses);
+const classes = ref(tabClasses);
 const cours = ref(tabCours);
 const modules = ref(tabModules);
 

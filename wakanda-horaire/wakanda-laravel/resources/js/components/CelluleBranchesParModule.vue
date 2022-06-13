@@ -51,7 +51,7 @@ function average(brancheId) {
                 <tr>
                     <td class="titreLigne" id="titreNotes">Notes :</td>
                     <th v-for="note of notesConcernees" v-show="note.branche_id === branche.id">{{ note.valeur }}</th>
-                    <td>{{ average(branche.id) }}</td>
+                    <td>Moyenne : {{ average(branche.id) }}</td>
                 </tr>
                 <tr v-if="!toggle">
                     <td class="titreLigne">Pondérations :</td>
