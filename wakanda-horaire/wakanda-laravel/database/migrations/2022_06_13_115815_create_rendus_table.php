@@ -16,7 +16,8 @@ return new class extends Migration
     {
         Schema::create('rendus', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('consignes');
+            $table->string('consignes', 1000);
+            $table->date('date');
 
             //Liens
             $table->integer('user_id')->unsigned();

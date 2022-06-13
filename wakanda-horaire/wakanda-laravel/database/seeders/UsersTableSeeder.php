@@ -60,5 +60,35 @@ class UsersTableSeeder extends Seeder
             $firstline = false;
         }
         fclose($csvFile);
+
+        //Utilisateur prof IngMed M49-2
+        DB::table('users')->insert([
+            'nom' => "Doe",
+            'prenom' => "John",
+            'dateNaissance' =>  "1970-01-01",
+            'email' => "prof@heig-vd.ch",
+            'password' => Hash::make("prof"),
+            'noTel' => "0782202020",
+            'adresse' => "chemin des Etudes 20",
+            'photo' => 'photo.jpg',
+            'filiere_id' => 1,
+            'role_id' => 2,
+            'classe_id' => 1
+        ]);
+
+        //Utilisateur direction IngMed M49-2
+        DB::table('users')->insert([
+            'nom' => "Doe",
+            'prenom' => "John",
+            'dateNaissance' =>  "1970-01-01",
+            'email' => "direction@heig-vd.ch",
+            'password' => Hash::make("direction"),
+            'noTel' => "0782202020",
+            'adresse' => "chemin des Etudes 20",
+            'photo' => 'photo.jpg',
+            'filiere_id' => 1,
+            'role_id' => 2,
+            'classe_id' => 1
+        ]);
     }
 }

@@ -100,4 +100,9 @@ class User extends Authenticatable
     public function branches(){
         return $this->belongsToMany(Branche::class);
     }
+
+    //Définition de la relation avec Rendus (un utilisateur peut creer plusieurs rendus)
+    public function rendus(){
+        return $this->hasMany(Rendu::class);
+    }
 }
