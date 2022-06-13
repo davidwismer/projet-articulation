@@ -24,27 +24,38 @@ class Cour extends Model
     ];
 
     //Definition avec Branche (Un cours appartient à une seule branche)
-    public function branche(){
+    public function branche()
+    {
         return $this->belongsTo(Branche::class);
     }
 
     //Definition avec Module (Un cours appartient à un seul module)
-    public function module(){
+    public function module()
+    {
         return $this->belongsTo(Module::class);
     }
 
     //Definition avec Absences (Un cours est concerné par plusieur absences)
-    public function absences(){
+    public function absences()
+    {
         return $this->hasMany(Absence::class);
     }
 
     //Definition avec Commentaire (Un cours est concerné par plusieur commentaires)
-    public function commentaires(){
+    public function commentaires()
+    {
         return $this->hasMany(Commentaire::class);
     }
 
     //Definition avec Classe (Un cours est donné à un classe)
-    public function classe(){
+    public function classe()
+    {
         return $this->belongsTo(Classe::class);
+    }
+
+    //Définition de la relation avec User (une filière peut avoir plusieur users)
+    public function rendus()
+    {
+        return $this->hasMany(Rendu::class);
     }
 }
