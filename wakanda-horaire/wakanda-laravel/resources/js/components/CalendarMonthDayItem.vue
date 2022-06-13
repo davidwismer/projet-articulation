@@ -6,11 +6,6 @@ import { user } from "../state.js";
 
 //Test qui est connecté
 let classeId
-if(user.value !== null){
-  classeId = user.value.classe_id
-}
-
-classeId = 3
 const classes = ref(tabClasses);
 const cours = ref(tabCours);
 const modules = ref(tabModules);
@@ -49,7 +44,7 @@ export default {
     getCoursClasseJour() {
       let coursClasseJour = []
       cours.value.forEach(evt => {
-        if (evt.classe_id == classeId && evt.start.split(' ')[0] === this.day.date && this.day.isCurrentMonth) coursClasseJour.push(evt)
+        if (evt.classe_id == classeId && evt.start.split(' ')[0] === this.day.date) coursClasseJour.push(evt)
       })
       return coursClasseJour
     },
@@ -59,22 +54,30 @@ export default {
       const coursClasseJour = this.getCoursClasseJour
       modules.value.forEach(module => {
         coursClasseJour.forEach(evt => {
-          if(evt.module_id == module.id) modulesCours.push(module)
+          if (evt.module_id == module.id) modulesCours.push(module)
         })
       })
       return modulesCours
+    },
+    getUserClasseId() {
+      if (user.value !== null && user.value.role_id == 3) {
+        classeId = user.value.classe_id
+      }
     }
   }
 };
 </script>
 
 <template>
+  {{ getUserClasseId }}
   <li class="calendar-day" :class="{
     'calendar-day--not-current': !day.isCurrentMonth,
     'calendar-day--today': isToday
   }">
     <span>{{ label }}</span>
-    <cours-horaire v-for="evt of getCoursClasseJour" :cours="evt" :modules="getModules"></cours-horaire>
+    <cours-horaire class="cours-day" :class="{
+      'cours-day--not-current': !day.isCurrentMonth
+    }" v-for="evt of getCoursClasseJour" :cours="evt" :modules="getModules"></cours-horaire>
   </li>
 </template>
 
@@ -84,6 +87,10 @@ li {
   padding: 0;
   margin: 0;
   list-style: none;
+}
+
+.cours-day--not-current {
+  opacity: 50%;
 }
 
 .calendar-day {
@@ -110,8 +117,7 @@ li {
 }
 
 .calendar-day--today>span {
-  color: #fff;
+  color: #ff0000;
   border-radius: 9999px;
-  background-color: #ff0000;
 }
 </style>

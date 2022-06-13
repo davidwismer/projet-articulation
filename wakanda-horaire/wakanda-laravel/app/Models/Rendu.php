@@ -10,12 +10,16 @@ class Rendu extends Model
     use HasFactory;
 
     protected $fillable = [
-        'consignes', 
+        'consignes',
+        'date'
     ];
 
 
-    public function cour()
-    {
+    public function cour(){
         return $this->belongsTo(Cour::class);
+    }
+
+    public function user() {
+        return $this->belongsTo(User::class);
     }
 }
