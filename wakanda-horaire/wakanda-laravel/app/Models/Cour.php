@@ -43,8 +43,8 @@ class Cour extends Model
         return $this->hasMany(Commentaire::class);
     }
 
-    //Definition avec Group (Un cours est donné à un groupe)
-    public function group(){
-        return $this->belongsTo(Group::class);
+    //Definition avec Classe (Un cours est donné à un classe)
+    public function classe(){
+        return $this->belongsTo(Classe::class);
     }
 }

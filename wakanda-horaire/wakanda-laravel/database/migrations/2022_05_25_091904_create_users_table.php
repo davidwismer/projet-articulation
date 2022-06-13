@@ -38,10 +38,10 @@ return new class extends Migration
                 ->on('roles')
                 ->onDelete('restrict')
                 ->onUpdate('restrict');
-            $table->integer('group_id')->unsigned();
-            $table->foreign('group_id')
+            $table->integer('classe_id')->unsigned();
+            $table->foreign('classe_id')
                 ->references('id')
-                ->on('groups')
+                ->on('classes')
                 ->onDelete('restrict')
                 ->onUpdate('restrict');
         });
@@ -58,7 +58,7 @@ return new class extends Migration
             Schema::table('users', function (Blueprint $table) {
                 $table->dropForeign('users_filiere_id_foreign');
                 $table->dropForeign('users_role_id_foreign');
-                $table->dropForeign('users_group_id_foreign');
+                $table->dropForeign('users_classe_id_foreign');
             });
         }
         Schema::dropIfExists('users');

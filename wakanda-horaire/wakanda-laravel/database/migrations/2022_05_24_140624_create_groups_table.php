@@ -14,7 +14,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('groups', function (Blueprint $table) {
+        Schema::create('classes', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nom', 50);
             $table->integer('anneeDebut');
@@ -37,10 +37,10 @@ return new class extends Migration
     public function down()
     {
         if (DB::getDriverName() !== 'mysql') {
-            Schema::table('groups', function (Blueprint $table) {
-                $table->dropForeign('groups_filiere_id_foreign');
+            Schema::table('classes', function (Blueprint $table) {
+                $table->dropForeign('classes_filiere_id_foreign');
             });
         }
-        Schema::dropIfExists('groups');
+        Schema::dropIfExists('classes');
     }
 };

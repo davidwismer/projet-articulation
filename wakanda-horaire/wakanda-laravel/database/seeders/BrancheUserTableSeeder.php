@@ -21,7 +21,7 @@ class BrancheUserTableSeeder extends Seeder
 
         foreach ($users as $user) {
             //Avoir le semestre de formation (à ce moment c'est 2 pour les 1e, 4 pour les 2e et 6 pour les 3e)
-            $class = DB::table('groups')->where('id', '=', $user->group_id)->first();
+            $class = DB::table('classes')->where('id', '=', $user->classe_id)->first();
             $classNom = $class->nom;
             $numClasse = substr($classNom, 1, 2);
             switch ($numClasse) {

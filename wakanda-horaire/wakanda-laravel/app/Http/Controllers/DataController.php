@@ -31,7 +31,7 @@ class DataController extends Controller
         $cours = DB::select('select * from cours');
         $commentaires = DB::select('select * from commentaires');
         $filieres = DB::select('select * from filieres');
-        $groups = DB::select('select * from groups');
+        $classes = DB::select('select * from classes');
         $roles = DB::select('select * from roles');
         $filiere_module = DB::select('select * from filiere_module');
 
@@ -46,7 +46,7 @@ class DataController extends Controller
             'absences' => $absences,
             'commentaires' => $commentaires,
             'filieres' => $filieres,
-            'groups' => $groups,
+            'classes' => $classes,
             'roles' => $roles,
             'filiere_module' => $filiere_module,
             'module_user' => $module_user,

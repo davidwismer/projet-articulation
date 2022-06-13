@@ -30,7 +30,7 @@ class User extends Authenticatable
         'photo',
         'filiere_id',
         'role_id',
-        'group_id'
+        'classe_id'
     ];
 
     /**
@@ -70,9 +70,9 @@ class User extends Authenticatable
         return $this->belongsTo(Role::class);
     }
 
-    //Définition de la relation avec Group (un utilisateur n'a qu'un group(classe))
-    public function group(){
-        return $this->belongsTo(Group::class);
+    //Définition de la relation avec Classe (un utilisateur n'a qu'une classe)
+    public function classe(){
+        return $this->belongsTo(Classe::class);
     }
 
     //Définition de la relation avec Absence (un utilisateur a plusieurs absences)

@@ -4,7 +4,6 @@ import logo from "./components/logo.vue";
 import DataExemple from "./components/DataExemple.vue";
 import sidebar from "./components/sidebar.vue";
 import { page } from "./state.js";
-import CelluleNotesParBranche from "./components/CelluleNotesParBranche.vue";
 import AppHoraire from "./AppHoraire.vue";
 import AppNotes from "./AppNotes.vue";
 import AppInformations from "./AppInformations.vue";
@@ -26,8 +25,6 @@ onMounted(async () => {
   } 
   loading.value = false;
 });
-
-watchEffect(() => console.log(user.value));
 
 const routes = {
   "#horaires": {

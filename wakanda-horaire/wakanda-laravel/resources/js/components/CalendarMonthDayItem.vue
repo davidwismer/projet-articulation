@@ -2,17 +2,19 @@
 import dayjs from "dayjs";
 import { ref } from "vue";
 import CoursHoraire from './CoursHoraire.vue';
+import { user } from "../state.js";
 
-const groups = ref(tabGroups);
+//Test qui est connecté
+let classeId
+if(user.value !== null){
+  classeId = user.value.classe_id
+}
+
+classeId = 3
+const classes = ref(tabClasses);
 const cours = ref(tabCours);
 const modules = ref(tabModules);
-//Avoir la bonne classe selectionnée
-let groupId
-let groupAnneeDeb
-groups.value.forEach(evt => {
-  if (evt.id == 3) groupId = evt.id, groupAnneeDeb = evt.anneeDebut
-})
-console.log()
+
 export default {
   name: "CalendarMonthDayItem",
 
@@ -47,7 +49,7 @@ export default {
     getCoursClasseJour() {
       let coursClasseJour = []
       cours.value.forEach(evt => {
-        if (evt.group_id == groupId && evt.start.split(' ')[0] === this.day.date && this.day.isCurrentMonth) coursClasseJour.push(evt)
+        if (evt.classe_id == classeId && evt.start.split(' ')[0] === this.day.date && this.day.isCurrentMonth) coursClasseJour.push(evt)
       })
       return coursClasseJour
     },

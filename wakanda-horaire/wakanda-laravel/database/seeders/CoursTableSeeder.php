@@ -26,7 +26,7 @@ class CoursTableSeeder extends Seeder
         foreach ($cours as $value) {
             $branche = DB::table('branches')->where('dimin', '=', $value->label)->first();
             //Gérer la classe avec l'id
-            $classe = DB::table('groups')->where('nom', '=', $value->class)->first();
+            $classe = DB::table('classes')->where('nom', '=', $value->class)->first();
             //ModuleId
             $module = DB::table('modules')->where('id', '=', $branche->module_id)->first();
             if ($value->class != 'IM49-2') {
@@ -46,7 +46,7 @@ class CoursTableSeeder extends Seeder
                     'periodeStart' => $periodStart,
                     'periodeDuree' => 4,
                     'branche_id' => $branche->id,
-                    'group_id' => $classe->id,
+                    'classe_id' => $classe->id,
                     'module_id' => $module->id,
                 ]);
             } else {
@@ -66,7 +66,7 @@ class CoursTableSeeder extends Seeder
                         'periodeStart' => 1,
                         'periodeDuree' => 4,
                         'branche_id' => $branche->id,
-                        'group_id' => $classe->id
+                        'classe_id' => $classe->id
                     ]);
                 }else{ //Sinon c'est l'aprem -> 16:30
                     DB::table('cours')->insert([
@@ -78,7 +78,7 @@ class CoursTableSeeder extends Seeder
                         'periodeStart' => 6,
                         'periodeDuree' => 4,
                         'branche_id' => $branche->id,
-                        'group_id' => $classe->id
+                        'classe_id' => $classe->id
                     ]);
                 }
             }

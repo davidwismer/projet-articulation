@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
         $this->call(FiliereModuleTableSeeder::class);
         $this->call(BranchesTableSeeder::class);
         $this->call(RolesTableSeeder::class);
-        $this->call(GroupsTableSeeder::class);
+        $this->call(ClassesTableSeeder::class);
         $this->call(UsersTableSeeder::class);
         $this->call(ModuleUserTableSeeder::class);
         $this->call(BrancheUserTableSeeder::class);

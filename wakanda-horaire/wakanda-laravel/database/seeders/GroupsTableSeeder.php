@@ -6,7 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class GroupsTableSeeder extends Seeder
+class ClassesTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,7 +15,7 @@ class GroupsTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('groups')->delete();
+        DB::table('classes')->delete();
 
         //Créer des classes aléatoires pour les filières autres que Ingénierie des médias (manque d'info) mais vraies classes pour les IM
         for ($filiere = 1; $filiere <= 31; $filiere++) {
@@ -26,7 +26,7 @@ class GroupsTableSeeder extends Seeder
                 for ($annee = 2019; $annee <= 2021; $annee++) {
                     switch ($annee) {
                         case 2019:
-                            DB::table('groups')->insert([
+                            DB::table('classes')->insert([
                                 'nom' => 'M48',
                                 'anneeDebut' => $annee,
                                 'filiere_id' => $filiere
@@ -34,7 +34,7 @@ class GroupsTableSeeder extends Seeder
                             break;
                         case 2020:
                             for ($i=1; $i <= 2; $i++) { 
-                                DB::table('groups')->insert([
+                                DB::table('classes')->insert([
                                     'nom' => 'M49-' . $i,
                                     'anneeDebut' => $annee,
                                     'filiere_id' => $filiere
@@ -43,7 +43,7 @@ class GroupsTableSeeder extends Seeder
                             break;
                         case 2021:
                             for ($i=1; $i <= 3; $i++) { 
-                                DB::table('groups')->insert([
+                                DB::table('classes')->insert([
                                     'nom' => 'M50-' . $i,
                                     'anneeDebut' => $annee,
                                     'filiere_id' => $filiere
@@ -57,7 +57,7 @@ class GroupsTableSeeder extends Seeder
                 if ($lettreNom == 'M') $lettreNom = 'A';
                 for ($annee = 2019; $annee <= 2021; $annee++) { //Pour chaque année
                     for ($nbClasse = rand(1, 3); $nbClasse >= 1; $nbClasse--) { //On met un nombre aléatoire de classe jusqu'a 3
-                        DB::table('groups')->insert([
+                        DB::table('classes')->insert([
                             'nom' => $lettreNom . ($annee - $dateCrea) . '-' . $nbClasse,
                             'anneeDebut' => $annee,
                             'filiere_id' => $filiere

@@ -17,9 +17,9 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         DB::table('users')->delete();
-        //Nombre de groups (classes) / filières
+        //Nombre de classes (classes) / filières
         $nbFilieres = count(DB::select('SELECT * FROM filieres'));
-        $nbGroups = count(DB::select('SELECT * FROM groups'));
+        $nbClasses = count(DB::select('SELECT * FROM classes'));
 
         //Créer 30 utilisateurs randoms
         for ($i = 1; $i <= 30; $i++) {
@@ -34,11 +34,11 @@ class UsersTableSeeder extends Seeder
                 'photo' => 'photo' . $i . '.jpg',
                 'filiere_id' => rand(1, $nbFilieres),
                 'role_id' => rand(1, 3),
-                'group_id' => rand(1, $nbGroups)
+                'classe_id' => rand(1, $nbClasses)
             ]);
         }
 
-        //Quelques utilisateurs (cas réels groupe wakanda)
+        //Quelques utilisateurs (cas réels classee wakanda)
         $csvFile = fopen(base_path("database/data/usersWakanda.csv"), "r");
         $firstline = true;
         while (($data = fgetcsv($csvFile, 100, ",")) !== FALSE) {
@@ -54,7 +54,7 @@ class UsersTableSeeder extends Seeder
                     'photo' => 'photo.jpg',
                     'filiere_id' => 1,
                     'role_id' => 3,
-                    'group_id' => 3
+                    'classe_id' => 3
                 ]);
             }
             $firstline = false;

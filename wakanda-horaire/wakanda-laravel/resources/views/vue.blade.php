@@ -45,9 +45,9 @@ foreach ($datas['filieres'] as $filiere) {
     array_push($tabFilieres, $filiere);
 }
 
-$tabGroups = [];
-foreach ($datas['groups'] as $group) {
-    array_push($tabGroups, $group);
+$tabClasses = [];
+foreach ($datas['classes'] as $classe) {
+    array_push($tabClasses, $classe);
 }
 
 $tabRoles = [];
@@ -98,7 +98,7 @@ foreach ($datas['branche_user'] as $brancheUser) {
         const tabAbsences = <?php echo json_encode($tabAbsences); ?>;
         const tabCommentaires = <?php echo json_encode($tabCommentaires); ?>;
         const tabFilieres = <?php echo json_encode($tabFilieres); ?>;
-        const tabGroups = <?php echo json_encode($tabGroups); ?>;
+        const tabClasses = <?php echo json_encode($tabClasses); ?>;
         const tabRoles = <?php echo json_encode($tabRoles); ?>;
         const tabFiliereModule = <?php echo json_encode($tabFiliereModule); ?>;
         const tabModuleUser = <?php echo json_encode($tabModuleUser); ?>;
