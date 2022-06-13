@@ -21,4 +21,8 @@ branches.value.forEach(branche => {
 </template>
 
 <style scoped>
+h2 {
+  margin: 0% 3% 0% 2%;
+  width: 90%;
+}
 </style>

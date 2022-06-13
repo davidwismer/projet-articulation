@@ -91,7 +91,7 @@ th {
 }
 
 #divMom {
-    width: 80%;
+    width: 90%;
     padding: 15px;
     border-left: 10px solid v-bind("module.couleur");
     border-radius: 25px;
