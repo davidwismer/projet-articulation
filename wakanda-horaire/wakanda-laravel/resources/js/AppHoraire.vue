@@ -39,8 +39,14 @@ export default {
 </script>
 
 <template>
-  <input type="button" class="semaine" value="Semaine" @click="changeToWeek">
-  <input type="button" class="mois" value="Mois" @click="changeToMonth">
+  <input :class="{
+    'active' : !isShowingMonth,
+    'inactive' : isShowingMonth
+  }" type="button" class="semaine" value="Semaine" @click="changeToWeek">
+  <input :class="{
+    'active' : isShowingMonth,
+    'inactive' : !isShowingMonth
+  }" type="button" class="mois" value="Mois" @click="changeToMonth">
   <CalendarMonth :tabChecked="choice" v-show="isShowingMonth"></CalendarMonth>
   <CalendarWeek v-show="!isShowingMonth"></CalendarWeek>
   <filtres-horaire @getChecked="getChecked"></filtres-horaire>
@@ -63,6 +69,11 @@ export default {
   margin-left: 2.5px;
   font-size: 24px;
   font-weight: 600;
+}
+
+.active {
+  background-color: black;
+  color: white;
 }
 
 #app {

@@ -5,7 +5,7 @@ import weekOfYear from "dayjs/plugin/weekOfYear";
 import CalendarDateIndicatorWeek from './CalendarDateIndicatorWeek.vue'
 import CalendarWeekDayItem from './CalendarWeekDayItem.vue'
 import CalendarWeekNumbers from "./CalendarWeekNumbers.vue"
-import CalendarWeekdays from './CalendarWeekdays.vue'
+import CalendarWeekdaysSemaine from './CalendarWeekdaysSemaine.vue'
 
 dayjs.extend(weekday);
 dayjs.extend(weekOfYear);
@@ -15,7 +15,7 @@ export default {
 
     components: {
         CalendarDateIndicatorWeek,
-        CalendarWeekdays,
+        CalendarWeekdaysSemaine,
         CalendarWeekDayItem,
         CalendarWeekNumbers
     },
@@ -94,8 +94,8 @@ export default {
             <CalendarDateIndicatorWeek :selected-date="selectedDate" :first-day="firstDayDate" :last-day="lastDayDate"
                 @dateSelected="selectDate" :current-date="today" class="calendar-week-header-selected-week" />
         </div>
-        <calendar-week-numbers :current-week="currentWeekDays"></calendar-week-numbers>
-        <CalendarWeekdays />
+        <calendar-week-numbers :current-week="currentWeekDays" :current-date="today"></calendar-week-numbers>
+        <CalendarWeekdaysSemaine />
         <ol class="days-grid">
             <calendar-week-day-item v-for="day in days" />
         </ol>
@@ -107,7 +107,7 @@ export default {
     block-size: 140px;
     width: 75%;
     position: relative;
-    margin-left: 30px;
+    margin-left: 60px;
 }
 
 .day-of-week {
@@ -119,11 +119,10 @@ export default {
     background-color: #f6f6f6;
 }
 
-.day-of-week,
-.days-grid {
+.day-of-week {
     height: auto;
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
+    grid-template-columns: 60px 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     justify-content: center;
 }
 </style>
