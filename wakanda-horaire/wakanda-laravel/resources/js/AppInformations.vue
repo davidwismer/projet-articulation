@@ -3,6 +3,7 @@ import EventDetails from "./components/EventDetails.vue";
 import MenuDay from "./components/MenuDay.vue";
 import LoaderSection from "./components/LoaderSection.vue";
 import { ref, watchEffect } from "vue";
+import {user} from "./state.js";
 
 const evenements = ref(tabEvents);
 
@@ -31,7 +32,7 @@ watchEffect(() => console.log(currentWeek.value));
   <div id="mainDiv" v-if="currentWeek">
     <div class="event">
       <h1>Evénements à la HEIG</h1>
-      <a class="propose" href="mailto:daniela.oberlojer@heig-vd.ch?subject=Proposition d'un nouvel événement HEIG-VD">PROPOSER UN EVENEMENT</a>
+      <a v-if="user != null" class="propose" href="mailto:daniela.oberlojer@heig-vd.ch?subject=Proposition d'un nouvel événement HEIG-VD">PROPOSER UN EVENEMENT</a>
       <div class="evenements">
         <event-details
           class="eventDetails"
@@ -110,7 +111,7 @@ a {
   height: 0%;
   float: right;
   position: relative;
-  right: 2%;
+  right: 3%;
 }
 
 .propose {
@@ -126,8 +127,6 @@ a {
   height: 100%;
   border-radius: 10px;
 }
-
-
 
 #loader {
   position: relative;
