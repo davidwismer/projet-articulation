@@ -42,10 +42,10 @@ function plusGrand() {
       </th>
       <th id="buttonSem">
         <h2>
-          <button v-on:click="plusPetit()" v-show="count != 1">&lt;</button>
+          <button class="previous" v-on:click="plusPetit()" v-show="count != 1">&lt;</button>
           Semestre {{ count }}
-          <button v-on:click="plusGrand()" v-if="count != 6">&gt;</button>
-          <button class="invisible" v-on:click="plusGrand()" v-else>
+          <button class="next" v-on:click="plusGrand()" v-if="count != 6">&gt;</button>
+          <button class="next invisible" v-on:click="plusGrand()" v-else>
             &gt;
           </button>
         </h2>
@@ -69,10 +69,18 @@ button {
   cursor: pointer;
   border: 0px;
   background-color: transparent;
-  color: red;
+  color: #888888;
 }
 
 .invisible {
   visibility: hidden;
+}
+
+.next {
+  margin-left: 10px;
+}
+
+.previous {
+  margin-right: 10px;
 }
 </style>
