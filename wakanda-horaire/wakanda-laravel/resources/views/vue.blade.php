@@ -74,6 +74,11 @@ $tabRendus = [];
 foreach ($datas['rendus'] as $rendu) {
     array_push($tabRendus, $rendu);
 }
+
+$tabNotifications = [];
+foreach ($datas['notifications'] as $notification) {
+    array_push($tabNotifications, $notification);
+}
 ?>
 
 
@@ -109,6 +114,7 @@ foreach ($datas['rendus'] as $rendu) {
         const tabModuleUser = <?php echo json_encode($tabModuleUser); ?>;
         const tabBrancheUser = <?php echo json_encode($tabBrancheUser); ?>;
         const tabRendus = <?php echo json_encode($tabRendus); ?>;
+        const tabNotifications = <?php echo json_encode($tabNotifications); ?>;
     </script>
 
 

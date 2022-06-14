@@ -8,6 +8,10 @@ window.addEventListener("hashchange", () => {
   page.value = window.location.hash;
 });
 
+
+let display = ref(false);
+
+
 const props = defineProps({
   routes: {
     type: Object,
@@ -27,6 +31,7 @@ async function logout() {
 </script>
 
 <template>
+
   <div class="sidenav">
     <nav>
       <ul>
@@ -48,10 +53,11 @@ async function logout() {
     
 <style lang="css" scoped>
 .sidenav {
-  /* visibility: hidden; */
+  visibility: visible;
   height: 100%;
   width: 180px; /* devra être 2 douzième de la largeur de l'écran */
   position: fixed;
+  display:block;
   z-index: 1;
   top: 0;
   left: 0;
@@ -104,19 +110,63 @@ li,
   position: absolute;
   bottom: 90px;
 }
-
-@media screen and (max-height: 450px) {
-  .sidenav {
-    padding-top: 15px;
-  }
-  .sidenav a {
-    font-size: 18px;
-  }
-}
-
 div > .active {
   background-color: #f6f6f6;
   border-radius: 20px 0px 0px 20px;
   color: black;
 }
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 450px) {
+  .sidenav {
+  visibility: hidden;
+  }
+
+  #burger {
+  width: 42px;
+  height: 24px;
+  cursor: pointer;
+  position: relative;
+}
+
+#burger span {
+  width: 100%;
+  height: 4px;
+  background-color: black;
+  display: block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+    border-radius: 25px;
+}
+
+#burger span::before, #burger span::after{
+  content:'';
+  position:absolute;
+  width:100%;
+  height:4px;
+  background-color:black;
+  border-radius: 25px;
+}
+
+#burger span::before {
+  transform: translateY(-10px);
+}
+
+#burger span::after {
+  transform: translateY(10px);
+}
+
+
+}
+
+
 </style> 

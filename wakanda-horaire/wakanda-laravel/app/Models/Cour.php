@@ -58,4 +58,9 @@ class Cour extends Model
     {
         return $this->hasMany(Rendu::class);
     }
+
+    public function notifications()
+    {
+        return $this->hasMany(Notification::class);
+    }
 }

@@ -29,5 +29,6 @@ class DatabaseSeeder extends Seeder
         $this->call(CommentairesTableSeeder::class);
         $this->call(AbsencesTableSeeder::class);
         $this->call(RendusTableSeeder::class);
+        $this->call(NotificationsTableSeeder::class);
     }
 }

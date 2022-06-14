@@ -34,6 +34,7 @@ class DataController extends Controller
         $classes = DB::select('select * from classes');
         $roles = DB::select('select * from roles');
         $rendus = DB::select('select * from rendus');
+        $notifications =   DB::select('select * from notifications');
         $filiere_module = DB::select('select * from filiere_module');
 
 
@@ -52,7 +53,8 @@ class DataController extends Controller
             'rendus' => $rendus,
             'filiere_module' => $filiere_module,
             'module_user' => $module_user,
-            'branche_user' => $branche_user
+            'branche_user' => $branche_user,
+            'notifications' =>$notifications
         ];
 
         return view('vue', ['datas' => $datas]);
