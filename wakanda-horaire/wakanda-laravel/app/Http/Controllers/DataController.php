@@ -33,6 +33,7 @@ class DataController extends Controller
         $filieres = DB::select('select * from filieres');
         $classes = DB::select('select * from classes');
         $roles = DB::select('select * from roles');
+        $rendus = DB::select('select * from rendus');
         $filiere_module = DB::select('select * from filiere_module');
 
 
@@ -48,6 +49,7 @@ class DataController extends Controller
             'filieres' => $filieres,
             'classes' => $classes,
             'roles' => $roles,
+            'rendus' => $rendus,
             'filiere_module' => $filiere_module,
             'module_user' => $module_user,
             'branche_user' => $branche_user

@@ -1,11 +1,3 @@
-<!-- <template>
-  <div class="calendar-date-indicator">
-    <span class="previous" @click="selectPrevious">&lt</span>
-    {{ selectedMonth }}
-    <span class="next" @click="selectNext">></span>
-  </div>
-</template> -->
-
 <template>
   <table class="calendar-date-indicator">
     <th class="previous" @click="selectPrevious">&lt</th>
