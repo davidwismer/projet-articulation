@@ -6,11 +6,12 @@ import EventHoraire from './EventHoraire.vue'
 import RenduHoraire from './RenduHoraire.vue'
 import { user } from "../state.js";
 
-let classeId
 const events = ref(tabEvents);
 const rendus = ref(tabRendus);
 const cours = ref(tabCours);
 const modules = ref(tabModules);
+const moduleUser = ref(tabModuleUser);
+const classes = ref(tabClasses);
 
 export default {
   name: "CalendarMonthDayItem",
@@ -63,7 +64,7 @@ export default {
     getCoursClasseJour() {
       let coursClasseJour = []
       cours.value.forEach(evt => {
-        if (evt.classe_id == classeId && evt.start.split(' ')[0] === this.day.date) coursClasseJour.push(evt)
+        if (evt.classe_id == this.getUserClasseId && evt.start.split(' ')[0] === this.day.date) coursClasseJour.push(evt)
       })
       return coursClasseJour
     },
@@ -77,15 +78,27 @@ export default {
       })
       return eventsJour
     },
-    getRendusJour(){
-      let rendusJour= []
+    getRendusJour() {
+      let rendusJour = []
       rendus.value.forEach(rendu => {
-        if(rendu.date === this.day.date) rendusJour.push(rendu)
+        if (rendu.date === this.day.date) rendusJour.push(rendu)
       })
       return rendusJour
     },
-    getModules() {
-      //Avoir les modules que la classe suit (lien avec branche du cours)
+    getRendusClasseJour() {
+      let rendusClasseJour = []
+      this.getRendusJour.forEach(rendu => {
+        let coursId = rendu.cour_id
+        cours.value.forEach(cours => {
+          if (coursId == cours.id) {
+            if (cours.classe_id == this.getUserClasseId) rendusClasseJour.push(rendu)
+          }
+        })
+      })
+      return rendusClasseJour
+    },
+    getModulesJour() {
+      //Avoir les modules que la classe suit pour ce jour (lien avec branche du cours)
       let modulesCours = []
       const coursClasseJour = this.getCoursClasseJour
       modules.value.forEach(module => {
@@ -97,16 +110,16 @@ export default {
     },
     getUserClasseId() {
       if (user.value !== null && user.value.role_id == 3) {
-        classeId = user.value.classe_id
+        return user.value.classe_id
       }
     },
-    getIsEvents(){
+    getIsEvents() {
       return this.isEventsChecked
     },
-    getIsCours(){
+    getIsCours() {
       return this.isCoursChecked
     },
-    getIsRendus(){
+    getIsRendus() {
       return this.isRendusChecked
     },
   }
@@ -114,7 +127,6 @@ export default {
 </script>
 
 <template>
-  {{ getUserClasseId }}
   <li class="calendar-day" :class="{
     'calendar-day--not-current': !day.isCurrentMonth,
     'calendar-day--today': isToday
@@ -122,13 +134,13 @@ export default {
     <span>{{ label }}</span>
     <cours-horaire class="cours-day" :class="{
       'cours-day--not-current': !day.isCurrentMonth
-    }" v-for="evt of getCoursClasseJour" :cours="evt" :modules="getModules" v-show="getIsCours"></cours-horaire>
+    }" v-for="evt of getCoursClasseJour" :cours="evt" :modules="getModulesJour" v-show="getIsCours"></cours-horaire>
+    <rendu-horaire class="cours-day" :class="{
+      'cours-day--not-current': !day.isCurrentMonth
+    }" v-for="evt of getRendusClasseJour" :rendu="evt" v-show="getIsRendus"></rendu-horaire>
     <event-horaire class="cours-day" :class="{
       'cours-day--not-current': !day.isCurrentMonth
     }" v-for="evt of getEventsJour" :evenement="evt" v-show="getIsEvents"></event-horaire>
-    <rendu-horaire class="cours-day" :class="{
-      'cours-day--not-current': !day.isCurrentMonth
-    }" v-for="evt of getRendusJour" :rendu="evt" v-show="getIsRendus"></rendu-horaire>
   </li>
 </template>
 
