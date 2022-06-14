@@ -33,7 +33,7 @@
   text-align: left;
 }
 
-.checkbox input[type="checkbox"]:checked {
+.checkbox__box:checked {
   font-family: 'FontAwesome';
   content: '\2714';
 }

@@ -1,5 +1,6 @@
 <script setup >
-import { ref, computed, watchEffect, onMounted } from "vue";
+import { Vue, ref, computed, watchEffect, onMounted } from "vue";
+import VueMq from 'vue-mq';
 import logo from "./components/logo.vue";
 import DataExemple from "./components/DataExemple.vue";
 import sidebar from "./components/sidebar.vue";
@@ -12,6 +13,7 @@ import AppUser from "./AppUser.vue";
 import LoginFormVue from "./components/LoginForm.vue";
 // import LogoutFormVue from "./components/LogoutForm.vue";
 import { user } from "./state.js";
+
 
 const loading = ref(true);
 
@@ -52,12 +54,6 @@ const routes = {
     id: "moncompte",
     component: AppUser,
   },
-
-  // "#logout": {
-  //   label: "Se déconnecter",
-  //   id: "logout",
-  //   component :LogoutFormVue,
-  // },
 
 };
 
@@ -103,6 +99,17 @@ const curComponent = computed(() => {
     return routes[curHash.value].component;
   }
 });
+
+
+// Vue.use(VueMq, {
+//   breakpoints: { // default breakpoints - customize this
+//     sm: 450,
+//     md: 1250,
+//     lg: Infinity,
+//   }
+// })
+
+
 </script>
 
 
@@ -128,4 +135,12 @@ body {
   margin-left: 200px; /* width of the sidenav + 20px of margin */
   background-color: #f6f6f6;
 }
+
+/* @media screen and (min-width: 300px) {
+  body {
+    margin-left: 100px;
+      background-color: red;
+  }
+} */
+
 </style> 

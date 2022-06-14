@@ -32,6 +32,7 @@
         "dayjs": "^1.11.2",
         "vue": "^3.2.33",
         "vue-chevron": "^0.1.0",
+        "vue-mq": "^1.0.1",
         "vue-template-compiler": "^2.6.11"
     }
 }
