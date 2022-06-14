@@ -14,25 +14,43 @@ export default {
   },
   data() {
     return {
-      checked: []
+      choice: []
     }
   },
   methods: {
-    getChecked(checked){
-      this.checked = checked
-    }
+    getChecked(choice){
+      this.choice = choice
+    },
   },
 };
 </script>
 
 <template>
-  <button class="semaine">Semaine</button>
-  <button class="month">Mois</button>
-  <CalendarMonth :tabChecked="checked"></CalendarMonth>
+  <input type="button" class="semaine" value="Semaine">
+  <input type="button" class="mois" value="Mois">
+  <CalendarMonth :tabChecked="choice"></CalendarMonth>
   <filtres-horaire @getChecked="getChecked"></filtres-horaire>
 </template>
 
 <style scoped>
+.semaine {
+  border-radius: 20px 0 0 20px;
+  width: 150px;
+  margin-right: 2.5px;
+  margin-left: 40px;
+  margin-top: 20px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.mois {
+  border-radius: 0 20px 20px 0;
+  width: 150px;
+  margin-left: 2.5px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

@@ -1,17 +1,16 @@
 <script >
-import { ref, computed } from "vue"
 
 export default {
   name: "AppHoraire",
   data() {
     return {
-      checked: []
+      choice: ['cours']
     }
   },
 
   methods: {
     sendChecked() {
-      this.$emit('getChecked', this.checked)
+      this.$emit('getChecked', this.choice)
     }
   }
 }
@@ -21,11 +20,11 @@ export default {
   <div class="bloc" width="250px">
     <div class="text-rendus">
       <h3 classe="titre-principal">Filtres</h3>
-      <input type="checkbox" value="cours" id="cours" v-model="checked">
+      <input type="checkbox" value="cours" id="cours" v-model="choice">
       <label for="cours">Cours</label><br>
-      <input type="checkbox" value="examens" id="examens" v-model="checked">
+      <input type="checkbox" value="rendus" id="rendus" v-model="choice">
       <label for="examens">Examens & Rendus</label><br>
-      <input type="checkbox" value="events" id="events" v-model="checked">
+      <input type="checkbox" value="events" id="events" v-model="choice">
       <label for="events">Evenements</label><br>
       {{ sendChecked() }}
     </div>
