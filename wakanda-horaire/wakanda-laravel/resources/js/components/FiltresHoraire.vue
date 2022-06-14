@@ -37,8 +37,10 @@ export default {
   background-color: #eae9e9;
   border-radius: 20px;
   width: 250px;
-  height: 250px;
+  /* height: 250px; */
   float: right;
+  position: relative;
+  right: 2%;
 }
 
 .titre-principal {
@@ -50,6 +52,16 @@ export default {
   margin: 20px;
   color: black;
   text-align: left;
+}
+
+h3 {
+  margin-top: 20px;
+}
+
+input {
+  margin-right: 5px;
+  margin-top: 5px;
+  transform: translate(0, 2px);
 }
 
 .checkbox input[type="checkbox"]:checked {

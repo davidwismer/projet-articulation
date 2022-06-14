@@ -104,8 +104,7 @@ function getYear(date) {
 <template>
   <div class="menuJour">
     <button @click="toggle = !toggle">
-      <p class="dayDate">{{getDayName(day.day) + ' ' + getDay(day.day) + ' ' + getMonth(day.day) + ' ' + getYear(day.day)}}</p>
-      <img
+            <img
         v-if="toggle"
         class="viewMoreImg"
         src="./assets/vectorMenuViewMore.svg"
@@ -115,6 +114,7 @@ function getYear(date) {
         class="viewMoreImg"
         src="./assets/vectorMenuViewLess.svg"
       />
+      <p class="dayDate">{{getDayName(day.day) + ' ' + getDay(day.day) + ' ' + getMonth(day.day) + ' ' + getYear(day.day)}}</p>
     </button>
   </div>
   <div class="descMenu" v-if="!toggle">
@@ -132,7 +132,7 @@ function getYear(date) {
   width: 15px;
   height: 15px;
   position: inherit;
-  margin-top: 3px;
+  margin: 3px 15px 3px 3px;
   justify-content: right;
 }
 

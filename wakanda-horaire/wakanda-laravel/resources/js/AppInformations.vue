@@ -31,7 +31,7 @@ watchEffect(() => console.log(currentWeek.value));
   <div id="mainDiv" v-if="currentWeek">
     <div class="event">
       <h1>Evénements à la HEIG</h1>
-      <button class="propose">PROPOSER UN EVENEMENT</button>
+      <a class="propose" href="mailto:daniela.oberlojer@heig-vd.ch?subject=Proposition d'un nouvel événement HEIG-VD">PROPOSER UN EVENEMENT</a>
       <div class="evenements">
         <event-details
           class="eventDetails"
@@ -46,7 +46,7 @@ watchEffect(() => console.log(currentWeek.value));
       </div>
     </div>
     <div class="menu">
-      <h1>Menus de la semaine</h1>
+      <h2>Menus de la semaine</h2>
       <div id="celluleMenu">
         <menu-day class="menuJour"  v-for="day of currentWeek.days" :day="day"></menu-day>
       </div>
@@ -80,12 +80,18 @@ h1 {
   display: inline-block;
 }
 
-button {
+h2 {
+  font-size: 1.5em;
+  margin-top: 20px;
+}
+
+a {
   background-color: #c83c2b;
   color: white;
   border: 0px;
   border-radius: 20px;
   padding: 5px 10px;
+  text-decoration: none;
 }
 
 .event {
@@ -95,13 +101,16 @@ button {
 
 .menu {
   background-color: #eae9e9;
-  height: 100%;
-  width: 25%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border-radius: 20px 0 0 20px;
   text-align: center;
+  border-radius: 20px;
+  width: 300px;
+  height: 0%;
+  float: right;
+  position: relative;
+  right: 2%;
 }
 
 .propose {
@@ -118,11 +127,7 @@ button {
   border-radius: 10px;
 }
 
-* {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+
 
 #loader {
   position: relative;
