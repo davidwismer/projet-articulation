@@ -21,7 +21,7 @@ export default {
   <div class="bloc" width="250px">
     <div class="text-rendus">
       <h3 classe="titre-principal">Filtres</h3>
-      <input type="checkbox" value="cours" id="cours" v-model="checked">
+      <input type="checkbox" value="cours" id="cours" v-model ="checked">
       <label for="cours">Cours</label><br>
       <input type="checkbox" value="examens" id="examens" v-model="checked">
       <label for="examens">Examens & Rendus</label><br>
@@ -52,8 +52,4 @@ export default {
   text-align: left;
 }
 
-.checkbox__box:checked {
-  font-family: 'FontAwesome';
-  content: '\2714';
-}
 </style>
