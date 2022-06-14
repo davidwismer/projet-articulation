@@ -20,11 +20,7 @@ export default {
   <div class="bloc" width="250px">
     <div class="text-rendus">
       <h3 classe="titre-principal">Filtres</h3>
-<<<<<<< HEAD
-      <input type="checkbox" value="cours" id="cours" v-model ="checked">
-=======
       <input type="checkbox" value="cours" id="cours" v-model="choice">
->>>>>>> e5ddb7f68352b54bca9b558018261685fbc4fcd4
       <label for="cours">Cours</label><br>
       <input type="checkbox" value="rendus" id="rendus" v-model="choice">
       <label for="examens">Examens & Rendus</label><br>
@@ -57,8 +53,6 @@ export default {
   text-align: left;
 }
 
-<<<<<<< HEAD
-=======
 h3 {
   margin-top: 20px;
 }
@@ -73,5 +67,4 @@ input {
   font-family: 'FontAwesome';
   content: '\2714';
 }
->>>>>>> e5ddb7f68352b54bca9b558018261685fbc4fcd4
 </style>

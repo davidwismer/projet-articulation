@@ -101,13 +101,6 @@ const curComponent = computed(() => {
 });
 
 
-// Vue.use(VueMq, {
-//   breakpoints: { // default breakpoints - customize this
-//     sm: 450,
-//     md: 1250,
-//     lg: Infinity,
-//   }
-// })
 
 
 </script>
@@ -133,12 +126,5 @@ body {
   margin-left: 200px; /* width of the sidenav + 20px of margin */
   background-color: #f6f6f6;
 }
-
-/* @media screen and (min-width: 300px) {
-  body {
-    margin-left: 100px;
-      background-color: red;
-  }
-} */
 
 </style> 

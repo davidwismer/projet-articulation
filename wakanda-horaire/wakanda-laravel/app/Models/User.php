@@ -56,27 +56,32 @@ class User extends Authenticatable
      * Permet d'encoder le mot de passe
      * @param type $password Le mot de passe
      */
-    public function setPasswordAttribute($password) {
+    public function setPasswordAttribute($password)
+    {
         $this->attributes['password'] = Hash::make($password);
     }
 
     //Définition de la relation avec Filière (un utilisateur n'a qu'une filière)
-    public function filiere(){
+    public function filiere()
+    {
         return $this->belongsTo(Filiere::class);
     }
 
     //Définition de la relation avec Role (un utilisateur n'a qu'un role)
-    public function role(){
+    public function role()
+    {
         return $this->belongsTo(Role::class);
     }
 
     //Définition de la relation avec Classe (un utilisateur n'a qu'une classe)
-    public function classe(){
+    public function classe()
+    {
         return $this->belongsTo(Classe::class);
     }
 
     //Définition de la relation avec Absence (un utilisateur a plusieurs absences)
-    public function absences(){
+    public function absences()
+    {
         return $this->hasMany(Absence::class);
     }
 
@@ -87,22 +92,32 @@ class User extends Authenticatable
     }
 
     //Définition de la relation avec Commentaire (un utilisateur peut écrire plusieurs commentaires)
-    public function commentaires(){
+    public function commentaires()
+    {
         return $this->hasMany(Commentaire::class);
     }
 
     //Définition de la relation avec Modules (un utilisateur participe à plusieurs modules)
-    public function modules(){
+    public function modules()
+    {
         return $this->belongsToMany(Module::class);
     }
 
     //Définition de la relation avec Branche (un utilisateur participe à plusieurs branches)
-    public function branches(){
+    public function branches()
+    {
         return $this->belongsToMany(Branche::class);
     }
 
     //Définition de la relation avec Rendus (un utilisateur peut creer plusieurs rendus)
-    public function rendus(){
+    public function rendus()
+    {
         return $this->hasMany(Rendu::class);
+    }
+
+    //Définition de la relation avec Rendus (un utilisateur peut creer plusieurs rendus)
+    public function notifications()
+    {
+        return $this->hasMany(Notification::class);
     }
 }
