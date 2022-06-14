@@ -1,6 +1,5 @@
 <script setup >
 import { Vue, ref, computed, watchEffect, onMounted } from "vue";
-import VueMq from 'vue-mq';
 import logo from "./components/logo.vue";
 import DataExemple from "./components/DataExemple.vue";
 import sidebar from "./components/sidebar.vue";

@@ -1,7 +1,7 @@
 <script>
 import CalendarMonth from "./components/CalendarMonth";
 import CalendarWeek from "./components/CalendarWeek.vue"
-import ProchainsRendus from './components/ProchainsRendus.vue';
+/* import ProchainsRendus from './components/ProchainsRendus.vue'; */
 import FiltresHoraire from './components/FiltresHoraire.vue';
 import { ref } from 'vue'
 
@@ -10,7 +10,7 @@ export default {
 
   components: {
     CalendarMonth,
-    ProchainsRendus,
+    /* ProchainsRendus, */
     FiltresHoraire,
     CalendarWeek
   },
