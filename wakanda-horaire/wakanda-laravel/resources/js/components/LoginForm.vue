@@ -1,33 +1,23 @@
-<script>
+<script setup>
 import { useLocalstorage } from "../composables/localstorage";
 import { user } from "../state";
+import { ref, reactive } from "vue";
 
-export default {
-  data() {
-    return {
-      form: { email: null, password: null },
-      errors: {},
-    };
-  },
-
-  methods: {
-    async handleLogin() {
-      try {
-        await axios.get("/sanctum/csrf-cookie");
-        const userdata = await axios.post("/mylogin", this.form); //a faire en global et en mode ref pour que ça change
-        window.location = "/";
-
-        user.value = userdata.data;
-      } catch (error) {
-        // this.errors = error.response.data.errors;
-        console.log(error);
-      }
-    },
-  },
-};
+let messageError = ref(false);
+const form = reactive({ email: null, password: null });
+const errors = reactive({});
+async function handleLogin() {  
+  await axios.get("/sanctum/csrf-cookie");
+  const userdata = await axios.post("/mylogin", form);
+  if (userdata.data === "error") {
+    messageError.value = true;
+    form.email = null;
+    form.password = null;
+  } else {
+    window.location = "/";
+  }    
+}
 </script>
-
-
 
 <template>
   <div class="container">
@@ -86,6 +76,7 @@ export default {
               errors.password[0]
             }}</span>
           </div>
+          <p class="messageError" v-if="messageError">Email ou mot de passe incorrect</p>
           <div id="button" class="element">
             <button type="submit">Se connecter</button>
           </div>
@@ -94,9 +85,6 @@ export default {
     </div>
   </div>
 </template>
-
-
-
     
 <style lang="css" scoped>
 #divMom {
@@ -106,7 +94,7 @@ export default {
   border-radius: 25px;
   margin: 25px 25px 50px;
   box-shadow: 0.2em 0em 1em silver;
-    position: relative;
+  position: relative;
   margin: 10% 0% 10% 0%;
 }
 
@@ -134,14 +122,18 @@ button {
 }
 
 input {
-    border-radius: 25px;
-    border: 1px solid #444444;
-    padding: 1% 2% 1% 2%;
-    background-color: transparent;
-    width: 50%;
+  border-radius: 25px;
+  border: 1px solid #444444;
+  padding: 1% 2% 1% 2%;
+  background-color: transparent;
+  width: 50%;
 }
 
 .element {
   margin: 5%;
+}
+
+.messageError {
+  color: red;
 }
 </style>

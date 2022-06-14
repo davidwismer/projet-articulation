@@ -47,7 +47,7 @@ watchEffect(() => console.log(currentWeek.value));
       </div>
     </div>
     <div class="menu">
-      <h2>Menus de la semaine</h2>
+      <h2 href="https://www.w3schools.com">Menus de la semaine</h2>
       <div id="celluleMenu">
         <menu-day class="menuJour"  v-for="day of currentWeek.days" :day="day"></menu-day>
       </div>

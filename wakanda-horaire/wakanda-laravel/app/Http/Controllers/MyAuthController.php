@@ -23,7 +23,7 @@ class MyAuthController extends Controller
             return Auth::user();
         }
 
-        return "pas ok";
+        return "error";
     }
 
     public function isLogged()
