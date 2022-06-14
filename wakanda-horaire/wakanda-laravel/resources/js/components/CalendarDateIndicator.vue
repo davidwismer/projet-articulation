@@ -57,6 +57,7 @@ export default {
   cursor: pointer;
   display: flex;
   justify-content: right;
+  color: #888888;
 }
 
 .month {
@@ -69,6 +70,7 @@ export default {
   cursor: pointer;
   display: flex;
   justify-content: left;
+  color: #888888;
 }
 </style>
 

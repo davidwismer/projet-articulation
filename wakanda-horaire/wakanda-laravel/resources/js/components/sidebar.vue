@@ -42,7 +42,7 @@ async function logout() {
         </div>
       </ul>
     </nav>
-                  <logo id="logo"></logo>
+    <logo id="logo"></logo>
   </div>
 </template>
     
@@ -99,7 +99,8 @@ li,
   list-style-type: none; /* enlève la bullet aux débuts des éléments "list" */
 }
 
-#login, #logout {
+#login,
+#logout {
   position: absolute;
   bottom: 90px;
 }
