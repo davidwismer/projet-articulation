@@ -46,7 +46,7 @@ async function logout() {
           <button id="logout" a href="#logout">Déconnexion</button>
         </div>
       </ul>
-    </nav> 
+    </nav>
     <logo id="logo"></logo>
   </div>
 </template>

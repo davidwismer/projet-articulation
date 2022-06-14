@@ -97,7 +97,7 @@ svg {
 
 strong {
   text-transform: uppercase;
-  color: grey;
+  color: #888888;
 }
 
 #allCellule, #divImg {

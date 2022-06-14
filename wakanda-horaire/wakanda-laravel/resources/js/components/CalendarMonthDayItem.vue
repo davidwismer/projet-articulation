@@ -3,9 +3,9 @@ import dayjs from "dayjs";
 import { ref } from "vue";
 import CoursHoraire from './CoursHoraire.vue';
 import EventHoraire from './EventHoraire.vue'
+import RenduHoraire from './RenduHoraire.vue'
 import { user } from "../state.js";
 
-//Test qui est connecté
 let classeId
 const events = ref(tabEvents);
 const rendus = ref(tabRendus);
@@ -17,7 +17,8 @@ export default {
 
   components: {
     CoursHoraire,
-    EventHoraire
+    EventHoraire,
+    RenduHoraire
   },
 
   props: {
@@ -76,6 +77,13 @@ export default {
       })
       return eventsJour
     },
+    getRendusJour(){
+      let rendusJour= []
+      rendus.value.forEach(rendu => {
+        if(rendu.date === this.day.date) rendusJour.push(rendu)
+      })
+      return rendusJour
+    },
     getModules() {
       //Avoir les modules que la classe suit (lien avec branche du cours)
       let modulesCours = []
@@ -93,15 +101,12 @@ export default {
       }
     },
     getIsEvents(){
-      console.log(this.isEventsChecked)
       return this.isEventsChecked
     },
     getIsCours(){
-      console.log(this.isCoursChecked)
       return this.isCoursChecked
     },
     getIsRendus(){
-      console.log(this.isRendusChecked)
       return this.isRendusChecked
     },
   }
@@ -121,6 +126,9 @@ export default {
     <event-horaire class="cours-day" :class="{
       'cours-day--not-current': !day.isCurrentMonth
     }" v-for="evt of getEventsJour" :evenement="evt" v-show="getIsEvents"></event-horaire>
+    <rendu-horaire class="cours-day" :class="{
+      'cours-day--not-current': !day.isCurrentMonth
+    }" v-for="evt of getRendusJour" :rendu="evt" v-show="getIsRendus"></rendu-horaire>
   </li>
 </template>
 

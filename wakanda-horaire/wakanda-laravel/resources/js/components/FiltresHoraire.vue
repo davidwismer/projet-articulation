@@ -1,17 +1,16 @@
 <script >
-import { ref, computed } from "vue"
 
 export default {
   name: "AppHoraire",
   data() {
     return {
-      checked: []
+      choice: ['cours']
     }
   },
 
   methods: {
     sendChecked() {
-      this.$emit('getChecked', this.checked)
+      this.$emit('getChecked', this.choice)
     }
   }
 }
@@ -21,11 +20,15 @@ export default {
   <div class="bloc" width="250px">
     <div class="text-rendus">
       <h3 classe="titre-principal">Filtres</h3>
+<<<<<<< HEAD
       <input type="checkbox" value="cours" id="cours" v-model ="checked">
+=======
+      <input type="checkbox" value="cours" id="cours" v-model="choice">
+>>>>>>> e5ddb7f68352b54bca9b558018261685fbc4fcd4
       <label for="cours">Cours</label><br>
-      <input type="checkbox" value="examens" id="examens" v-model="checked">
+      <input type="checkbox" value="rendus" id="rendus" v-model="choice">
       <label for="examens">Examens & Rendus</label><br>
-      <input type="checkbox" value="events" id="events" v-model="checked">
+      <input type="checkbox" value="events" id="events" v-model="choice">
       <label for="events">Evenements</label><br>
       {{ sendChecked() }}
     </div>
@@ -37,8 +40,10 @@ export default {
   background-color: #eae9e9;
   border-radius: 20px;
   width: 250px;
-  height: 250px;
+  /* height: 250px; */
   float: right;
+  position: relative;
+  right: 2%;
 }
 
 .titre-principal {
@@ -52,4 +57,21 @@ export default {
   text-align: left;
 }
 
+<<<<<<< HEAD
+=======
+h3 {
+  margin-top: 20px;
+}
+
+input {
+  margin-right: 5px;
+  margin-top: 5px;
+  transform: translate(0, 2px);
+}
+
+.checkbox input[type="checkbox"]:checked {
+  font-family: 'FontAwesome';
+  content: '\2714';
+}
+>>>>>>> e5ddb7f68352b54bca9b558018261685fbc4fcd4
 </style>

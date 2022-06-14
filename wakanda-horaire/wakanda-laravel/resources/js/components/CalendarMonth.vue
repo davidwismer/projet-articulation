@@ -50,7 +50,6 @@ export default {
       let bool = false
       if (this.tabChecked !== null) {
         this.tabChecked.forEach(evt => {
-          console.log(evt)
           if (evt == 'events') bool =true
         })
       }
@@ -61,7 +60,6 @@ export default {
       let bool = false
       if (this.tabChecked !== null) {
         this.tabChecked.forEach(evt => {
-          console.log(evt)
           if (evt == 'cours') bool = true
         })
       }
@@ -72,7 +70,6 @@ export default {
       let bool = false
       if (this.tabChecked !== null) {
         this.tabChecked.forEach(evt => {
-          console.log(evt)
           if (evt == 'rendus') bool = true
         })
       }
@@ -184,8 +181,7 @@ export default {
 <style scoped>
 .calendar-month {
   block-size: 140px;
-  margin-left: 80px;
-  width: 70%;
+  width: 75%;
   position: relative;
 }
 
