@@ -23,7 +23,7 @@ export default {
       <input type="checkbox" value="cours" id="cours" v-model="choice">
       <label for="cours">Cours</label><br>
       <input type="checkbox" value="rendus" id="rendus" v-model="choice">
-      <label for="examens">Examens & Rendus</label><br>
+      <label for="rendus">Examens & Rendus</label><br>
       <input type="checkbox" value="events" id="events" v-model="choice">
       <label for="events">Evenements</label><br>
       {{ sendChecked() }}

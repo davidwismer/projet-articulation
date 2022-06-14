@@ -1,11 +1,18 @@
 <script setup>
 import { ref } from "vue"
-const props = defineProps(['rendu', "cours"]);
+const props = defineProps(['rendu']);
+
+const cours = ref(tabCours);
+let coursNom
+cours.value.forEach(cours => {
+    if(props.rendu.cour_id == cours.id) coursNom = cours.label
+})
+
 </script>
 
 <template>
     <div class="rendu">
-        <span class="nom">{{ props.rendu.date }}</span>
+        <span class="nom">{{ coursNom }}</span>
     </div>
 </template>
 
