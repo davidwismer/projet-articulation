@@ -183,12 +183,12 @@ export default {
   block-size: 140px;
   width: 75%;
   position: relative;
+  margin-left: 30px;
 }
 
 .day-of-week {
   font-size: 18px;
   padding-bottom: 5px;
-  padding-top: 10px;
 }
 
 .calendar-month-header {
@@ -197,7 +197,6 @@ export default {
 
 .day-of-week,
 .days-grid {
-  margin: 30px auto;
   height: auto;
   display: grid;
   grid-template-columns: repeat(7, 1fr);

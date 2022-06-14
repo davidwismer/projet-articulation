@@ -30,5 +30,19 @@ class RendusTableSeeder extends Seeder
                 'cour_id' => rand(1, $nbCours)
             ]);
         }
+
+        DB::table('rendus')->insert([
+            'consignes' => 'Projet Articulation rendu du rapport à 12:00',
+            'date' => '2022-06-16',
+            'user_id' => rand(1, $nbUser),
+            'cour_id' => 158
+        ]);
+
+        DB::table('rendus')->insert([
+            'consignes' => 'Projet Articulation rendu du rapport à 12:00',
+            'date' => '2022-06-16',
+            'user_id' => rand(1, $nbUser),
+            'cour_id' => 340
+        ]);
     }
 }

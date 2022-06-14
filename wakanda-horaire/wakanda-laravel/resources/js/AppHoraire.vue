@@ -1,8 +1,9 @@
 <script>
 import CalendarMonth from "./components/CalendarMonth";
+import CalendarWeek from "./components/CalendarWeek.vue"
 import ProchainsRendus from './components/ProchainsRendus.vue';
 import FiltresHoraire from './components/FiltresHoraire.vue';
-import {ref} from 'vue'
+import { ref } from 'vue'
 
 export default {
   name: "App",
@@ -10,25 +11,38 @@ export default {
   components: {
     CalendarMonth,
     ProchainsRendus,
-    FiltresHoraire
+    FiltresHoraire,
+    CalendarWeek
   },
   data() {
     return {
-      choice: []
+      choice: [],
+      isShowingMonth: true,
     }
   },
   methods: {
-    getChecked(choice){
+    getChecked(choice) {
       this.choice = choice
     },
+    changeToWeek() {
+      if(this.isShowingMonth){
+        this.isShowingMonth = !this.isShowingMonth
+      }
+    },
+    changeToMonth() {
+      if(!this.isShowingMonth){
+        this.isShowingMonth = !this.isShowingMonth
+      }
+    }
   },
 };
 </script>
 
 <template>
-  <input type="button" class="semaine" value="Semaine">
-  <input type="button" class="mois" value="Mois">
-  <CalendarMonth :tabChecked="choice"></CalendarMonth>
+  <input type="button" class="semaine" value="Semaine" @click="changeToWeek">
+  <input type="button" class="mois" value="Mois" @click="changeToMonth">
+  <CalendarMonth :tabChecked="choice" v-show="isShowingMonth"></CalendarMonth>
+  <CalendarWeek v-show="!isShowingMonth"></CalendarWeek>
   <filtres-horaire @getChecked="getChecked"></filtres-horaire>
 </template>
 

@@ -51,6 +51,8 @@ export default {
 
   display:flex;
   justify-content: right;
+
+  margin-bottom: 60px;
 }
 
 .previous {
