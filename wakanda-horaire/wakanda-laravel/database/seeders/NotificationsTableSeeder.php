@@ -18,7 +18,7 @@ class NotificationsTableSeeder extends Seeder
         DB::table('notifications')->delete();
         $nbUser = count(DB::select('SELECT * FROM users'));
         $nbCours = count(DB::select('SELECT * FROM cours'));
-        $motif = ["changement de salle", "changement horaire", "Mise à jour de rendus"];
+        $motif = ["Changement de salle", "Changement horaire", "Mise à jour de rendus"];
 
         for ($i = 0; $i < 20; $i++) {
             DB::table('notifications')->insert([

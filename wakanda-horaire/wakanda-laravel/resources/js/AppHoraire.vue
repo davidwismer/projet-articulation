@@ -48,7 +48,7 @@ export default {
     'inactive' : !isShowingMonth
   }" type="button" class="mois" value="Mois" @click="changeToMonth">
   <CalendarMonth :tabChecked="choice" v-show="isShowingMonth"></CalendarMonth>
-  <CalendarWeek v-show="!isShowingMonth"></CalendarWeek>
+  <CalendarWeek :tabChecked="choice" v-show="!isShowingMonth"></CalendarWeek>
   <filtres-horaire @getChecked="getChecked"></filtres-horaire>
 </template>
 

@@ -20,6 +20,13 @@ export default {
         CalendarWeekNumbers
     },
 
+    props: {
+        tabChecked: {
+            type: Array,
+            default: [1, 2, 3]
+        }
+    },
+
     data() {
         return {
             selectedDate: dayjs(),
@@ -27,6 +34,49 @@ export default {
     },
 
     computed: {
+        eventsChecked() {
+            let bool = false
+            if (this.tabChecked !== null) {
+                this.tabChecked.forEach(evt => {
+                    if (evt == 'events') bool = true
+                })
+            }
+            return bool
+        },
+
+        coursChecked() {
+            let bool = false
+            if (this.tabChecked !== null) {
+                this.tabChecked.forEach(evt => {
+                    if (evt == 'cours') bool = true
+                })
+            }
+            return bool
+        },
+
+        rendusChecked() {
+            let bool = false
+            if (this.tabChecked !== null) {
+                this.tabChecked.forEach(evt => {
+                    if (evt == 'rendus') bool = true
+                })
+            }
+            return bool
+        },
+
+        getGridWeek() {
+            let tab = []
+            let hIndex = 8
+            for (let nbLigne = 0; nbLigne < 12; nbLigne++) {
+                tab.push(dayjs().hour(hIndex).minute(0).format("HH:mm"))
+                for (let nbColumn = 1; nbColumn < 8; nbColumn++) {
+                    tab.push("" + nbColumn + "")
+                }
+                hIndex++
+            }
+            return tab
+        },
+
         days() {
             return [
                 ...this.currentWeekDays,
@@ -97,7 +147,8 @@ export default {
         <calendar-week-numbers :current-week="currentWeekDays" :current-date="today"></calendar-week-numbers>
         <CalendarWeekdaysSemaine />
         <ol class="days-grid">
-            <calendar-week-day-item v-for="day in days" />
+            <calendar-week-day-item v-for="day in getGridWeek" :case="day" :isEventsChecked="eventsChecked"
+                :isCoursChecked="coursChecked" :isRendusChecked="rendusChecked" />
         </ol>
     </div>
 </template>
@@ -119,7 +170,8 @@ export default {
     background-color: #f6f6f6;
 }
 
-.day-of-week {
+.day-of-week,
+.days-grid {
     height: auto;
     display: grid;
     grid-template-columns: 60px 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
