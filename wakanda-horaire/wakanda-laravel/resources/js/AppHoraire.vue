@@ -1,8 +1,8 @@
 <script>
 import CalendarMonth from "./components/CalendarMonth";
 import ProchainsRendus from './components/ProchainsRendus.vue';
-import FiltresHoraireVue from "./components/FiltresHoraire.vue";
 import FiltresHoraire from './components/FiltresHoraire.vue';
+import {ref} from 'vue'
 
 export default {
   name: "App",
@@ -11,15 +11,25 @@ export default {
     CalendarMonth,
     ProchainsRendus,
     FiltresHoraire
-  }
+  },
+  data() {
+    return {
+      checked: []
+    }
+  },
+  methods: {
+    getChecked(checked){
+      this.checked = checked
+    }
+  },
 };
 </script>
 
 <template>
   <button class="semaine">Semaine</button>
   <button class="month">Mois</button>
-  <CalendarMonth></CalendarMonth>
-  <filtres-horaire></filtres-horaire>
+  <CalendarMonth :tabChecked="checked"></CalendarMonth>
+  <filtres-horaire @getChecked="getChecked"></filtres-horaire>
 </template>
 
 <style scoped>

@@ -69,6 +69,11 @@ $tabBrancheUser = [];
 foreach ($datas['branche_user'] as $brancheUser) {
     array_push($tabBrancheUser, $brancheUser);
 }
+
+$tabRendus = [];
+foreach ($datas['rendus'] as $rendu) {
+    array_push($tabRendus, $rendu);
+}
 ?>
 
 
@@ -103,6 +108,7 @@ foreach ($datas['branche_user'] as $brancheUser) {
         const tabFiliereModule = <?php echo json_encode($tabFiliereModule); ?>;
         const tabModuleUser = <?php echo json_encode($tabModuleUser); ?>;
         const tabBrancheUser = <?php echo json_encode($tabBrancheUser); ?>;
+        const tabRendus = <?php echo json_encode($tabRendus); ?>;
     </script>
 
 

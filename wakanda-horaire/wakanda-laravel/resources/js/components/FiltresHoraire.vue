@@ -1,14 +1,33 @@
-<script setup>
+<script >
+import { ref, computed } from "vue"
 
+export default {
+  name: "AppHoraire",
+  data() {
+    return {
+      checked: []
+    }
+  },
+
+  methods: {
+    sendChecked() {
+      this.$emit('getChecked', this.checked)
+    }
+  }
+}
 </script>
 
 <template>
   <div class="bloc" width="250px">
     <div class="text-rendus">
       <h3 classe="titre-principal">Filtres</h3>
-      <input type="checkbox" name="Cours" value="un" />Cours<br>
-      <input type="checkbox" name="Examens" value="deux" />Examens & Rendus <br>
-      <input type="checkbox" name="Event" value="trois" />Evénements  <br>
+      <input type="checkbox" value="cours" id="cours" v-model="checked">
+      <label for="cours">Cours</label><br>
+      <input type="checkbox" value="examens" id="examens" v-model="checked">
+      <label for="examens">Examens & Rendus</label><br>
+      <input type="checkbox" value="events" id="events" v-model="checked">
+      <label for="events">Evenements</label><br>
+      {{ sendChecked() }}
     </div>
   </div>
 </template>

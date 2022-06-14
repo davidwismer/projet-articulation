@@ -1,7 +1,11 @@
 <script setup >
+<<<<<<< HEAD
 import { Vue, ref, computed, watchEffect, onMounted } from "vue";
 import VueMq from 'vue-mq';
 import logo from "./components/logo.vue";
+=======
+import { ref, computed, watchEffect, onMounted } from "vue";
+>>>>>>> 4a569596993b74004e370cc7bdbfc6858f86e29f
 import DataExemple from "./components/DataExemple.vue";
 import sidebar from "./components/sidebar.vue";
 import { page } from "./state.js";
@@ -114,9 +118,7 @@ const curComponent = computed(() => {
 
 
 <template>
-  <logo></logo>
-
-<div v-if="loading">Chargement en cours</div>
+  <div v-if="loading">Chargement en cours</div>
 <div v-if="loading == false">
 <div v-if="user === null">
     <sidebar :routes="routes2" :curHash="curHash"></sidebar>

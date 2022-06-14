@@ -2,11 +2,13 @@
 import dayjs from "dayjs";
 import { ref } from "vue";
 import CoursHoraire from './CoursHoraire.vue';
+import EventHoraire from './EventHoraire.vue'
 import { user } from "../state.js";
 
 //Test qui est connecté
 let classeId
-const classes = ref(tabClasses);
+const events = ref(tabEvents);
+const rendus = ref(tabRendus);
 const cours = ref(tabCours);
 const modules = ref(tabModules);
 
@@ -14,7 +16,8 @@ export default {
   name: "CalendarMonthDayItem",
 
   components: {
-    CoursHoraire
+    CoursHoraire,
+    EventHoraire
   },
 
   props: {
@@ -31,7 +34,22 @@ export default {
     isToday: {
       type: Boolean,
       default: false
-    }
+    },
+
+    isEventsChecked: {
+      type: Boolean,
+      default: false
+    },
+
+    isCoursChecked: {
+      type: Boolean,
+      default: false
+    },
+
+    isRendusChecked: {
+      type: Boolean,
+      default: false
+    },
   },
 
   computed: {
@@ -48,6 +66,16 @@ export default {
       })
       return coursClasseJour
     },
+    getEventsJour() {
+      let eventsJour = []
+      const date1 = new Date(this.day.date)
+      events.value.forEach(evt => {
+        const date2 = new Date(evt.dateDebut)
+        const date3 = new Date(evt.dateFin)
+        if (date1 >= date2 && date1 <= date3) eventsJour.push(evt)
+      })
+      return eventsJour
+    },
     getModules() {
       //Avoir les modules que la classe suit (lien avec branche du cours)
       let modulesCours = []
@@ -63,7 +91,19 @@ export default {
       if (user.value !== null && user.value.role_id == 3) {
         classeId = user.value.classe_id
       }
-    }
+    },
+    getIsEvents(){
+      console.log(this.isEventsChecked)
+      return this.isEventsChecked
+    },
+    getIsCours(){
+      console.log(this.isCoursChecked)
+      return this.isCoursChecked
+    },
+    getIsRendus(){
+      console.log(this.isRendusChecked)
+      return this.isRendusChecked
+    },
   }
 };
 </script>
@@ -77,7 +117,10 @@ export default {
     <span>{{ label }}</span>
     <cours-horaire class="cours-day" :class="{
       'cours-day--not-current': !day.isCurrentMonth
-    }" v-for="evt of getCoursClasseJour" :cours="evt" :modules="getModules"></cours-horaire>
+    }" v-for="evt of getCoursClasseJour" :cours="evt" :modules="getModules" v-show="getIsCours"></cours-horaire>
+    <event-horaire class="cours-day" :class="{
+      'cours-day--not-current': !day.isCurrentMonth
+    }" v-for="evt of getEventsJour" :evenement="evt" v-show="getIsEvents"></event-horaire>
   </li>
 </template>
 

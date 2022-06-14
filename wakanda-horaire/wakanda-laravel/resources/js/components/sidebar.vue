@@ -2,6 +2,7 @@
 import { ref } from "vue";
 import { page } from "../state.js";
 import { user } from "../state.js";
+import logo from "./logo.vue";
 
 window.addEventListener("hashchange", () => {
   page.value = window.location.hash;
@@ -36,12 +37,12 @@ async function logout() {
             </a>
           </div>
         </li>
-
         <div v-if="user !== null" @click="logout()">
           <button id="logout" a href="#logout">Déconnexion</button>
         </div>
       </ul>
     </nav>
+                  <logo id="logo"></logo>
   </div>
 </template>
     
@@ -66,6 +67,11 @@ async function logout() {
   font-size: 18px;
   color: #fff;
   display: block;
+}
+
+#logo {
+  position: absolute;
+  bottom: 30px;
 }
 
 #logout {
@@ -95,7 +101,7 @@ li,
 
 #login, #logout {
   position: absolute;
-  bottom: 32px;
+  bottom: 90px;
 }
 
 @media screen and (max-height: 50px) {

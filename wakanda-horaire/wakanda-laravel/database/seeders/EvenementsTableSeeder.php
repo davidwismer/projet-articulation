@@ -75,5 +75,16 @@ class EvenementsTableSeeder extends Seeder
             'lienURL' => 'https://www.loutre-festival.ch/',
             'image' => "https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg"
         ]);
+
+        //5e event
+        DB::table('evenements')->insert([
+            'titre' => "Barbecue de fin d'année",
+            'description' => "Retrouvons nous tous au bord du lac d'Yverdon pour fêter entre COMEM l'arrivée de la fin d'année.",
+            'dateDebut' => '2022-06-09',
+            'dateFin' => '2022-06-09',
+            'lieu' => "Bord du lac d'Yverdon",
+            'lienURL' => '',
+            'image' => "https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg"
+        ]);
     }
 }
