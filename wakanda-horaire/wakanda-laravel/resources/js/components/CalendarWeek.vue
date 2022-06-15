@@ -105,7 +105,16 @@ export default {
         getCoursWeekUser(){
             let coursWeekClasse = []
             let coursWeek = []
-            const lundi = new Date(this.currentWeekDays[0].date)
+
+            let lundi
+            if(this.currentWeekDays[0].date == 'Invalid Date'){
+                console.log()
+                const year = this.currentWeekDays[1].date.split('-')[0]
+                const month = this.currentWeekDays[1].date.split('-')[1]
+                lundi = new Date(year+ '-' + month + '-' + '30')
+            }else{
+                lundi = new Date(this.currentWeekDays[0].date)
+            }
             const dimanche = new Date(this.currentWeekDays[6].date)
             cours.value.forEach(cours => {
                 const date = new Date(cours.start.split(' ')[0])

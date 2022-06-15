@@ -41,14 +41,13 @@ const room = props.cours.room
     flex-direction: column;
     justify-content: center;
 
-    z-index: 9999;
+    z-index: 9997;
     position: relative;
 }
 
 .nom {
     font-size: 15px;
     font-weight: 600;
-    text-align: center;
 }
 .element {
     margin-top: 10px;

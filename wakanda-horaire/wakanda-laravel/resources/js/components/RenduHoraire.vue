@@ -17,12 +17,20 @@ const showModal = ref(false);
     <button @click="showModal = true">
       <span class="nom">{{ coursNom }}</span>
     </button>
-    <pop-up-rendu v-if="showModal" :show="showMedal" @close="showModal = false"></pop-up-rendu>
+    <pop-up-rendu
+      v-if="showModal"
+      :show="showMedal"
+      :coursNom="coursNom"
+      :rendu="rendu"
+      @close="showModal = false"
+    ></pop-up-rendu>
   </div>
 </template>
 
 <style scoped>
 button {
+  height: 18px;
+  line-height: 18px;
   width: 100%;
   border-radius: 20px;
   padding-left: 5px;
