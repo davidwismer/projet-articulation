@@ -1,13 +1,12 @@
 <script>
-import {ref} from "vue"
+import { ref } from "vue"
 import dayjs from 'dayjs'
 import RenduHoraire from './RenduHoraire.vue'
 import CoursHoraireWeek from './CoursHoraireWeek.vue'
 import EventHoraire from './EventHoraire.vue'
 
-const modules = ref(tabModules)
-
 export default {
+    name: "CalendarWeekDayItem",
 
     components: {
         RenduHoraire,
@@ -60,7 +59,13 @@ export default {
             return this.case.split('/')[0]
         },
         getCaseDate() {
-            return this.case.split('$')[1]
+            let date = this.case.split('$')[1]
+            if (date == 'Invalid Date') {
+                const year = this.weekDays[1].date.split('-')[0]
+                const month = this.weekDays[1].date.split('-')[1]
+                date = year + '-' + month + '-' + '30'
+            }
+            return date
         },
 
         getHourCase() {
@@ -97,18 +102,6 @@ export default {
             return coursCase
         },
 
-        getModulesCase() {
-            //Avoir les modules que la classe suit pour ce jour (lien avec branche du cours)
-            let modulesCours = []
-            const coursClasseCase = this.getCoursCase
-            modules.value.forEach(module => {
-                coursClasseCase.forEach(evt => {
-                    if (evt.module_id == module.id) modulesCours.push(module)
-                })
-            })
-            return modulesCours
-        },
-
         isHour() {
             return this.case.split(':')[1] == '00'
         },
@@ -143,10 +136,10 @@ export default {
         'hour': isHour
     }">
         <span>{{ getHourCase }}</span>
-        <cours-horaire-week class="cours-day" v-for="evt of getCoursCase" :cours="evt" :modules="getModulesCase" v-show="getIsCours">
+        <cours-horaire-week class="cours-day" v-for="evt of getCoursCase" :cours="evt" v-show="getIsCours">
         </cours-horaire-week>
-        <rendu-horaire class="cours-day" v-for="evt of getRendusCase" :rendu="evt" v-show="getIsRendus"></rendu-horaire>
-        <event-horaire class="cours-day" v-for="evt of getEventsCase" :evenement="evt" v-show="getIsEvents">
+        <rendu-horaire class="rendu-day" v-for="evt of getRendusCase" :rendu="evt" v-show="getIsRendus"></rendu-horaire>
+        <event-horaire class="event-day" v-for="evt of getEventsCase" :evenement="evt" v-show="getIsEvents">
         </event-horaire>
     </li>
 </template>
@@ -154,10 +147,11 @@ export default {
 <style scoped>
 ol,
 li {
-  padding: 0;
-  margin: 0;
-  list-style: none;
+    padding: 0;
+    margin: 0;
+    list-style: none;
 }
+
 .calendar-case {
     position: relative;
     min-height: 50px;

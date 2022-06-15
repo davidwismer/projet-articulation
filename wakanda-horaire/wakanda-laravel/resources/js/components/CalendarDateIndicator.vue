@@ -1,7 +1,7 @@
 <template>
   <table class="calendar-date-indicator">
     <th class="previous" @click="selectPrevious">&lt</th>
-    <th class="month">{{selectedMonth}}</th>
+    <th class="month">{{ selectedMonth }}</th>
     <th class="next" @click="selectNext">></th>
   </table>
 </template>
@@ -24,7 +24,7 @@ export default {
     selectedMonth() {
       const date = new Date(this.selectedDate);
       const month = ["Janvier", "Fevrier", "Mars", "Avril", "Mai", "Juin",
-    "Juillet", "Aout", "Septembre", "Octobre", "Novembre", "Decembre"][date.getMonth()];
+        "Juillet", "Aout", "Septembre", "Octobre", "Novembre", "Decembre"][date.getMonth()];
       return month + ' ' + date.getFullYear();
     },
   },
@@ -49,7 +49,7 @@ export default {
   font-weight: 600;
   color: var(--grey-00);
 
-  display:flex;
+  display: flex;
   justify-content: right;
 
   margin-bottom: 60px;

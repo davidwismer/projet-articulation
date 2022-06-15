@@ -1,16 +1,15 @@
 <script setup>
 import { ref } from "vue"
 
-const props = defineProps(['cours', 'modules']);
+const props = defineProps(['cours']);
+const modules = ref(tabModules)
 //Avoir la couleur du module
 let couleurModule
-props.modules.forEach(evt => {
+modules.value.forEach(evt => {
     if (evt.id == props.cours.module_id) couleurModule = evt.couleur
 })
-const dureePeriode = props.cours.periodeDuree
-const theme = {
-    color: couleurModule,
-    duree: dureePeriode
+const style = {
+    color: couleurModule
 }
 //Avoir l'heure de début du cours
 const heureDebut = props.cours.start.split(' ')[1].split(':')[0] + ':' + props.cours.start.split(' ')[1].split(':')[1];
@@ -34,7 +33,7 @@ const room = props.cours.room
     padding-top: 10px;
     background-color: #EAE9E9;
     font-size: 10px;
-    border-left: 4px solid v-bind('theme.color');
+
     height: 200px;
 
     display: flex;
@@ -43,12 +42,14 @@ const room = props.cours.room
 
     z-index: 9997;
     position: relative;
+    border-left: 4px solid v-bind('style.color');
 }
 
 .nom {
     font-size: 15px;
     font-weight: 600;
 }
+
 .element {
     margin-top: 10px;
     margin-bottom: 10px;

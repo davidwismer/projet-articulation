@@ -137,7 +137,7 @@ export default {
     }" v-for="evt of getCoursClasseJour" :cours="evt" :modules="getModulesJour" :isCurrentMonth="day.isCurrentMonth" v-show="getIsCours"></cours-horaire>
     <rendu-horaire class="cours-day" :class="{
       'cours-day--not-current': !day.isCurrentMonth
-    }" v-for="evt of getRendusClasseJour" :rendu="evt" v-show="getIsRendus"></rendu-horaire>
+    }" v-for="evt of getRendusClasseJour" :rendu="evt" :isCurrentMonth="day.isCurrentMonth" v-show="getIsRendus"></rendu-horaire>
     <event-horaire class="cours-day" :class="{
       'cours-day--not-current': !day.isCurrentMonth
     }" v-for="evt of getEventsJour" :evenement="evt" v-show="getIsEvents"></event-horaire>
@@ -153,7 +153,7 @@ li {
 }
 
 .cours-day--not-current {
-  opacity: 50%;
+  opacity: 75%;
 }
 
 .calendar-day {

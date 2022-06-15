@@ -10,7 +10,6 @@ export default {
 
   components: {
     CalendarMonth,
-    /* ProchainsRendus, */
     FiltresHoraire,
     CalendarWeek
   },

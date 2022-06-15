@@ -22,7 +22,7 @@ export default {
             let firstDate
             if (this.firstDay == 'Invalid Date') {
                 const month = parseInt(this.lastDay.split('-')[1])
-                const monthCurrent = '' + (month-1) + ''
+                const monthCurrent = '' + (month - 1) + ''
                 const year = this.lastDay.split('-')[0]
                 firstDate = new Date(year + '-' + monthCurrent + '-' + '30')
             } else {

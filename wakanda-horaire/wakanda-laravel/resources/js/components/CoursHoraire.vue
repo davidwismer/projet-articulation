@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from "vue";
+import { ref} from "vue";
 import PopUpCours from "./PopUpCours.vue";
 
 const props = defineProps(["cours", "modules", 'isCurrentMonth']);
@@ -16,27 +16,17 @@ const heureDebut =
   props.cours.start.split(" ")[1].split(":")[0] +
   ":" +
   props.cours.start.split(" ")[1].split(":")[1];
-
 const showModal = ref(false);
 </script>
 
 <template>
   <div class="cours">
-    <button :attribute="{
-      'disabled': !isCurrentMonth
-    }" @click="showModal = true">
-      <span class="heure">{{ heureDebut }}</span
-      >&nbsp;
+    <button @click="showModal = true" :disabled="!isCurrentMonth">
+      <span class="heure">{{ heureDebut }}</span>&nbsp;
       <span class="nom">{{ props.cours.label }}</span>
     </button>
-    <pop-up-cours
-      v-if="showModal"
-      :show="showModal"
-      :cours="props.cours"
-      :modules="props.modules"
-      :couleur="couleurModule"
-      @close="showModal = false"
-    ></pop-up-cours>
+    <pop-up-cours v-if="showModal" :show="showModal" :cours="props.cours" :modules="props.modules"
+      :couleur="couleurModule" @close="showModal = false"></pop-up-cours>
   </div>
 </template>
 

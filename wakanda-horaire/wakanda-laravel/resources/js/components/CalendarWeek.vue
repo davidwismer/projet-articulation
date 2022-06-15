@@ -133,10 +133,11 @@ export default {
             for (let nbLigne = 0; nbLigne < 12; nbLigne++) {
                 tab.push(dayjs().hour(hIndex).minute(0).format("HH:mm"))
                 for (let nbColumn = 1; nbColumn < 8; nbColumn++) {
-                    tab.push("" + nbColumn + "/" + nbLigne + "$" + this.currentWeekDays[nbColumn - 1].date + "")
+                    tab.push("" + nbColumn + "/" + nbLigne + "$" + this.currentWeekDays[nbColumn - 1].date)
                 }
                 hIndex++
             }
+            console.log(tab)
             return tab
         },
 
@@ -216,7 +217,7 @@ export default {
         <calendar-week-numbers :current-week="currentWeekDays" :current-date="today"></calendar-week-numbers>
         <CalendarWeekdaysSemaine />
         <ol class="days-grid">
-            <calendar-week-day-item v-for="day in getGridWeek" :case="day" :isEventsChecked="eventsChecked"
+            <CalendarWeekDayItem :class="indexCase" v-for="day in getGridWeek" :case="day" :isEventsChecked="eventsChecked"
                 :isCoursChecked="coursChecked" :isRendusChecked="rendusChecked" :eventsWeek="getEventsWeek"
                 :weekDays="currentWeekDays" :rendusWeek="getRendusWeekUser" :coursWeek="getCoursWeekUser"/>
         </ol>
