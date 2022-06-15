@@ -3,23 +3,6 @@ import { ref } from "vue";
 
 const props = defineProps(["notification"]);
 
-// const couleurSalle = null;
-// const couleurHoraire = null;
-// const couleurRendu = null;
-
-// console.log(props.notification.motif);
-
-//couleurs
-
-// if (props.notification.motif === "changement de salle"){
-//     couleurSalle = "#71A0BA";
-// }
-// if (props.notification.motif === "Mise à jour de rendus"){
-//     couleurRendu = "#C83C2B";
-// }
-// if (props.notification.motif === "changement horaire"){
-//     couleurHoraire = "#EBC2BD";
-// }
 </script>
 
 
@@ -29,11 +12,11 @@ const props = defineProps(["notification"]);
   <div>
         
 
-    <div v-if="notification.motif == 'changement de salle'">
+    <div v-if="notification.motif == 'Changement de salle'">
       <div id="divMom" :id="notification.id" class="couleurSalle">
           <table id="tableNotifications" style="width: 100%">
       <tr class="notif">
-        <td class="bold">{{ notification.description }}</td>
+        <td class="bold" style="width: 50%" >{{ notification.description }}</td>
         <td>{{ notification.motif }}</td>
         <td class="bold">{{ notification.date }}</td>
       </tr>
@@ -45,7 +28,7 @@ const props = defineProps(["notification"]);
       <div id="divMom" :id="notification.id" class="couleurRendu">
           <table id="tableNotifications" style="width: 100%">
       <tr class="notif">
-        <td class="bold">{{ notification.description }}</td>
+        <td class="bold" style="width: 50%" >{{ notification.description }}</td>
         <td>{{ notification.motif }}</td>
         <td class="bold">{{ notification.date }}</td>
       </tr>
@@ -57,7 +40,7 @@ const props = defineProps(["notification"]);
       <div id="divMom" :id="notification.id" class="couleurHoraire">
           <table id="tableNotifications" style="width: 100%">
       <tr class="notif">
-        <td class="bold">{{ notification.description }}</td>
+        <td class="bold" style="width: 50%" >{{ notification.description }}</td>
         <td>{{ notification.motif }}</td>
         <td class="bold">{{ notification.date }}</td>
       </tr>
@@ -86,10 +69,6 @@ tr {
   height: 20px;
 }
 
-th {
-  text-align: left;
-  width: 150px;
-}
 
 td {
   font-size: 23px;
@@ -97,7 +76,7 @@ td {
 
 
 #divMom {
-  width: 85%;
+  width: 90%;
   padding: 15px;
   border-radius: 25px;
   margin: 25px 25px 50px;

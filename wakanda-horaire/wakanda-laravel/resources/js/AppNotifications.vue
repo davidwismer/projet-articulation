@@ -18,7 +18,7 @@ const notifications = ref(tabNotifications);
     </div>
 
     <div>
-      <table style="width: 22%">
+      <table style="width: 33%">
         <td class="cercleSalle"></td>
         <td>Salle</td>
 
