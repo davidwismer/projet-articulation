@@ -1,4 +1,6 @@
 <script>
+import { ref } from "vue";
+import { user } from "../state";
 import dayjs from "dayjs";
 import weekday from "dayjs/plugin/weekday";
 import weekOfYear from "dayjs/plugin/weekOfYear";
@@ -9,6 +11,10 @@ import CalendarWeekdaysSemaine from './CalendarWeekdaysSemaine.vue'
 
 dayjs.extend(weekday);
 dayjs.extend(weekOfYear);
+
+const events = ref(tabEvents);
+const rendus = ref(tabRendus);
+const cours = ref(tabCours);
 
 export default {
     name: "CalendarWeek",
@@ -64,17 +70,80 @@ export default {
             return bool
         },
 
+        getEventsWeek() {
+            let eventsWeek = []
+            const lundi = new Date(this.currentWeekDays[0].date)
+            const dimanche = new Date(this.currentWeekDays[6].date)
+            events.value.forEach(event => {
+                const dateDeb = new Date(event.dateDebut)
+                const dateFin = new Date(event.dateFin)
+                if (dateDeb <= dimanche && dateFin >= lundi) eventsWeek.push(event)
+            })
+            return eventsWeek
+        },
+
+        getRendusWeekUser() {
+            let rendusWeekUser = []
+            let rendusWeek = []
+            const lundi = new Date(this.currentWeekDays[0].date)
+            const dimanche = new Date(this.currentWeekDays[6].date)
+            rendus.value.forEach(rendu => {
+                const date = new Date(rendu.date)
+                if (date <= dimanche && date >= lundi) rendusWeek.push(rendu)
+            })
+            rendusWeek.forEach(rendu => {
+                let coursId = rendu.cour_id
+                cours.value.forEach(cours => {
+                    if (coursId == cours.id) {
+                        if (cours.classe_id == this.getUserClasseId) rendusWeekUser.push(rendu)
+                    }
+                })
+            })
+            return rendusWeekUser
+        },
+
+        getCoursWeekUser(){
+            let coursWeekClasse = []
+            let coursWeek = []
+
+            let lundi
+            if(this.currentWeekDays[0].date == 'Invalid Date'){
+                console.log()
+                const year = this.currentWeekDays[1].date.split('-')[0]
+                const month = this.currentWeekDays[1].date.split('-')[1]
+                lundi = new Date(year+ '-' + month + '-' + '30')
+            }else{
+                lundi = new Date(this.currentWeekDays[0].date)
+            }
+            const dimanche = new Date(this.currentWeekDays[6].date)
+            cours.value.forEach(cours => {
+                const date = new Date(cours.start.split(' ')[0])
+                if(date <= dimanche && date >= lundi) coursWeek.push(cours)
+            })
+            coursWeek.forEach(cours => {
+                let classeId = this.getUserClasseId
+                if(cours.classe_id == classeId)coursWeekClasse.push(cours)
+            })
+            return coursWeekClasse
+        },
+
         getGridWeek() {
             let tab = []
             let hIndex = 8
             for (let nbLigne = 0; nbLigne < 12; nbLigne++) {
                 tab.push(dayjs().hour(hIndex).minute(0).format("HH:mm"))
                 for (let nbColumn = 1; nbColumn < 8; nbColumn++) {
-                    tab.push("" + nbColumn + "")
+                    tab.push("" + nbColumn + "/" + nbLigne + "$" + this.currentWeekDays[nbColumn - 1].date + "")
                 }
                 hIndex++
             }
             return tab
+        },
+
+        getUserClasseId() {
+            if (user.value !== null && user.value.role_id == 3) {
+                return user.value.classe_id
+            }
         },
 
         days() {
@@ -148,7 +217,8 @@ export default {
         <CalendarWeekdaysSemaine />
         <ol class="days-grid">
             <calendar-week-day-item v-for="day in getGridWeek" :case="day" :isEventsChecked="eventsChecked"
-                :isCoursChecked="coursChecked" :isRendusChecked="rendusChecked" />
+                :isCoursChecked="coursChecked" :isRendusChecked="rendusChecked" :eventsWeek="getEventsWeek"
+                :weekDays="currentWeekDays" :rendusWeek="getRendusWeekUser" :coursWeek="getCoursWeekUser"/>
         </ol>
     </div>
 </template>
@@ -172,7 +242,7 @@ export default {
 
 .day-of-week,
 .days-grid {
-    height: auto;
+    height: 50px;
     display: grid;
     grid-template-columns: 60px 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     justify-content: center;

@@ -1,4 +1,5 @@
 <script>
+import { isTSConditionalType } from '@babel/types';
 import dayjs from 'dayjs';
 
 export default {
@@ -19,13 +20,23 @@ export default {
         getNumbers() {
             let numbers = [" "]
             this.currentWeek.forEach(day => {
-                numbers.push(Number(dayjs(day.date).format("DD")))
+                let num = Number(dayjs(day.date).format("DD"))
+                if(isNaN(num)) num = 30
+                numbers.push(num)
             })
             return numbers
         },
 
         getTodayNumber() {
             return Number(dayjs(this.currentDate).format("DD"))
+        },
+
+        isToday() {
+            let isToday = false
+            this.currentWeek.forEach(day => {
+                if(dayjs(this.currentDate).format("YYYY-MM-DD") == day.date) isToday = true
+            })
+            return isToday
         }
     }
 
@@ -35,12 +46,12 @@ export default {
 <template>
     <ol class="number-of-week">
         <li class="calendar-number" :class="{
-            'today': (number == getTodayNumber)
+            'today': (isToday && getTodayNumber == number)
         }" v-for="number in getNumbers" :key="number">{{ number }}</li>
     </ol>
 </template>
 
-<style>
+<style scoped>
 ol,
 li {
     padding: 0;
