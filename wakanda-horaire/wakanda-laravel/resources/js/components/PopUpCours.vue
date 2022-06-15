@@ -139,7 +139,12 @@ branches.value.forEach((branche) => {
       <h2>Modalités d'examen</h2>
       <p>{{ currentBranche.modalite }}</p>
       <button class="close" @click="$emit('close')">Retour</button>
-      <!-- <button class="close">Retour</button> -->
+      <a
+        href="https://intra.heig-vd.ch/academique/formulaire-absence/Pages/default.aspx"
+        target="_blank"
+      >
+        <button class="absence">Signaler mon absence</button>
+      </a>
     </div>
   </div>
 </template>
@@ -176,5 +181,16 @@ button.close {
   background-color: transparent;
   border: 0px;
   color: #444444;
+}
+
+button.absence {
+  position: relative;
+  margin-left: 50%;
+  width: 50%;
+  border-radius: 25px;
+  cursor: pointer;
+  background-color: transparent;
+  color: #E17C70;
+  border: 2px solid #E17C70;
 }
 </style>
