@@ -51,7 +51,7 @@ export default {
     </ol>
 </template>
 
-<style>
+<style scoped>
 ol,
 li {
     padding: 0;

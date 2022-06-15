@@ -105,9 +105,6 @@ function getYear(date) {
   return year;
 }
 
-// console.log(props.cours);
-// console.log(props.modules);
-
 const branches = ref(tabBranches);
 let currentBranche;
 branches.value.forEach((branche) => {

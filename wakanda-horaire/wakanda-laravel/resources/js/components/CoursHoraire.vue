@@ -2,7 +2,7 @@
 import { ref } from "vue";
 import PopUpCours from "./PopUpCours.vue";
 
-const props = defineProps(["cours", "modules"]);
+const props = defineProps(["cours", "modules", 'isCurrentMonth']);
 //Avoir la couleur du module
 let couleurModule;
 props.modules.forEach((evt) => {
@@ -22,7 +22,9 @@ const showModal = ref(false);
 
 <template>
   <div class="cours">
-    <button @click="showModal = true">
+    <button :attribute="{
+      'disabled': !isCurrentMonth
+    }" @click="showModal = true">
       <span class="heure">{{ heureDebut }}</span
       >&nbsp;
       <span class="nom">{{ props.cours.label }}</span>

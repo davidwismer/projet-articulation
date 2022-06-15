@@ -152,6 +152,12 @@ export default {
 </template>
 
 <style scoped>
+ol,
+li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
 .calendar-case {
     position: relative;
     min-height: 50px;

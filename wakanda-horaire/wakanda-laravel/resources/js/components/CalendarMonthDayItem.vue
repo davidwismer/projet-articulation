@@ -134,7 +134,7 @@ export default {
     <span>{{ label }}</span>
     <cours-horaire class="cours-day" :class="{
       'cours-day--not-current': !day.isCurrentMonth
-    }" v-for="evt of getCoursClasseJour" :cours="evt" :modules="getModulesJour" v-show="getIsCours"></cours-horaire>
+    }" v-for="evt of getCoursClasseJour" :cours="evt" :modules="getModulesJour" :isCurrentMonth="day.isCurrentMonth" v-show="getIsCours"></cours-horaire>
     <rendu-horaire class="cours-day" :class="{
       'cours-day--not-current': !day.isCurrentMonth
     }" v-for="evt of getRendusClasseJour" :rendu="evt" v-show="getIsRendus"></rendu-horaire>
