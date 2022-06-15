@@ -3,23 +3,6 @@ import { ref } from "vue";
 
 const props = defineProps(["notification"]);
 
-// const couleurSalle = null;
-// const couleurHoraire = null;
-// const couleurRendu = null;
-
-// console.log(props.notification.motif);
-
-//couleurs
-
-// if (props.notification.motif === "changement de salle"){
-//     couleurSalle = "#71A0BA";
-// }
-// if (props.notification.motif === "Mise à jour de rendus"){
-//     couleurRendu = "#C83C2B";
-// }
-// if (props.notification.motif === "changement horaire"){
-//     couleurHoraire = "#EBC2BD";
-// }
 </script>
 
 
