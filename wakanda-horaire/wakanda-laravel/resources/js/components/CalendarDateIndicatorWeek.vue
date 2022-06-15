@@ -19,7 +19,15 @@ export default {
 
     computed: {
         selectedWeek() {
-            const firstDate = new Date(this.firstDay)
+            let firstDate
+            if (this.firstDay == 'Invalid Date') {
+                const month = parseInt(this.lastDay.split('-')[1])
+                const monthCurrent = '' + (month-1) + ''
+                const year = this.lastDay.split('-')[0]
+                firstDate = new Date(year + '-' + monthCurrent + '-' + '30')
+            } else {
+                firstDate = new Date(this.firstDay)
+            }
             const lastDate = new Date(this.lastDay)
             const date = new Date(this.selectedDate);
             const firstMonth = ["janvier", "février", "mars", "avril", "mai", "juin",

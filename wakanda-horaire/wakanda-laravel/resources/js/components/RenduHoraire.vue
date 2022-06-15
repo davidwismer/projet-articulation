@@ -10,8 +10,6 @@ cours.value.forEach((cours) => {
 });
 
 const showModal = ref(false);
-
-console.log(coursNom);
 </script>
 
 <template>

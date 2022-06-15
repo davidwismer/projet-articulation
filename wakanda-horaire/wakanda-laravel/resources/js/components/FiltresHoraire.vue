@@ -35,7 +35,7 @@ export default {
 .bloc {
   background-color: #eae9e9;
   border-radius: 20px;
-  width: 250px;
+  width: 200px;
   /* height: 250px; */
   float: right;
   position: relative;
