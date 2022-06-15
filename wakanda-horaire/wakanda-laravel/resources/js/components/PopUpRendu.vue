@@ -102,7 +102,8 @@ function getYear(date) {
   <div class="popupBackground">
     <div class="popup">
       <h1>{{ coursNom }}</h1>
-      <p class="dayDate">Remise du travail le
+      <p class="dayDate">
+        Remise du travail le
         {{
           getDayName(rendu.date) +
           " " +
@@ -123,14 +124,14 @@ function getYear(date) {
 <style scoped>
 .popup {
   position: fixed;
-  top: 20%;
+  top: 5%;
   left: 20%;
   right: 20%;
   width: 60%;
-  max-height: 60%;
-  background-color: #EBC2BD;
+  max-height: 90%;
+  background-color: #ebc2bd;
   border-radius: 20px;
-  border-left: 10px solid #E17C70;
+  border-left: 10px solid #e17c70;
   z-index: 9998;
   padding: 15px 20px 15px 20px;
 }
@@ -146,11 +147,21 @@ function getYear(date) {
 }
 
 button {
-      position: absolute;
-    top: 15px;
-    right: 20px;
-    background-color: transparent;
-    border: 0px;
-    color: #444444;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background-color: transparent;
+  border: 0px;
+  color: #444444;
+}
+
+h1, h2 {
+  margin-bottom: 20px;
+}
+
+p {
+  /* font-size: 14px; */
+  margin-top: -10px;
+  line-height: 1.3em;
 }
 </style>

@@ -30,7 +30,7 @@ class BranchesTableSeeder extends Seeder
                     "module_id" => $module->id,
                     "coefficient" => $data['4'],
                     "nom" => $data['2'],
-                    'description' => '',
+                    'description' => $data['6'],
                     'annee' => 2021,
                     "semestreFormation" => $data['3'],
                     'modalite' => 'Examen: 50%, Projet Pratique: 50%'
