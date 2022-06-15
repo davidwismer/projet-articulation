@@ -10,6 +10,8 @@ cours.value.forEach((cours) => {
 });
 
 const showModal = ref(false);
+
+console.log(coursNom);
 </script>
 
 <template>
@@ -17,7 +19,7 @@ const showModal = ref(false);
     <button @click="showModal = true">
       <span class="nom">{{ coursNom }}</span>
     </button>
-    <pop-up-rendu v-if="showModal" :show="showMedal" @close="showModal = false"></pop-up-rendu>
+    <pop-up-rendu v-if="showModal" :show="showMedal" :coursNom="coursNom" :rendu="rendu" @close="showModal = false"></pop-up-rendu>
   </div>
 </template>
 
