@@ -107,17 +107,31 @@ function getYear(date) {
 
 const branches = ref(tabBranches);
 let currentBranche;
+let currentDesc;
 branches.value.forEach((branche) => {
   if (branche.id === props.cours.branche_id) {
     currentBranche = branche;
+    currentDesc = cutOnCharachter(currentBranche.description);
   }
 });
+
+function cutOnCharachter(string) {
+  let charachter = "$$";
+  let array = [];
+  let stringArray = string.split(charachter);
+  stringArray.forEach((string) => {
+    array.push(string);
+  });
+  return array;
+}
+
+
 </script>
 
 <template>
   <div class="popupBackground">
     <div class="popup">
-      <h1>{{ cours.label }} - {{ currentBranche.nom }}</h1>
+      <h1>{{ cours.label }}</h1>
       <p>
         {{
           getDayName(cours.start) +
@@ -131,8 +145,8 @@ branches.value.forEach((branche) => {
         de {{ heureDebut }} à {{ heureFin }}
       </p>
       <p>Salle : {{ cours.room }}</p>
-      <h2>Description</h2>
-      <p>{{ cours.description }}</p>
+      <h2 class="titreDesc">Description</h2>
+      <p class="pDesc" v-for="desc of currentDesc">{{ desc }}</p>
       <h2>Modalités d'examen</h2>
       <p>{{ currentBranche.modalite }}</p>
       <button class="close" @click="$emit('close')">Retour</button>
@@ -149,11 +163,11 @@ branches.value.forEach((branche) => {
 <style scoped>
 .popup {
   position: fixed;
-  top: 20%;
+  top: 5%;
   left: 20%;
   right: 20%;
   width: 60%;
-  max-height: 60%;
+  max-height: 90%;
   background-color: #eae9e9;
   border-radius: 20px;
   border-left: 10px solid v-bind("couleur");
@@ -189,5 +203,15 @@ button.absence {
   background-color: transparent;
   color: #E17C70;
   border: 2px solid #E17C70;
+}
+
+h1, h2 {
+  margin-bottom: 20px;
+}
+
+p {
+  /* font-size: 14px; */
+  margin-top: -10px;
+  line-height: 1.3em;
 }
 </style>

@@ -1,4 +1,4 @@
-idBranche;idModule;nom;semestreFormation;coef;prof;;;;;;;;;
+idBranche;idModule;nom;semestreFormation;coef;prof;description;;;;;;;;
 MethOut;TheoCom;Outils et methodes de travail;1;46;SRU ;;;;;;;;;
 ComHum;TheoCom;Bases de la communication humaine;1;74;SRU, BTI;;;;;;;;;
 ComVisuel;BasPratCom;Communication visuelle et semiologie graph.;2;52;DRO/MET/GPD;;;;;;;;;
