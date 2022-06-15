@@ -183,7 +183,7 @@ export default {
   block-size: 140px;
   width: 75%;
   position: relative;
-  margin-left: 30px;
+  margin-left: 60px;
 }
 
 .day-of-week {

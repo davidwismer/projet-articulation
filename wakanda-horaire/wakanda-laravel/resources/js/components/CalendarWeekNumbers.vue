@@ -8,16 +8,24 @@ export default {
         currentWeek: {
             type: Array,
             require: true
-        }
+        },
+        currentDate: {
+            type: String,
+            require: true
+        },
     },
 
     computed: {
         getNumbers() {
-            let numbers = []
+            let numbers = [" "]
             this.currentWeek.forEach(day => {
                 numbers.push(Number(dayjs(day.date).format("DD")))
             })
             return numbers
+        },
+
+        getTodayNumber() {
+            return Number(dayjs(this.currentDate).format("DD"))
         }
     }
 
@@ -26,7 +34,9 @@ export default {
 
 <template>
     <ol class="number-of-week">
-        <li v-for="number in getNumbers" :key="number">{{ number }}</li>
+        <li class="calendar-number" :class="{
+            'today': (number == getTodayNumber)
+        }" v-for="number in getNumbers" :key="number">{{ number }}</li>
     </ol>
 </template>
 
@@ -40,7 +50,8 @@ li {
 
 .number-of-week {
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
+    grid-template-columns: 60px 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    justify-content: center;
 }
 
 .number-of-week>* {
@@ -49,5 +60,9 @@ li {
 
 .day-of-week {
     margin-top: 0;
+}
+
+.today {
+    color: #ff0000;
 }
 </style>

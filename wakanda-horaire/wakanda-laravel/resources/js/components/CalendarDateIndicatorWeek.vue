@@ -26,9 +26,9 @@ export default {
                 "juillet", "aout", "septembre", "octobre", "novembre", "décembre"][firstDate.getMonth()];
             const lastMonth = ["janvier", "février", "mars", "avril", "mai", "juin",
                 "juillet", "aout", "septembre", "octobre", "novembre", "décembre"][lastDate.getMonth()];
-            return dayjs(firstDate).format("DD") + ' ' + firstMonth +
+            return Number(dayjs(firstDate).format("DD")) + ' ' + firstMonth +
                 ' au ' +
-                dayjs(lastDate).format("DD") + ' ' + lastMonth +
+                Number(dayjs(lastDate).format("DD")) + ' ' + lastMonth +
                 ' ' + date.getFullYear();
         },
     },

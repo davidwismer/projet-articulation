@@ -63,8 +63,8 @@ input {
   transform: translate(0, 2px);
 }
 
-.checkbox input[type="checkbox"]:checked {
-  font-family: 'FontAwesome';
-  content: '\2714';
+label,
+input {
+  cursor: pointer;
 }
 </style>
