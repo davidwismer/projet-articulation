@@ -7,7 +7,7 @@ let nomFiliere;
 filieres.value.forEach((filiere) => {
   if (user.value.filiere_id == filiere.id) nomFiliere = filiere.nom;
 });
-console.log(user.value);
+// console.log(user.value);
 
 const [year, month, day] = user.value.dateNaissance.split("-");
 const date = [day, month, year].join(".");

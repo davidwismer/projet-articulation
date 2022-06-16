@@ -7,7 +7,8 @@
     <CalendarWeekdays />
     <ol class="days-grid">
       <CalendarMonthDayItem v-for="day in days" :key="day.date" :day="day" :is-today="day.date === today"
-      :isEventsChecked="eventsChecked" :isCoursChecked="coursChecked" :isRendusChecked="rendusChecked" />
+      :isEventsChecked="eventsChecked" :isCoursChecked="coursChecked" :isRendusChecked="rendusChecked" 
+      :classeSelected='getClasse'/>
     </ol>
   </div>
 </template>
@@ -36,6 +37,9 @@ export default {
     tabChecked: {
       type: Array,
       default: [1, 2, 3]
+    },
+    classeSelection: {
+      type: Number
     }
   },
 
@@ -46,6 +50,9 @@ export default {
   },
 
   computed: {
+    getClasse() {
+      return this.classeSelection
+    },
     eventsChecked() {
       let bool = false
       if (this.tabChecked !== null) {

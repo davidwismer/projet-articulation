@@ -69,7 +69,7 @@ const routes2 = {
   },
 
   "#infos": {
-    label: "Informations",
+    label: "Événements Informations",
     id: "informations",
     component: AppInformations,
   },

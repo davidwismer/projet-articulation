@@ -52,6 +52,10 @@ export default {
       type: Boolean,
       default: false
     },
+
+    classeSelected: {
+      type: Number
+    }
   },
 
   computed: {
@@ -109,9 +113,13 @@ export default {
       return modulesCours
     },
     getUserClasseId() {
+      let classeId = this.classeSelected
       if (user.value !== null && user.value.role_id == 3) {
-        return user.value.classe_id
+        if (this.classeSelected === null) {
+          classeId = user.value.classe_id
+        }
       }
+      return classeId
     },
     getIsEvents() {
       return this.isEventsChecked
@@ -134,13 +142,15 @@ export default {
     <span>{{ label }}</span>
     <cours-horaire class="cours-day" :class="{
       'cours-day--not-current': !day.isCurrentMonth
-    }" v-for="evt of getCoursClasseJour" :cours="evt" :modules="getModulesJour" :isCurrentMonth="day.isCurrentMonth" v-show="getIsCours"></cours-horaire>
+    }" v-for="evt of getCoursClasseJour" :cours="evt" :modules="getModulesJour" :isCurrentMonth="day.isCurrentMonth"
+      v-show="getIsCours"></cours-horaire>
     <rendu-horaire class="cours-day" :class="{
       'cours-day--not-current': !day.isCurrentMonth
-    }" v-for="evt of getRendusClasseJour" :rendu="evt" :isCurrentMonth="day.isCurrentMonth" v-show="getIsRendus"></rendu-horaire>
+    }" v-for="evt of getRendusClasseJour" :rendu="evt" :isCurrentMonth="day.isCurrentMonth" v-show="getIsRendus">
+    </rendu-horaire>
     <event-horaire class="cours-day" :class="{
       'cours-day--not-current': !day.isCurrentMonth
-    }" v-for="evt of getEventsJour" :evenement="evt" v-show="getIsEvents"></event-horaire>
+    }" v-for="evt of getEventsJour" :evenement="evt" :isCurrentMonth="day.isCurrentMonth" v-show="getIsEvents"></event-horaire>
   </li>
 </template>
 

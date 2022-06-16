@@ -1,7 +1,17 @@
 <script setup>
 import { ref } from "vue"
+import PopUpCours from "./PopUpCours.vue";
 
-const props = defineProps(['cours']);
+const props = defineProps({
+    cours:{
+        type:Object
+    },
+    isCurrentMonth: {
+        type:Boolean,
+        default: true
+    }
+})
+
 const modules = ref(tabModules)
 //Avoir la couleur du module
 let couleurModule
@@ -15,24 +25,30 @@ const style = {
 const heureDebut = props.cours.start.split(' ')[1].split(':')[0] + ':' + props.cours.start.split(' ')[1].split(':')[1];
 const heureFin = props.cours.end.split(' ')[1].split(':')[0] + ':' + props.cours.end.split(' ')[1].split(':')[1];
 const room = props.cours.room
+const showModal = ref(false);
 </script>
 
 <template>
     <div class="cours">
-        <span class="nom element">{{ props.cours.label }}</span>
-        <span class="heure element"> {{ heureDebut }} - {{ heureFin }}</span>
-        <span class="room element">{{ room }}</span>
+        <button @click="showModal = true" :disabled="!isCurrentMonth">
+            <span class="nom element">{{ props.cours.label }}</span>
+            <span class="heure element"> {{ heureDebut }} - {{ heureFin }}</span>
+            <span class="room element">{{ room }}</span>
+        </button>
+        <pop-up-cours v-if="showModal" :show="showModal" :cours="props.cours" :modules="props.modules"
+            :couleur="couleurModule" @close="showModal = false"></pop-up-cours>
     </div>
 </template>
 
 <style scoped>
-.cours {
+button{
     border-radius: 20px;
     padding-left: 10px;
     padding-right: 10px;
     padding-top: 10px;
     background-color: #EAE9E9;
     font-size: 10px;
+    border: 0px;
 
     height: 200px;
 
