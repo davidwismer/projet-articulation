@@ -1,7 +1,6 @@
 <script setup>
 import { ref, watchEffect } from "vue";
 import PopUpEvent from "./PopUpEvent.vue";
-
 const showModal = ref(false);
 const props = defineProps([
   "titre",
@@ -10,29 +9,13 @@ const props = defineProps([
   "dateDebut",
   "dateFin",
 ]);
-
 //Description format
 const shortDesc = props.description.substr(0, 100);
 //Date Debut format
-<<<<<<< HEAD
-const dateD = new Date(props.dateDebut);
-const monthDeb = ["janvier", "fevrier", "mars", "avril", "mai", "juin",
-    "juillet", "aout", "septembre", "octobre", "novembre", "decembre"][dateD.getMonth()];
-const dateDeb = dateD.getDate() + ' ' + monthDeb;
-//DateFin format
-const dateF = new Date(props.dateFin);
-const monthFin = ["janvier", "fevrier", "mars", "avril", "mai", "juin",
-    "juillet", "aout", "septembre", "octobre", "novembre", "decembre"][dateF.getMonth()];
-const dateFin = dateF.getDate() + ' ' + monthFin;
-const annee = dateF.getFullYear();
-
-//Composant pour afficher le détail d'un événement
-=======
 function getDay(date) {
   let day = date.substring(8, 10);
   return day;
 }
-
 function getMonth(date) {
   let month = date.substring(5, 7);
   switch (month) {
@@ -77,7 +60,6 @@ function getMonth(date) {
   }
   return month;
 }
-
 function getDayName(dateFr) {
   let date = new Date(dateFr);
   let day = date.getDay();
@@ -110,17 +92,14 @@ function getDayName(dateFr) {
   }
   return dayName;
 }
-
 function getYear(date) {
   let year = date.substring(0, 4);
   return year;
 }
-
 let sameDate = false;
 if (props.dateDebut.substring(8, 10) === props.dateFin.substring(8, 10)) {
   sameDate = true;
 }
->>>>>>> 9c09dd9c6f4b91a6d73fc85114edf9352130a82a
 </script>
 
 <template>
@@ -167,7 +146,6 @@ button {
   margin: 0px;
   padding: 0px;
 }
-
 .block {
   background-color: #eae9e9;
   border-radius: 20px;
@@ -175,28 +153,23 @@ button {
   flex-direction: column;
   margin-bottom: 50px;
 }
-
 h2 {
   margin-top: 0;
 }
-
 .liste {
   list-style-type: "- ";
 }
-
 .contenu {
   margin: 20px;
   display: flex;
   flex-direction: column;
   align-items: left;
 }
-
 .imgEvent {
   width: 100%;
   height: 150px;
   border-radius: 20px 20px 0px 0px;
 }
-
 .lireSuite {
   color: #c83c2b;
 }

@@ -1,10 +1,5 @@
 <script setup>
 import { ref } from "vue";
-<<<<<<< HEAD
-const props = defineProps(["evenement"]);
-
-//Affichage event
-=======
 import PopUpEvent from "./PopUpEvent.vue";
 
 const props = defineProps({
@@ -104,7 +99,6 @@ function getYear(date) {
   let year = date.substring(0, 4);
   return year;
 }
->>>>>>> 9c09dd9c6f4b91a6d73fc85114edf9352130a82a
 </script>
 
 <template>
