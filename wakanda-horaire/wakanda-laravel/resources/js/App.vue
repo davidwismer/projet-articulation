@@ -115,7 +115,7 @@ const curComponent = computed(() => {
 
 <style lang="css">
 body {
-  margin-left: 200px; /* width of the sidenav + 20px of margin */
+  margin-left: 220px; /* width of the sidenav + 20px of margin */
   background-color: #f6f6f6;
   font-family: 'Inter', sans-serif;
 }
