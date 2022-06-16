@@ -33,7 +33,6 @@ const showModal = ref(false);
 <style scoped>
 button {
   height: 18px;
-  line-height: 18px;
   width: 100%;
   border-radius: 20px;
   padding-left: 5px;
