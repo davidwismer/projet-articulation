@@ -93,7 +93,6 @@ export default {
       <label for="rendus">Examens & Rendus</label><br>
       <input type="checkbox" value="events" id="events" v-model="choice">
       <label for="events">Evenements</label><br>
-      {{ sendChecked() }}
     </div>
     <div class="selecteurFiliere">
       <button class="filiere" @click="toggleFil = !toggleFil; toggleClasseClickFiliere()">
@@ -112,6 +111,7 @@ export default {
       <button class="nomClasse" v-for="classe of getClasses" v-show="!toggleCl" @click="changeTitreClasse(classe.nom); sendClasse(classe.nom)">{{ classe.nom }}</button>
     </div>
   </div>
+  {{ sendChecked() }}
 </template>
 
 <style scoped>
