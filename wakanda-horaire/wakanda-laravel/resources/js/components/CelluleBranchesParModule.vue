@@ -58,7 +58,7 @@ function average(brancheId) {
                     <td v-for="note of notesConcernees" v-show="note.branche_id === branche.id">{{ toPercent(note.coefficient) }}%
                     </td>
                     <!-- eventually add ponderation -->
-                    <td class="lastInfo">Coefficiant : {{ branche.coefficient }}</td>
+                    <td class="lastInfo">Coefficient : {{ branche.coefficient }}</td>
                 </tr>
             </table>
         </div>

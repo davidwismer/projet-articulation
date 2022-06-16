@@ -33,7 +33,7 @@ span {
 }
 
 h2 {
-    
+  text-transform: uppercase;
   width: 90%;
 }
 </style>
