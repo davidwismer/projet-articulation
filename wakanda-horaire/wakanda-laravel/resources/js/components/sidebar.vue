@@ -71,7 +71,8 @@ async function logout() {
   padding: 24px 15px 24px 10px;
   width: 150px;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 14px;
+  font-weight: condensed;
   color: #fff;
   display: block;
 }
@@ -85,7 +86,8 @@ async function logout() {
   padding: 24px 15px 24px 10px;
   width: 150px;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 14px;
+  font-weight: condensed;
   color: #fff;
   background-color: transparent;
   display: block;
