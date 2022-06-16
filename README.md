@@ -13,12 +13,12 @@ Prérequis :
 
 Déploiement :
 - Adapter les variables d’environnement afin que celles-ci correspondent aux données de connexion sur le serveur. 
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=wakanda
-DB_USERNAME=wakanda
-DB_PASSWORD= *Password de la bd*
+DB_CONNECTION=mysql  
+DB_HOST=127.0.0.1  
+DB_PORT=3306  
+DB_DATABASE=wakanda  
+DB_USERNAME=wakanda  
+DB_PASSWORD= *Password de la bd*  
 - Importer le projet sur le serveur pingouin par le biais de Cyberduck / FileZilla
 - Effectuer les commandes php artisan migrate et php artisan db:seed afin de créer les tables et les peupler. 
 - Effectuer les commandes composer install et npm install
