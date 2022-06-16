@@ -10,10 +10,6 @@ const props = defineProps({
     type: Boolean,
     default: false
   },
-  isFromWeek: {
-    type: Boolean,
-    default: false
-  }
 });
 
 const cours = ref(tabCours);
