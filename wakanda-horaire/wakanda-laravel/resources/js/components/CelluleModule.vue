@@ -1,3 +1,6 @@
+
+<!-- Ce fichier gère les modules que l'on va afficher pour les notes de l'user (seciton note) -->
+
 <script setup>
 import CelluleBranchesParModule from "./CelluleBranchesParModule.vue";
 import { ref } from "vue";
@@ -14,22 +17,18 @@ branches.value.forEach((branche) => {
 <template>
   <div>
     <div id="title">
-      <h2><span>•  </span>{{ module.nom }}</h2>
+      <h2><span>• </span>{{ module.nom }}</h2>
     </div>
-    <cellule-branches-par-module
-      v-for="branche of branchesConcernees"
-      v-show="branche.module_id === module.id"
-      :branche="branche"
-      :module="module"
-    >
+    <cellule-branches-par-module v-for="branche of branchesConcernees" v-show="branche.module_id === module.id"
+      :branche="branche" :module="module">
     </cellule-branches-par-module>
   </div>
 </template>
 
 <style scoped>
 span {
-        margin: 0% 1% 0% 2%;
-   color: v-bind("module.couleur");
+  margin: 0% 1% 0% 2%;
+  color: v-bind("module.couleur");
 }
 
 h2 {

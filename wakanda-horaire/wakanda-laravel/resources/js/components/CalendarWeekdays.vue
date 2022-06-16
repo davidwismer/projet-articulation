@@ -1,3 +1,6 @@
+
+<!-- Ce fichier gère les jours de la semaines pour le header de l'horaire (mois) -->
+
 <template>
   <ol class="day-of-week">
     <li v-for="weekday in weekdays" :key="weekday">{{ weekday }}</li>

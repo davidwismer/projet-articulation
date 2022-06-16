@@ -13,7 +13,7 @@ class DatabaseSeeder extends Seeder
      * @return void
      */
 
-     //ordre de la création des tables
+     //ordre pour les seeders des tables
     public function run()
     {
         $this->call(EvenementsTableSeeder::class);

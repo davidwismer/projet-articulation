@@ -1,3 +1,6 @@
+
+<!-- Ce fichier gère l'affichage de la section des notifications -->
+
 <script setup>
 import { ref } from "vue";
 

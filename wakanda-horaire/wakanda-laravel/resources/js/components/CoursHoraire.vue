@@ -1,3 +1,6 @@
+
+<!-- Ce fichier gère l'affichage des cours dans l'horaire au mois -->
+
 <script setup>
 import { ref} from "vue";
 import PopUpCours from "./PopUpCours.vue";

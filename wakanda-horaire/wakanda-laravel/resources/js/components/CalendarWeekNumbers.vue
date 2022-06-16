@@ -1,11 +1,14 @@
+
+<!-- Pour le header de l'horaire de semaine, on veut afficher les numéros des jours -->
+
 <script>
-import { isTSConditionalType } from '@babel/types';
 import dayjs from 'dayjs';
 
 export default {
     name: "CalendarWeekdays",
 
     props: {
+        //jours de la semaine selectionnée
         currentWeek: {
             type: Array,
             require: true
@@ -17,20 +20,22 @@ export default {
     },
 
     computed: {
+        //Retourne le numéro pour chaque jour de la semaine
         getNumbers() {
+            //On instancie le tableau des nums avec une chaine vide (C'est pour la colonne des heures, on ne veut pas de numéro sur celle-ci)
             let numbers = [" "]
             this.currentWeek.forEach(day => {
                 let num = Number(dayjs(day.date).format("DD"))
-                if(isNaN(num)) num = 30
+                if(isNaN(num)) num = 30 //Gère le cas du bug
                 numbers.push(num)
             })
             return numbers
         },
-
+        //Pour le style, on veut que la date d'aujourd'hui soit en rouge
         getTodayNumber() {
             return Number(dayjs(this.currentDate).format("DD"))
         },
-
+        //Retourne true si la date d'aujourd'hui est dans le tableau des jours de la semaine selectionnée
         isToday() {
             let isToday = false
             this.currentWeek.forEach(day => {

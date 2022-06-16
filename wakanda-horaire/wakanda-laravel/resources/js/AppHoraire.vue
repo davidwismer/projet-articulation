@@ -1,3 +1,6 @@
+
+<!-- C'est le fichier parent pour tout ceux qui gèrent les horaires -->
+
 <script>
 import CalendarMonth from "./components/CalendarMonth";
 import CalendarWeek from "./components/CalendarWeek.vue"
@@ -8,7 +11,6 @@ import { ref } from 'vue'
 export default {
   name: "App",
 
-//différents composants inclus
   components: {
     CalendarMonth,
     FiltresHoraire,
@@ -22,19 +24,22 @@ export default {
     }
   },
 
-  //les différentes méthodes
   methods: {
+    //Renvoie les cases cochées dans le filtre
     getChecked(choice) {
       this.choice = choice
     },
+    //Renvoie la classe selectionnée
     getClasse(classe) {
       this.classe = classe
     },
+    //Change la vue à la semaine
     changeToWeek() {
       if(this.isShowingMonth){
         this.isShowingMonth = !this.isShowingMonth
       }
     },
+    //Change la vue au mois
     changeToMonth() {
       if(!this.isShowingMonth){
         this.isShowingMonth = !this.isShowingMonth

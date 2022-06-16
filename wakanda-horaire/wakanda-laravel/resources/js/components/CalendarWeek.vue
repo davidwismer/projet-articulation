@@ -1,3 +1,6 @@
+
+<!-- Ce fichier gère la section d'affichage de la vue semaine pour l'horaire -->
+
 <script>
 import { ref } from "vue";
 import { user } from "../state";
@@ -27,10 +30,12 @@ export default {
     },
 
     props: {
+        //Quels options sont cochées dans le filtre
         tabChecked: {
             type: Array,
             default: [1, 2, 3]
         },
+        //La classe selectionnée
         classeSelection: {
             type: Number
         }
@@ -43,6 +48,7 @@ export default {
     },
 
     computed: {
+        //Si les evenements sont checkés dans le filtre
         eventsChecked() {
             let bool = false
             if (this.tabChecked !== null) {
@@ -52,7 +58,7 @@ export default {
             }
             return bool
         },
-
+        //Si les cours sont checkés dans le filtre
         coursChecked() {
             let bool = false
             if (this.tabChecked !== null) {
@@ -62,7 +68,7 @@ export default {
             }
             return bool
         },
-
+        //Si les rendus sont checkés dans le filtre
         rendusChecked() {
             let bool = false
             if (this.tabChecked !== null) {
@@ -72,11 +78,11 @@ export default {
             }
             return bool
         },
-
+        //Retourne les evenements propres à la semaine selectionnée (Pour trier un peu)
         getEventsWeek() {
             let eventsWeek = []
             let lundi
-            if (this.currentWeekDays[0].date == 'Invalid Date') {
+            if (this.currentWeekDays[0].date == 'Invalid Date') { //Gère le cas du bug
                 // console.log()
                 const year = this.currentWeekDays[1].date.split('-')[0]
                 const month = this.currentWeekDays[1].date.split('-')[1]
@@ -92,12 +98,12 @@ export default {
             })
             return eventsWeek
         },
-
+        //Retourne les rendus propres à la semaine selectionnée (Pour trier un peu)
         getRendusWeekUser() {
             let rendusWeekUser = []
             let rendusWeek = []
             let lundi
-            if (this.currentWeekDays[0].date == 'Invalid Date') {
+            if (this.currentWeekDays[0].date == 'Invalid Date') { //Gère le cas du bug
                 // console.log()
                 const year = this.currentWeekDays[1].date.split('-')[0]
                 const month = this.currentWeekDays[1].date.split('-')[1]
@@ -120,12 +126,12 @@ export default {
             })
             return rendusWeekUser
         },
-
+        //Retourne les cours propres à la semaine selectionnée (Pour trier un peu)
         getCoursWeekUser() {
             let coursWeekClasse = []
             let coursWeek = []
             let lundi
-            if(this.currentWeekDays[0].date == 'Invalid Date'){
+            if (this.currentWeekDays[0].date == 'Invalid Date') { //Gère le cas du bug
                 // console.log()
                 const year = this.currentWeekDays[1].date.split('-')[0]
                 const month = this.currentWeekDays[1].date.split('-')[1]
@@ -144,7 +150,8 @@ export default {
             })
             return coursWeekClasse
         },
-
+        //La vue semaine est constituée d'une matrice avec 8 colonnes et 12 lignes: les colonnes sont pour l'heure et les jours et les lignes sont pour les différentes heures (la première ligne est avant les heures est est à disposition pour les events et rendus).
+        //Cette fonction nous retourne donc pour chaque case le num de la colonne, de la ligne et la data à laquelle est appartient
         getGridWeek() {
             let tab = []
             let hIndex = 8
@@ -155,10 +162,9 @@ export default {
                 }
                 hIndex++
             }
-            // console.log(tab)
             return tab
         },
-
+        //Retourne l'id de la classe de laquelle on montre l'horaire
         getUserClasseId() {
             let classeId = this.classeSelection
             if (user.value !== null && user.value.role_id == 3) {
@@ -186,21 +192,21 @@ export default {
         year() {
             return Number(this.selectedDate.format("YYYY"));
         },
-
+        //Retourne le lundi de la semaine de la date selecitonnée
         firstDayDate() {
             let jour = Number(this.selectedDate.format("DD"))
             let nbJourDansSemaine = this.getWeekday(this.selectedDate)
             let premierJour = jour - nbJourDansSemaine + 1
             return dayjs(`${this.year}-${this.month}-${premierJour}`).format('YYYY-MM-DD');
         },
-
+        //Retourne le dimanche de la semaine de la date selecitonnée
         lastDayDate() {
             let jour = Number(this.selectedDate.format("DD"))
             let nbJourDansSemaine = this.getWeekday(this.selectedDate)
             let premierJour = jour - nbJourDansSemaine + 1
             return dayjs(`${this.year}-${this.month}-${premierJour + 6}`).format('YYYY-MM-DD');
         },
-
+        //Retourne les jours de la semaine selectionnée
         currentWeekDays() {
             let jour = Number(this.selectedDate.format("DD"))
             let nbJourDansSemaine = this.getWeekday(this.selectedDate)
@@ -217,10 +223,11 @@ export default {
     },
 
     methods: {
+        //Retourne le jour dans la semaine d'une date (de 0 pour dimanche à 6 pour samedi)
         getWeekday(date) {
             return dayjs(date).weekday();
         },
-
+        
         selectDate(newSelectedDate) {
             this.selectedDate = newSelectedDate;
         },

@@ -1,3 +1,6 @@
+
+<!-- Ce fichier gère l'affichage du formulaire de login -->
+
 <script setup>
 import { useLocalstorage } from "../composables/localstorage";
 import { user } from "../state";

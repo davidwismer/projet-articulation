@@ -1,3 +1,6 @@
+
+<!-- Ce fichier gère l'affichage du menu pour les menus de chaque jour de la semaine -->
+
 <script setup>
 import { ref } from "vue";
 import MenuDayParMenu from "./MenuDayParMenu.vue";
@@ -9,7 +12,6 @@ const props = defineProps({
     required: true,
   },
 });
-
 
 //Fonction pour formater la date
 function getDay(date) {

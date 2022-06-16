@@ -1,3 +1,6 @@
+
+<!-- Ce fichier gère la vue pour la section de l'horaire vu au mois -->
+
 <template>
   <div class="calendar-month">
     <div class="calendar-month-header">
@@ -7,8 +10,8 @@
     <CalendarWeekdays />
     <ol class="days-grid">
       <CalendarMonthDayItem v-for="day in days" :key="day.date" :day="day" :is-today="day.date === today"
-      :isEventsChecked="eventsChecked" :isCoursChecked="coursChecked" :isRendusChecked="rendusChecked" 
-      :classeSelected='getClasse'/>
+        :isEventsChecked="eventsChecked" :isCoursChecked="coursChecked" :isRendusChecked="rendusChecked"
+        :classeSelected='getClasse' />
     </ol>
   </div>
 </template>
@@ -34,10 +37,12 @@ export default {
   },
 
   props: {
+    //tabChecked fait référence à ce qu'on souhaite afficher dans l'horaire grace au filtre.
     tabChecked: {
       type: Array,
       default: [1, 2, 3]
     },
+    //classeSelection définit pour quelle classe on affiche l'horaire
     classeSelection: {
       type: Number
     }
@@ -53,16 +58,17 @@ export default {
     getClasse() {
       return this.classeSelection
     },
+    //Si on affiche les evenements
     eventsChecked() {
       let bool = false
       if (this.tabChecked !== null) {
         this.tabChecked.forEach(evt => {
-          if (evt == 'events') bool =true
+          if (evt == 'events') bool = true
         })
       }
       return bool
     },
-
+    //Si on affiche les cours
     coursChecked() {
       let bool = false
       if (this.tabChecked !== null) {
@@ -72,7 +78,7 @@ export default {
       }
       return bool
     },
-
+    //Si on affiche les rendus
     rendusChecked() {
       let bool = false
       if (this.tabChecked !== null) {
@@ -82,7 +88,7 @@ export default {
       }
       return bool
     },
-
+    //Retourne les jours à afficher dans la grille du mois
     days() {
       return [
         ...this.previousMonthDays,
@@ -106,7 +112,7 @@ export default {
     numberOfDaysInMonth() {
       return dayjs(this.selectedDate).daysInMonth();
     },
-
+    //Retourne les jours du mois selectionné
     currentMonthDays() {
       return [...Array(this.numberOfDaysInMonth)].map((day, index) => {
         return {
@@ -117,7 +123,7 @@ export default {
         };
       });
     },
-
+    //On récolte les jours du mois précédents que l'on a quand même dans la grille affichée (Ceux qui sont en début de semaine avant le 1er)
     previousMonthDays() {
       const firstDayOfTheMonthWeekday = this.getWeekday(
         this.currentMonthDays[0].date
@@ -127,7 +133,7 @@ export default {
         "month"
       );
 
-      // Cover first day of the month being sunday (firstDayOfTheMonthWeekday === 0)
+      //On couvre le premier jour du mois étant un dimanche (firstDayOfTheMonthWeekday === 0)
       const visibleNumberOfDaysFromPreviousMonth = firstDayOfTheMonthWeekday
         ? firstDayOfTheMonthWeekday - 1
         : 6;
@@ -150,7 +156,7 @@ export default {
         }
       );
     },
-
+    //Pareille que pour les jours précédents, mais pour les jours suivants
     nextMonthDays() {
       const lastDayOfTheMonthWeekday = this.getWeekday(
         `${this.year}-${this.month}-${this.currentMonthDays.length}`
@@ -174,10 +180,11 @@ export default {
   },
 
   methods: {
+    //Retourne le jour dans la semaine d'une date (2 si c'est mardi par exemple, dimanche étant 0 et samedi 6)
     getWeekday(date) {
       return dayjs(date).weekday();
     },
-
+    //Gère les changements de mois avec selecteur
     selectDate(newSelectedDate) {
       this.selectedDate = newSelectedDate;
     },

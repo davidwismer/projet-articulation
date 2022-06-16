@@ -1,3 +1,6 @@
+
+<!-- Ce fichier gère l'affichage pour un evenement dans la section "information et evenement" -->
+
 <script setup>
 import { ref, watchEffect } from "vue";
 import PopUpEvent from "./PopUpEvent.vue";
@@ -9,7 +12,7 @@ const props = defineProps([
   "dateDebut",
   "dateFin",
 ]);
-//Description format
+//Réduit la description de l'évènement à 100 caractères
 const shortDesc = props.description.substr(0, 100);
 //Date Debut format
 function getDay(date) {
@@ -96,6 +99,7 @@ function getYear(date) {
   let year = date.substring(0, 4);
   return year;
 }
+//Gère si le début et la fin de l'évenement sont le meme jour
 let sameDate = false;
 if (props.dateDebut.substring(8, 10) === props.dateFin.substring(8, 10)) {
   sameDate = true;

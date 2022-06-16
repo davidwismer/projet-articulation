@@ -23,7 +23,7 @@ class ClassesTableSeeder extends Seeder
         for ($filiere = 1; $filiere <= 31; $filiere++) {
             $dateCrea = 1971;
             $lettreNom = chr($filiere + 64);
-            //Pour Ingénierie des médias on veut pas d'aléatoire
+            //Pour Ingénierie des médias on veut pas d'aléatoire (pour la démo)
             if ($filiere == 1) {
                 for ($annee = 2019; $annee <= 2021; $annee++) {
                     switch ($annee) {

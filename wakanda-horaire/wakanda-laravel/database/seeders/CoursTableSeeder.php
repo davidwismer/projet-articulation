@@ -16,7 +16,7 @@ class CoursTableSeeder extends Seeder
      * @return void
      */
 
-     //créatin d'un seeder pour remplir les données dans la table
+     //créatin d'un seeder pour remplir les données dans la table (Le seul cas réel et complet est celui pour les cours de la M49-2 (démo))
     public function run()
     {
         DB::table('cours')->delete();

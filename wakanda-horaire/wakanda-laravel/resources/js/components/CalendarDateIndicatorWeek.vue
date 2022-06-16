@@ -1,3 +1,6 @@
+
+<!-- Ce fichier gère le selecteur de date pour la vue des semaines de l'horaire -->
+
 <script>
 import dayjs from "dayjs";
 
@@ -18,11 +21,12 @@ export default {
         },
     },
 
-//Obtenir le mois sélectionné
+    //Obtenir le mois sélectionné
     computed: {
         selectedWeek() {
+            //avoir le premier jour de la semaine
             let firstDate
-            if (this.firstDay == 'Invalid Date') {
+            if (this.firstDay == 'Invalid Date') { //Ici on gère un cas spécial de bug, où l'avant dernier jour du mois bug
                 const month = parseInt(this.lastDay.split('-')[1])
                 const monthCurrent = '' + (month - 1) + ''
                 const year = this.lastDay.split('-')[0]

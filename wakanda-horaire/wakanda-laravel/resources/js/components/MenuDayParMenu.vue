@@ -1,3 +1,6 @@
+
+<!-- Ce fichier gère l'affichage des menus de la cafet par jour -->
+
 <script setup>
 import { ref } from "vue";
 const props = defineProps({

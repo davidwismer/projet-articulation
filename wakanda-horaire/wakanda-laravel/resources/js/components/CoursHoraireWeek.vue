@@ -1,3 +1,6 @@
+
+<!-- Ce fichier gère l'affichage des cours dans l'horaire de la semaine -->
+
 <script setup>
 import { ref } from "vue"
 import PopUpCours from "./PopUpCours.vue";
@@ -23,7 +26,9 @@ const style = {
 }
 //Avoir l'heure de début du cours
 const heureDebut = props.cours.start.split(' ')[1].split(':')[0] + ':' + props.cours.start.split(' ')[1].split(':')[1];
+//L'heure de fin de cours
 const heureFin = props.cours.end.split(' ')[1].split(':')[0] + ':' + props.cours.end.split(' ')[1].split(':')[1];
+//La salle dans laquelle se trouve le cours
 const room = props.cours.room
 const showModal = ref(false);
 </script>

@@ -1,7 +1,8 @@
+
+<!-- Ce fichier gère l'affichage du loader -->
+
 <script setup>
 
-
-//Loader lorsque les données chargent
 </script>
 
 <template>

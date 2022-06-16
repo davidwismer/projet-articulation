@@ -1,3 +1,6 @@
+
+<!-- Ce fichier gère le selecteur de date pour la vue des mois de l'horaire -->
+
 <template>
   <table class="calendar-date-indicator">
     <th class="previous" @click="selectPrevious">&lt</th>
@@ -10,7 +13,6 @@
 import dayjs from "dayjs";
 
 export default {
-  //normalement il y a le model-value
   props: {
     selectedDate: {
       type: Object,
@@ -18,9 +20,8 @@ export default {
     },
   },
 
-  //Donnée réactive, normalement il y a le get et set et le emit...
   computed: {
-    //selectedMonth est une fonction mais pas besoin de mettre les parenthèses dans la variable double
+    //selectedMonth affiche le mois selectionné pour le selecteur de date de la vue des mois
     selectedMonth() {
       const date = new Date(this.selectedDate);
       const month = ["Janvier", "Fevrier", "Mars", "Avril", "Mai", "Juin",
@@ -29,7 +30,7 @@ export default {
     },
   },
 
-//Méthodes pour changer les données selon le mois d'avant ou après.
+  //Méthodes pour changer les données selon le mois d'avant ou après. (Activées selon les clics des boutons du selecteur de date)
   methods: {
     selectPrevious() {
       let newSelectedDate = dayjs(this.selectedDate).subtract(1, "month");

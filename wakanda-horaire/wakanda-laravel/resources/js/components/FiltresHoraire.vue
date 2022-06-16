@@ -1,3 +1,6 @@
+
+<!-- Ce fichier gère les différents filtres pour les horaires (section horaire mois et semaine) -->
+
 <script>
 import { ref } from 'vue'
 import { user } from '../state'
@@ -18,6 +21,7 @@ export default {
   },
 
   computed: {
+    //Retourne les filières de la bd
     getFilieres() {
       let filieres = []
       this.filieres.forEach(evt => {
@@ -29,7 +33,7 @@ export default {
       })
       return filieres
     },
-
+    //Retourne les classes qui sont propres à la filière selectionnée dans le filtre
     getClasses() {
       let classes = []
       this.classes.forEach(classe => {
@@ -40,25 +44,26 @@ export default {
   },
 
   methods: {
+    //Envoi les cases cochées du filtre
     sendChecked() {
       this.$emit('getChecked', this.choice)
     },
-
+//Envoi la classe selectionnée pour l'horaire
     sendClasse(nomClasse) {
       let classeId = this.getClasseId(nomClasse)
       this.$emit('getClasse', classeId)
     },
-
+//Change le nom dans le filtre des filieres
     changeTitreFiliere(newTitre) {
       this.titreFiliere = newTitre
       this.toggleFil = !this.toggleFil
     },
-
+//Change le nom dans le filtre des cours
     changeTitreClasse(newTitre) {
       this.titreClasse = newTitre
       this.toggleCl = !this.toggleCl
     },
-
+//Renvoie l'id d'une filiere
     getFiliereId(nomFiliere) {
       let filiereId
       this.filieres.forEach(filiere => {
@@ -66,6 +71,7 @@ export default {
       })
       return filiereId
     },
+    //Renvoie l'id d'une classe
     getClasseId(nomClasse) {
       let classeId
       this.classes.forEach(classe => {
@@ -73,16 +79,17 @@ export default {
       })
       return classeId
     },
+    //Si on clique sur le filtre de filiere, ça ferme le choix pour le filtre des classes
     toggleClasseClickFiliere(){
       if(!this.toggleCl)this.toggleCl = !this.toggleCl
     },
+    //Vice versa
     toggleFiliereClickClasse(){
       if(!this.toggleFil)this.toggleFil = !this.toggleFil
     }
   }
 }
 
-//Filtre pour sélectionner le filtre d'affichage
 </script>
 
 <template>

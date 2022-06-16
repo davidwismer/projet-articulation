@@ -1,3 +1,6 @@
+
+<!-- Ce fichier gère le logo de l'heig -->
+
 <template>
 <div id="app">
   <a href="https://heig-vd.ch/" target=”_blank”>
@@ -13,6 +16,5 @@ img {
   width: 50px;
   height: 50px;
   margin-left: 50px;
-  /* margin-bottom: 10px; */
 }
 </style> 

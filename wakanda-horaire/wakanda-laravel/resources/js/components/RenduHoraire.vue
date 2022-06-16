@@ -1,3 +1,6 @@
+
+<!-- Ce fichier gère l'affichage des rendus sur l'horaire (semaine et mois) -->
+
 <script setup>
 import PopUpRendu from "./PopUpRendu.vue";
 import { ref } from "vue";

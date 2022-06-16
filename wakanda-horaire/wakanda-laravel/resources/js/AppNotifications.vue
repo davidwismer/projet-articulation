@@ -1,5 +1,7 @@
+
+<!-- C'est le fichier parent pour tout ceux qui gèrent les notifications -->
+
 <script setup >
-import DataExemple from "./components/DataExemple.vue";
 import CelluleModule from "./components/CelluleModule.vue";
 import Vue, { watchEffect } from "vue";
 import { ref, computed } from "vue";
@@ -30,8 +32,6 @@ function getNotifications() {
 function sortedNotifs() {
   return getNotifications().sort((a, b) => new Date(b.date) - new Date(a.date));
 }
-
-
 </script>
 
 <template>

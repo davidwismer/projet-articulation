@@ -1,3 +1,6 @@
+
+<!-- C'est le fichier parent pour tout ceux qui gèrent les informations et evenements -->
+
 <script setup>
 import EventDetails from "./components/EventDetails.vue";
 import MenuDay from "./components/MenuDay.vue";
@@ -9,7 +12,7 @@ const evenements = ref(tabEvents);
 
 const currentWeek = ref(null);
 
-//Récupérer les informations de l'api
+//Récupérer les informations de l'api pour les menus de la cafet
 async function init() {
   const url = "https://top-chef-intra-api.blacktree.io/weeks/current";
   const rep = await fetch(url, {

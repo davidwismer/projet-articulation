@@ -1,3 +1,6 @@
+
+<!-- Ce fichier gère l'affichage de la bar de navigation sur le coté du site (le menu de navigation) -->
+
 <script setup >
 import { ref } from "vue";
 import { page } from "../state.js";

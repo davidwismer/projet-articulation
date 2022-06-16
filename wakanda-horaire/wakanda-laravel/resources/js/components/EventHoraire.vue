@@ -1,3 +1,6 @@
+
+<!-- Ce fichier gère l'affichage des évènements sur l'horaire (semaine et mois) -->
+
 <script setup>
 import { ref } from "vue";
 import PopUpEvent from "./PopUpEvent.vue";
@@ -6,6 +9,7 @@ const props = defineProps({
   evenement: {
     type: Object
   },
+  //Si oui on non l'event se passe pendant le mois selectionné
   isCurrentMonth: {
     type: Boolean,
     default: false

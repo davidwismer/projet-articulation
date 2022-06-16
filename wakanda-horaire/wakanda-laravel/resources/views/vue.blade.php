@@ -2,12 +2,11 @@
 
 //Récupération des données de la vue
 
-//Users
 $tabUsers = [];
 foreach ($datas['users'] as $user) {
     array_push($tabUsers, $user);
 }
-//Evenements
+
 $tabEvents = [];
 foreach ($datas['events'] as $event) {
     array_push($tabEvents, $event);

@@ -1,3 +1,6 @@
+
+<!-- Ce fichier gère les branches que l'on va afficher avec les notes dans les différents modules (section note) -->
+
 <script setup>
 import { ref } from "vue"
 const props = defineProps(['branche', 'module'])
@@ -10,26 +13,28 @@ notes.value.forEach(note => {
 
 const toggle = ref(true);
 
+//met le chiffre en %
 function toPercent(number) {
-  let countNotes = 0;
-  notes.value.forEach(note => {
-    if (note.branche_id === props.branche.id) {
-      countNotes++;
-    }
-  });
-  return ((number * 100)/countNotes).toFixed(2);
+    let countNotes = 0;
+    notes.value.forEach(note => {
+        if (note.branche_id === props.branche.id) {
+            countNotes++;
+        }
+    });
+    return ((number * 100) / countNotes).toFixed(2);
 }
 
+//Retourne la moyenne de la branche
 function average(brancheId) {
-  let sum = 0;
-  let countNotes = 0;
-  notes.value.forEach(note => {
-    if (note.branche_id === brancheId) {
-      sum += note.valeur * note.coefficient;
-      countNotes++;
-    }
-  });
-  return (sum/countNotes).toFixed(1);
+    let sum = 0;
+    let countNotes = 0;
+    notes.value.forEach(note => {
+        if (note.branche_id === brancheId) {
+            sum += note.valeur * note.coefficient;
+            countNotes++;
+        }
+    });
+    return (sum / countNotes).toFixed(1);
 }
 </script>
 
@@ -44,8 +49,10 @@ function average(brancheId) {
             <table id="tableNotes" style="width: 100%">
                 <tr>
                     <td class="titreLigne titreBranche">{{ branche.dimin }}</td>
-                    <th v-for="note of notesConcernees" v-show="note.branche_id === branche.id && note.isExam === 0">Note</th>
-                    <th v-for="note of notesConcernees" v-show="note.branche_id === branche.id && note.isExam != 0">Examen</th>
+                    <th v-for="note of notesConcernees" v-show="note.branche_id === branche.id && note.isExam === 0">
+                        Note</th>
+                    <th v-for="note of notesConcernees" v-show="note.branche_id === branche.id && note.isExam != 0">
+                        Examen</th>
                     <!-- eventually add note 3 -->
                 </tr>
                 <tr>
@@ -55,7 +62,9 @@ function average(brancheId) {
                 </tr>
                 <tr v-if="!toggle">
                     <td class="titreLigne">Pondérations :</td>
-                    <td v-for="note of notesConcernees" v-show="note.branche_id === branche.id">{{ toPercent(note.coefficient) }}%
+                    <td v-for="note of notesConcernees" v-show="note.branche_id === branche.id">{{
+                            toPercent(note.coefficient)
+                    }}%
                     </td>
                     <!-- eventually add ponderation -->
                     <td class="lastInfo">Coefficient : {{ branche.coefficient }}</td>
@@ -66,10 +75,6 @@ function average(brancheId) {
 </template>
 
 <style scoped>
-/* table, th, td {
-  border:1px solid black;
-} */
-
 tr {
     height: 50px;
 }

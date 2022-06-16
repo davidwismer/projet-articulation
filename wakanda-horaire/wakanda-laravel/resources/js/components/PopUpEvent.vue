@@ -1,3 +1,7 @@
+
+<!-- Ce fichier gère l'affichage pour les pop-ups des évènements dans l'horaire -->
+
+
 <script setup>
 import { ref } from "vue";
 const props = defineProps({

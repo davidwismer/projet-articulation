@@ -1,5 +1,7 @@
+
+<!-- C'est le fichier parent pour tout ceux qui gèrent les notes -->
+
 <script setup >
-import DataExemple from "./components/DataExemple.vue";
 import CelluleModule from "./components/CelluleModule.vue";
 import Vue from "vue";
 import { ref } from "vue";

@@ -1,3 +1,6 @@
+
+<!-- Ce fichier gère chacune des case pour la vue de l'horaire au mois -->
+
 <script>
 import dayjs from "dayjs";
 import { ref } from "vue";
@@ -27,44 +30,47 @@ export default {
       type: Object,
       required: true
     },
-
+    //Définit si le jour est dans le mois actuel ou non (Pour les jours apparaissants quand même dans la grille, mais pas du mois en question)
     isCurrentMonth: {
       type: Boolean,
       default: false
     },
-
+    //Définit si la case est celle du jour actuel
     isToday: {
       type: Boolean,
       default: false
     },
-
+    //Si les evenements sont cochés dans filtre
     isEventsChecked: {
       type: Boolean,
       default: false
     },
-
+    //Si les cours sont cochés dans filtre
     isCoursChecked: {
       type: Boolean,
       default: false
     },
-
+    //Si les rendus sont cochés dans filtre
     isRendusChecked: {
       type: Boolean,
       default: false
     },
-
+    //Quelle classe est selectionnée pour l'horaire
     classeSelected: {
       type: Number
     }
   },
 
   computed: {
+    //Jour de la case (Pour l'afficher dans la grille)
     label() {
       return dayjs(this.day.date).format("D");
     },
+    //Date de la case
     dateCase() {
       return dayjs(this.day.date).format("YYYY-MM-DD")
     },
+    //Retourne les cours qui sont propres à la case (Pour trier un peu)
     getCoursClasseJour() {
       let coursClasseJour = []
       cours.value.forEach(evt => {
@@ -72,6 +78,7 @@ export default {
       })
       return coursClasseJour
     },
+    //Retourne les events qui sont propres à la case (Pour trier un peu)
     getEventsJour() {
       let eventsJour = []
       const date1 = new Date(this.day.date)
@@ -82,6 +89,7 @@ export default {
       })
       return eventsJour
     },
+    //Retourne les rendus qui sont propres à la case (Pour trier un peu)
     getRendusJour() {
       let rendusJour = []
       rendus.value.forEach(rendu => {
@@ -89,6 +97,7 @@ export default {
       })
       return rendusJour
     },
+    //On trie encore plus, en retournant des rendus propres à la case, les rendus propres à la classe selectionnée.
     getRendusClasseJour() {
       let rendusClasseJour = []
       this.getRendusJour.forEach(rendu => {
@@ -101,6 +110,7 @@ export default {
       })
       return rendusClasseJour
     },
+    //Retourne les modules propres à la case et à la classe
     getModulesJour() {
       //Avoir les modules que la classe suit pour ce jour (lien avec branche du cours)
       let modulesCours = []
@@ -112,6 +122,7 @@ export default {
       })
       return modulesCours
     },
+    //Retourne l'id de la classe de laquelle on affiche l'horaire
     getUserClasseId() {
       let classeId = this.classeSelected
       if (user.value !== null && user.value.role_id == 3) {
@@ -150,7 +161,8 @@ export default {
     </rendu-horaire>
     <event-horaire class="cours-day" :class="{
       'cours-day--not-current': !day.isCurrentMonth
-    }" v-for="evt of getEventsJour" :evenement="evt" :isCurrentMonth="day.isCurrentMonth" v-show="getIsEvents"></event-horaire>
+    }" v-for="evt of getEventsJour" :evenement="evt" :isCurrentMonth="day.isCurrentMonth" v-show="getIsEvents">
+    </event-horaire>
   </li>
 </template>
 

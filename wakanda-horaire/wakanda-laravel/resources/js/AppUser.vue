@@ -1,3 +1,6 @@
+
+<!-- C'est le fichier parent pour tout ceux qui gèrent les profils de l'utilisateur -->
+
 <script setup >
 import { user } from "./state.js";
 import { ref } from "vue";
@@ -7,7 +10,6 @@ let nomFiliere;
 filieres.value.forEach((filiere) => {
   if (user.value.filiere_id == filiere.id) nomFiliere = filiere.nom;
 });
-// console.log(user.value);
 
 const [year, month, day] = user.value.dateNaissance.split("-");
 const date = [day, month, year].join(".");

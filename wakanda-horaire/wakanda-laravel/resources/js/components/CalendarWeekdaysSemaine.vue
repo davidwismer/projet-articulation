@@ -1,3 +1,6 @@
+
+<!-- Ce fichier gère les jours de la semaine pour le header de l'horaire (semaine) -->
+
 <template>
   <ol class="day-of-week">
     <li :class="{
@@ -7,6 +10,7 @@
 </template>
 
 <script>
+//La différence avec le header pour le mois, c'est que pour semaine on a besoin d'une colonne en plus: "Heure"
 const WEEKDAYS = ["Heure", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"];
 
 export default {
