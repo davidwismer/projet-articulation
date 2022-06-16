@@ -150,7 +150,7 @@ export default {
     </rendu-horaire>
     <event-horaire class="cours-day" :class="{
       'cours-day--not-current': !day.isCurrentMonth
-    }" v-for="evt of getEventsJour" :evenement="evt" v-show="getIsEvents"></event-horaire>
+    }" v-for="evt of getEventsJour" :evenement="evt" :isCurrentMonth="day.isCurrentMonth" v-show="getIsEvents"></event-horaire>
   </li>
 </template>
 

@@ -125,8 +125,8 @@ export default {
             let coursWeekClasse = []
             let coursWeek = []
             let lundi
-            if (this.currentWeekDays[0].date == 'Invalid Date') {
-                console.log()
+            if(this.currentWeekDays[0].date == 'Invalid Date'){
+                // console.log()
                 const year = this.currentWeekDays[1].date.split('-')[0]
                 const month = this.currentWeekDays[1].date.split('-')[1]
                 lundi = new Date(year + '-' + month + '-' + '30')
@@ -155,6 +155,7 @@ export default {
                 }
                 hIndex++
             }
+            // console.log(tab)
             return tab
         },
 

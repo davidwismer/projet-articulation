@@ -148,7 +148,7 @@ async function logout() {
                   />
                 </svg>
               </div>
-              <span class="nameLink">{{ route.label }}</span>
+              <span :id="`span${route.id}`" class="nameLink">{{ route.label }}</span>
             </a>
           </div>
         </li>
@@ -229,6 +229,10 @@ li,
   position: absolute;
   bottom: 90px;
   text-transform: uppercase;
+}
+
+#spanlogin {
+  margin: 0 0 0 0;
 }
 
 #login:hover, #logout:hover {
