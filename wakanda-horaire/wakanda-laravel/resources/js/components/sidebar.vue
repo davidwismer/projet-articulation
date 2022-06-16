@@ -64,13 +64,14 @@ async function logout() {
   background-color: #444444;
   overflow-x: hidden;
   padding-top: 20px;
+    text-transform: uppercase;
 }
 
 .sidenav a {
-  padding: 24px 15px 24px 15px;
+  padding: 24px 15px 24px 10px;
   width: 150px;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 16px;
   color: #fff;
   display: block;
 }
@@ -81,10 +82,10 @@ async function logout() {
 }
 
 #logout {
-  padding: 24px 15px 24px 15px;
+  padding: 24px 15px 24px 10px;
   width: 150px;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 16px;
   color: #fff;
   background-color: transparent;
   display: block;
@@ -109,6 +110,7 @@ li,
 #logout {
   position: absolute;
   bottom: 90px;
+  text-transform: uppercase;
 }
 div > .active {
   background-color: #f6f6f6;
