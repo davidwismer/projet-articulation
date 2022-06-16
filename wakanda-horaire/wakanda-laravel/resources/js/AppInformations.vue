@@ -2,7 +2,7 @@
 import EventDetails from "./components/EventDetails.vue";
 import MenuDay from "./components/MenuDay.vue";
 import LoaderSection from "./components/LoaderSection.vue";
-import { ref, watchEffect } from "vue";
+import { ref } from "vue";
 import {user} from "./state.js";
 
 const evenements = ref(tabEvents);
@@ -25,7 +25,6 @@ async function init() {
 
 init();
 
-watchEffect(() => console.log(currentWeek.value));
 </script>
 
 <template>

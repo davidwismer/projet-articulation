@@ -13,17 +13,16 @@ import LoginFormVue from "./components/LoginForm.vue";
 // import LogoutFormVue from "./components/LogoutForm.vue";
 import { user } from "./state.js";
 
-
 const loading = ref(true);
 
 onMounted(async () => {
   await axios.get("/sanctum/csrf-cookie");
   const userdata = await axios.get("/isLogged");
-  if(userdata.data == ""){
+  if (userdata.data == "") {
     user.value = null;
-  }else{
-    user.value =userdata.data;
-  } 
+  } else {
+    user.value = userdata.data;
+  }
   loading.value = false;
 });
 
@@ -33,27 +32,26 @@ const routes = {
     id: "horaires",
     component: AppHoraire,
   },
+  "#notifications": {
+    label: "Notifications",
+    id: "notifications",
+    component: AppNotifications,
+  },
   "#notes": {
     label: "Notes",
     id: "notes",
     component: AppNotes,
   },
   "#infos": {
-    label: "Informations",
+    label: "Événements Informations",
     id: "informations",
     component: AppInformations,
-  },
-  "#notifications": {
-    label: "Notifications",
-    id: "notifications",
-    component: AppNotifications,
   },
   "#user": {
     label: "Mon compte",
     id: "moncompte",
     component: AppUser,
   },
-
 };
 
 const routes2 = {
@@ -98,34 +96,27 @@ const curComponent = computed(() => {
     return routes[curHash.value].component;
   }
 });
-
-
-
-
-
-
 </script>
 
 
 <template>
   <div v-if="loading">Chargement en cours</div>
-<div v-if="loading == false">
-<div v-if="user === null">
-    <sidebar :routes="routes2" :curHash="curHash"></sidebar>
-  </div>
-  <div v-else>
-    <sidebar :routes="routes" :curHash="curHash"></sidebar>
-  </div>
+  <div v-if="loading == false">
+    <div v-if="user === null">
+      <sidebar :routes="routes2" :curHash="curHash"></sidebar>
+    </div>
+    <div v-else>
+      <sidebar :routes="routes" :curHash="curHash"></sidebar>
+    </div>
 
-  <component :is="curComponent" />
-</div>
-  
+    <component :is="curComponent" />
+  </div>
 </template>
 
 <style lang="css">
 body {
   margin-left: 200px; /* width of the sidenav + 20px of margin */
   background-color: #f6f6f6;
+  font-family: 'Inter', sans-serif;
 }
-
 </style> 

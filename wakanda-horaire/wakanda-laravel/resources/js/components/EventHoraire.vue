@@ -12,7 +12,6 @@ const props = defineProps(["evenement"]);
 <style scoped>
 .evenement {
   height: 18px;
-  line-height: 18px;
   border-radius: 20px;
   margin-top: 5px;
   padding-left: 5px;

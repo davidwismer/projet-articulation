@@ -7,8 +7,21 @@ import { user } from "./state.js";
 import CelluleNotifications from "./components/CelluleNotifications.vue";
 
 const notifications = ref(tabNotifications);
+// notifications.value.forEach(notif => {
+//   trierNotifications(notif);
+// });
+// // function qui permet de trier les notifications grâce à la notification.date
+// function trierNotifications(a, b) {
+//   if (a.date > b.date) {
+//     return -1;
+//   }
+//   if (a.date < b.date) {
+//     return 1;
+//   }
+//   return 0;
+// }
+// console.log(notifications.value);
 </script>
-
 
 <template>
   <div id="divv">
@@ -36,16 +49,6 @@ const notifications = ref(tabNotifications);
   </div>
 
 </template>
-
-
-
-
-
-
-
-
-
-
 
 <style scoped>
 #divv {
