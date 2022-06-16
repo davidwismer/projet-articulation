@@ -12,6 +12,9 @@ return new class extends Migration
      *
      * @return void
      */
+
+
+        //création d'une table branches avec les colonnes inscrites dans la modélisation
     public function up()
     {
         Schema::create('branches', function (Blueprint $table) {

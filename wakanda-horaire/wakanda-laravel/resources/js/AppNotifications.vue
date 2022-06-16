@@ -10,7 +10,7 @@ const notifications = ref(tabNotifications);
 
 const cours = ref(tabCours);
 
-
+//Obtenir les notifications
 function getNotifications() {
   let notifs = [];
   notifications.value.forEach((notification) => {
@@ -26,6 +26,7 @@ function getNotifications() {
   return notifs;
 }
 
+//Trier les notifications par date
 function sortedNotifs() {
   return getNotifications().sort((a, b) => new Date(b.date) - new Date(a.date));
 }

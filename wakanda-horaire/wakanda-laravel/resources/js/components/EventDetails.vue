@@ -14,6 +14,8 @@ const monthFin = ["janvier", "fevrier", "mars", "avril", "mai", "juin",
     "juillet", "aout", "septembre", "octobre", "novembre", "decembre"][dateF.getMonth()];
 const dateFin = dateF.getDate() + ' ' + monthFin;
 const annee = dateF.getFullYear();
+
+//Composant pour afficher le détail d'un événement
 </script>
 
 <template>

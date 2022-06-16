@@ -12,6 +12,8 @@ return new class extends Migration
      *
      * @return void
      */
+
+              //création d'une table absences avec les colonnes inscrites dans la modélisation ainsi que les clés étrangères
     public function up()
     {
         Schema::create('absences', function (Blueprint $table) {

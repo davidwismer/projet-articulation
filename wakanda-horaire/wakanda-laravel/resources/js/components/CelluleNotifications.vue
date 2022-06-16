@@ -56,59 +56,31 @@ function getYear(date) {
   let year = date.substring(0, 4);
   return year;
 }
+
+function showClass(aMotif, aDate) {
+  let theClasses = "";
+  if (aMotif === 'Changement de salle') {
+    theClasses = "couleurSalle";
+  }else if (aMotif === 'Mise à jour de rendus') {
+    theClasses = "couleurRendu";
+  }else if (aMotif === 'Changement horaire') {
+    theClasses = "couleurHoraire";
+  }
+
+if (new Date(aDate) <=  new Date()) {
+    theClasses += " sombre";
+  }
+
+  return theClasses;
+}
+
 </script>
-
-
 
 
 <template>
   <div>
-    <div v-if="notification.motif == 'Changement de salle'">
-      <div id="divMom" :id="notification.id" class="couleurSalle">
-        <table id="tableNotifications" style="width: 100%">
-          <tr class="notif">
-            <td class="bold titre" style="width: 50%">
-              {{ notification.description }}
-            </td>
-            <td class="motif">{{ notification.motif }}</td>
-            <td class="bold date">
-              {{
-                getDay(notification.date) +
-                " " +
-                getMonth(notification.date) +
-                " " +
-                getYear(notification.date)
-              }}
-            </td>
-          </tr>
-        </table>
-      </div>
-    </div>
-
-    <div v-else-if="notification.motif === 'Mise à jour de rendus'">
-      <div id="divMom" :id="notification.id" class="couleurRendu">
-        <table id="tableNotifications" style="width: 100%">
-          <tr class="notif">
-            <td class="bold titre" style="width: 50%">
-              {{ notification.description }}
-            </td>
-            <td class="motif">{{ notification.motif }}</td>
-            <td class="bold date">
-              {{
-                getDay(notification.date) +
-                " " +
-                getMonth(notification.date) +
-                " " +
-                getYear(notification.date)
-              }}
-            </td>
-          </tr>
-        </table>
-      </div>
-    </div>
-
-    <div v-else="notification.motif === 'changement horaire'">
-      <div id="divMom" :id="notification.id" class="couleurHoraire">
+    <div>
+      <div id="divMom" :id="notification.id" :class="showClass(notification.motif, notification.date)">
         <table id="tableNotifications" style="width: 100%">
           <tr class="notif">
             <td class="bold titre" style="width: 50%">
@@ -138,9 +110,13 @@ function getYear(date) {
 
 
 <style scoped>
-/* table, th, td {
-  border:1px solid black;
-} */
+
+
+
+.sombre{
+   opacity: 0.33;
+}
+
 
 tr {
   height: 20px;

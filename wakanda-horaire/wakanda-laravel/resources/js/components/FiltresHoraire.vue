@@ -14,6 +14,8 @@ export default {
     }
   }
 }
+
+//Filtre pour sélectionner le filtre d'affichage
 </script>
 
 <template>

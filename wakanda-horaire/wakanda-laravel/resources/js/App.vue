@@ -13,8 +13,13 @@ import LoginFormVue from "./components/LoginForm.vue";
 // import LogoutFormVue from "./components/LogoutForm.vue";
 import { user } from "./state.js";
 
+
+//Vue principale
+
 const loading = ref(true);
 
+
+//Vérification que l'utilisateur est connecté
 onMounted(async () => {
   await axios.get("/sanctum/csrf-cookie");
   const userdata = await axios.get("/isLogged");
@@ -26,6 +31,8 @@ onMounted(async () => {
   loading.value = false;
 });
 
+
+//construction des routes
 const routes = {
   "#horaires": {
     label: "Horaires",
@@ -81,6 +88,8 @@ window.addEventListener(
   () => (hash.value = window.location.hash)
 );
 
+
+//Obtenir le hash courant
 const curHash = computed(() => {
   if (user.value === null) {
     return routes2[hash.value] ? hash.value : Object.keys(routes2)[0];
@@ -97,6 +106,7 @@ const curComponent = computed(() => {
   }
 });
 </script>
+
 
 
 <template>

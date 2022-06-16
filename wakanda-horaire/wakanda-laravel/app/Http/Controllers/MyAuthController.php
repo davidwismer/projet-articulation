@@ -10,6 +10,8 @@ use Symfony\Component\HttpFoundation\Session\Session;
 
 class MyAuthController extends Controller
 {
+
+    //controller pour gérer la réception et le controle des données de connexion reçues depuis la vue
     public function login(Request $request)
     {
         $credentials = $request->validate([
@@ -26,6 +28,8 @@ class MyAuthController extends Controller
         return "error";
     }
 
+
+    //fonction pour controller si la personne est connectée
     public function isLogged()
     {
         if (Auth::check()) {
@@ -35,6 +39,8 @@ class MyAuthController extends Controller
         }
     }
 
+
+    //fonction pour déconnecter l'utilisateur
     public function deconnexion()
     {
         Auth::logout();

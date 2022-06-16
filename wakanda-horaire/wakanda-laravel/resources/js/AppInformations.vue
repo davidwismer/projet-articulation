@@ -9,6 +9,7 @@ const evenements = ref(tabEvents);
 
 const currentWeek = ref(null);
 
+//Récupérer les informations de l'api
 async function init() {
   const url = "https://top-chef-intra-api.blacktree.io/weeks/current";
   const rep = await fetch(url, {

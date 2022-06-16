@@ -11,6 +11,9 @@ return new class extends Migration
      *
      * @return void
      */
+
+     
+    //création d'une table notifications avec les colonnes inscrites dans la modélisation ainsi que les clés étrangères
     public function up()
     {
         Schema::create('notifications', function (Blueprint $table) {

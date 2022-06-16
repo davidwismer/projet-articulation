@@ -11,6 +11,9 @@ return new class extends Migration
      *
      * @return void
      */
+
+    //création d'une table modules avec les colonnes inscrites dans la modélisation
+
     public function up()
     {
         Schema::create('modules', function (Blueprint $table) {

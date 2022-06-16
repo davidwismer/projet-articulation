@@ -3,7 +3,7 @@
 import { ref } from 'vue';
 
 const branches = ref(tabBranches);
-    
+    //Composant test pour récupérer les données depuis la vue.blade
     </script>
  
 <template>

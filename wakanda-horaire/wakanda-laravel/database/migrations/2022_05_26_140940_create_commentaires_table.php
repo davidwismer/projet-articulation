@@ -12,6 +12,8 @@ return new class extends Migration
      *
      * @return void
      */
+
+              //création d'une table commentaires avec les colonnes inscrites dans la modélisation ainsi que les clés étrangères
     public function up()
     {
         Schema::create('commentaires', function (Blueprint $table) {

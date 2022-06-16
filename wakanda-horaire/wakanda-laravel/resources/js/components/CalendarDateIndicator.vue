@@ -29,6 +29,7 @@ export default {
     },
   },
 
+//Méthodes pour changer les données selon le mois d'avant ou après.
   methods: {
     selectPrevious() {
       let newSelectedDate = dayjs(this.selectedDate).subtract(1, "month");

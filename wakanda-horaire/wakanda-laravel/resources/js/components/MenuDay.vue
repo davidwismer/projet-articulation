@@ -10,6 +10,8 @@ const props = defineProps({
   },
 });
 
+
+//Fonction pour formater la date
 function getDay(date) {
   let day = date.substring(8, 10);
   return day;

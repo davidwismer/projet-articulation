@@ -11,6 +11,8 @@ return new class extends Migration
      *
      * @return void
      */
+
+         //création d'une table événements avec les colonnes inscrites dans la modélisation
     public function up()
     {
         Schema::create('evenements', function (Blueprint $table) {

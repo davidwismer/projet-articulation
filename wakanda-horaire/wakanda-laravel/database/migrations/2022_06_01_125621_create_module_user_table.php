@@ -11,6 +11,9 @@ return new class extends Migration
      *
      * @return void
      */
+
+     
+              //création d'une table pivot module_user avec les colonnes inscrites dans la modélisation ainsi que les clés étrangères
     public function up()
     {
         Schema::create('module_user', function (Blueprint $table) {

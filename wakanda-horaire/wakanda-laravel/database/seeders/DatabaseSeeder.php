@@ -12,6 +12,8 @@ class DatabaseSeeder extends Seeder
      *
      * @return void
      */
+
+     //ordre de la création des tables
     public function run()
     {
         $this->call(EvenementsTableSeeder::class);

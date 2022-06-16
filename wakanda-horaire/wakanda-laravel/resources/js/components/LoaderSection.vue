@@ -1,5 +1,7 @@
 <script setup>
 
+
+//Loader lorsque les données chargent
 </script>
 
 <template>

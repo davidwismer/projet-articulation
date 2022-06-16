@@ -10,6 +10,8 @@ const modules = ref(tabModules);
 const moduleUser = ref(tabModuleUser);
 const notes = ref(tabNotes);
 
+
+//Obtenir les modules suivis par l'utilisateur
 let modulesSuivis = []
 modules.value.forEach(module => {
   moduleUser.value.forEach(connect => {
@@ -19,6 +21,7 @@ modules.value.forEach(module => {
 
 let count = ref(4);
 
+//définition des fonction plus petit ou plus grand 
 function plusPetit() {
   count.value--;
   if (count.value < 1) {

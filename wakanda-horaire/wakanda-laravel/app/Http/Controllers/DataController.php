@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Auth;
 
 class DataController extends Controller
 {
+
+    //controller permettant de récupérer les données et de les transmettre à la vue.blade.php
     public function index()
     {
         if (Auth::user() !== null) {

@@ -1,4 +1,7 @@
 <?php
+
+//Récupération des données de la vue
+
 //Users
 $tabUsers = [];
 foreach ($datas['users'] as $user) {
@@ -97,8 +100,9 @@ foreach ($datas['notifications'] as $notification) {
 
 
 <body>
-
     <script>
+
+        //trasformation des données en json
         const tabEvents = <?php echo json_encode($tabEvents); ?>;
         const tabUsers = <?php echo json_encode($tabUsers); ?>;
         const tabBranches = <?php echo json_encode($tabBranches); ?>;

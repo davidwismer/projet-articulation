@@ -17,6 +17,8 @@ async function handleLogin() {
     window.location = "/";
   }    
 }
+
+//Formulaire de login
 </script>
 
 <template>

@@ -6,6 +6,8 @@ const props = defineProps({
     required: true,
   },
 });
+
+//Afficher les données du menu
 </script>
 <template>
 <div class="divMenu" v-if="menu.starter">

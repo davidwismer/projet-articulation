@@ -9,6 +9,8 @@ const props = defineProps({
 let branches = ref(tabBranches);
 let cours = ref(tabCours);
 
+
+//Fonction permettant de formatter la date dans le format souhaité.
 function getDay(date) {
   let day = date.substring(8, 10);
   return day;

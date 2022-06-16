@@ -5,6 +5,8 @@ const props = defineProps(["rendu", 'isCurrentMonth']);
 
 const cours = ref(tabCours);
 let coursNom;
+
+//Récupérer les rendus liés au cour.
 cours.value.forEach((cours) => {
   if (props.rendu.cour_id == cours.id) coursNom = cours.label;
 });

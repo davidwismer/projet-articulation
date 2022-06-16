@@ -13,6 +13,8 @@ class ModuleUserTableSeeder extends Seeder
      *
      * @return void
      */
+
+     //créatin d'un seeder pour remplir les données dans la table
     public function run()
     {
         DB::table('module_user')->delete();

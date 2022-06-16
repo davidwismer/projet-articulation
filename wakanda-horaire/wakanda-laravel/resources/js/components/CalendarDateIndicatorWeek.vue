@@ -1,6 +1,7 @@
 <script>
 import dayjs from "dayjs";
 
+//déclaration des propriétés
 export default {
     props: {
         selectedDate: {
@@ -17,6 +18,7 @@ export default {
         },
     },
 
+//Obtenir le mois sélectionné
     computed: {
         selectedWeek() {
             let firstDate
@@ -40,6 +42,8 @@ export default {
                 ' ' + date.getFullYear();
         },
     },
+
+    //mois d'avant et après
 
     methods: {
         selectPrevious() {

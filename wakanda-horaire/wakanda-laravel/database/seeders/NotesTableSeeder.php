@@ -13,6 +13,8 @@ class NotesTableSeeder extends Seeder
      *
      * @return void
      */
+
+     //créatin d'un seeder pour remplir les données dans la table
     public function run()
     {
         DB::table('notes')->delete();

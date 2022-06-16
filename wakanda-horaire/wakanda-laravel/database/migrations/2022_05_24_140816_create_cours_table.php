@@ -12,6 +12,8 @@ return new class extends Migration
      *
      * @return void
      */
+
+              //création d'une table cours avec les colonnes inscrites dans la modélisation ainsi que les clés étrangères
     public function up()
     {
         Schema::create('cours', function (Blueprint $table) {

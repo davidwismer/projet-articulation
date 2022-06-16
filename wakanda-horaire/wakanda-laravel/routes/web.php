@@ -16,16 +16,13 @@ use App\Http\Controllers\MyAuthController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('vue');
-// });
 
+
+//création des différentes routes
 
 Route::get('/', [DataController::class,'index']);
 
 Auth::routes();
-
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::post('/mylogin', [MyAuthController::class,'login']);
 

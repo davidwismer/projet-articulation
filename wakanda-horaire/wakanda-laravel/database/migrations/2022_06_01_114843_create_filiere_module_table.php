@@ -11,8 +11,11 @@ return new class extends Migration
      *
      * @return void
      */
+
+              //création d'une table pivot filiere_module avec les colonnes inscrites dans la modélisation ainsi que les clés étrangères
     public function up()
     {
+
         Schema::create('filiere_module', function (Blueprint $table) {
             $table->id();
             $table->timestamps();

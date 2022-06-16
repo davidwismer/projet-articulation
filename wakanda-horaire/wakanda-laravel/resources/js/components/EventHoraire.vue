@@ -1,6 +1,8 @@
 <script setup>
 import { ref } from "vue";
 const props = defineProps(["evenement"]);
+
+//Affichage event
 </script>
 
 <template>

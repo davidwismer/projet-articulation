@@ -8,6 +8,7 @@ import { ref } from 'vue'
 export default {
   name: "App",
 
+//différents composants inclus
   components: {
     CalendarMonth,
     FiltresHoraire,
@@ -19,6 +20,8 @@ export default {
       isShowingMonth: true,
     }
   },
+
+  //les différentes méthodes
   methods: {
     getChecked(choice) {
       this.choice = choice

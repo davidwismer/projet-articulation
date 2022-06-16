@@ -7,6 +7,7 @@ const props = defineProps({
   couleur: String,
 });
 
+//Formatter les heures
 let heureDebut =
   props.cours.start.split(" ")[1].split(":")[0] +
   ":" +
@@ -108,6 +109,8 @@ function getYear(date) {
 const branches = ref(tabBranches);
 let currentBranche;
 let currentDesc;
+
+//Obtenir les branches
 branches.value.forEach((branche) => {
   if (branche.id === props.cours.branche_id) {
     currentBranche = branche;
