@@ -17,7 +17,6 @@ class NotificationsTableSeeder extends Seeder
     {
         DB::table('notifications')->delete();
         $nbUser = count(DB::select('SELECT * FROM users'));
-        $nbCours = count(DB::select('SELECT * FROM cours'));
         $motif = ["Changement de salle", "Changement horaire", "Mise à jour de rendus"];
 
 
@@ -27,7 +26,7 @@ class NotificationsTableSeeder extends Seeder
             'motif' => $motif[0],
             'date' => '2022-06-' . rand(1, 30),
             'user_id' => rand(1, $nbUser),
-            'cour_id' => rand(1, $nbCours),
+            'cour_id' => rand(213, 351),
         ]);
 
 
@@ -37,7 +36,7 @@ class NotificationsTableSeeder extends Seeder
             'motif' => $motif[1],
             'date' => '2022-06-' . rand(1, 30),
             'user_id' => rand(1, $nbUser),
-            'cour_id' => rand(1, $nbCours),
+            'cour_id' => rand(213, 351),
         ]);
 
 
@@ -47,17 +46,17 @@ class NotificationsTableSeeder extends Seeder
             'motif' => $motif[2],
             'date' => '2022-06-' . rand(1, 30),
             'user_id' => rand(1, $nbUser),
-            'cour_id' => rand(1, $nbCours),
+            'cour_id' => rand(213, 351),
         ]);
 
 
         //3ème notification
         DB::table('notifications')->insert([
-            'description' => 'un nouveau rendu a été ajouté pour PropVal',
+            'description' => 'Un nouveau rendu a été ajouté pour PropVal',
             'motif' => $motif[2],
             'date' => '2022-06-' . rand(1, 30),
             'user_id' => rand(1, $nbUser),
-            'cour_id' => rand(1, $nbCours),
+            'cour_id' => rand(213, 351),
         ]);
 
         //1ère notification
@@ -66,7 +65,7 @@ class NotificationsTableSeeder extends Seeder
             'motif' => $motif[0],
             'date' => '2022-06-' . rand(1, 30),
             'user_id' => rand(1, $nbUser),
-            'cour_id' => rand(1, $nbCours),
+            'cour_id' => rand(213, 351),
         ]);
 
 
@@ -76,7 +75,7 @@ class NotificationsTableSeeder extends Seeder
             'motif' => $motif[0],
             'date' => '2022-06-' . rand(1, 30),
             'user_id' => rand(1, $nbUser),
-            'cour_id' => rand(1, $nbCours),
+            'cour_id' => rand(213, 351),
         ]);
 
         //2ème notification
@@ -85,7 +84,7 @@ class NotificationsTableSeeder extends Seeder
             'motif' => $motif[1],
             'date' => '2022-06-' . rand(1, 30),
             'user_id' => rand(1, $nbUser),
-            'cour_id' => rand(1, $nbCours),
+            'cour_id' => rand(213, 351),
         ]);
     }
 }

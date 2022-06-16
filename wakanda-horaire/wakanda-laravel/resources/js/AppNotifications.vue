@@ -1,26 +1,36 @@
 <script setup >
 import DataExemple from "./components/DataExemple.vue";
 import CelluleModule from "./components/CelluleModule.vue";
-import Vue from "vue";
-import { ref } from "vue";
+import Vue, { watchEffect } from "vue";
+import { ref, computed } from "vue";
 import { user } from "./state.js";
 import CelluleNotifications from "./components/CelluleNotifications.vue";
 
 const notifications = ref(tabNotifications);
-// notifications.value.forEach(notif => {
-//   trierNotifications(notif);
-// });
-// // function qui permet de trier les notifications grâce à la notification.date
-// function trierNotifications(a, b) {
-//   if (a.date > b.date) {
-//     return -1;
-//   }
-//   if (a.date < b.date) {
-//     return 1;
-//   }
-//   return 0;
-// }
-// console.log(notifications.value);
+
+const cours = ref(tabCours);
+
+
+function getNotifications() {
+  let notifs = [];
+  notifications.value.forEach((notification) => {
+    const courId = notification.cour_id;
+    cours.value.forEach((cour) => {
+      if (courId == cour.id) {
+        if (cour.classe_id == user.value.classe_id) {
+          notifs.push(notification);
+        }
+      }
+    });
+  });
+  return notifs;
+}
+
+function sortedNotifs() {
+  return getNotifications().sort((a, b) => new Date(b.date) - new Date(a.date));
+}
+
+
 </script>
 
 <template>
@@ -43,16 +53,18 @@ const notifications = ref(tabNotifications);
       </table>
       <br />
     </div>
-  
-  <cellule-notifications v-for="notif of notifications" :notification="notif">
-  </cellule-notifications>
-  </div>
 
+    <cellule-notifications
+      v-for="notif of sortedNotifs()"
+      :notification="notif"
+    >
+    </cellule-notifications>
+  </div>
 </template>
 
 <style scoped>
 #divv {
-    margin: 80px;
+  margin: 80px;
 }
 .cercleSalle {
   height: 30px;

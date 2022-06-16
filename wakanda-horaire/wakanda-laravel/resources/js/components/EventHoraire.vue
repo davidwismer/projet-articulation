@@ -1,9 +1,18 @@
 <script setup>
 import { ref } from "vue";
 import PopUpEvent from "./PopUpEvent.vue";
-const props = defineProps(["evenement", "isCurrentMonth"]);
-const showModal = ref(false);
 
+const props = defineProps({
+  evenement: {
+    type: Object
+  },
+  isCurrentMonth: {
+    type: Boolean,
+    default: false
+  }
+});
+
+const showModal = ref(false);
 function getDay(date) {
   let day = date.substring(8, 10);
   return day;
@@ -113,7 +122,7 @@ function getYear(date) {
 </template>
 
 <style scoped>
-.button {
+button {
   height: 18px;
   width: 100%;
   border-radius: 20px;

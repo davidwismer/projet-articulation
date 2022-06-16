@@ -1,7 +1,20 @@
 <script setup>
 import PopUpRendu from "./PopUpRendu.vue";
 import { ref } from "vue";
-const props = defineProps(["rendu", 'isCurrentMonth']);
+
+const props = defineProps({
+  rendu: {
+    type: Object
+  },
+  isCurrentMonth: {
+    type: Boolean,
+    default: false
+  },
+  isFromWeek: {
+    type: Boolean,
+    default: false
+  }
+});
 
 const cours = ref(tabCours);
 let coursNom;
@@ -17,13 +30,8 @@ const showModal = ref(false);
     <button @click="showModal = true" :disabled="!isCurrentMonth">
       <span class="nom">{{ coursNom }}</span>
     </button>
-    <pop-up-rendu
-      v-if="showModal"
-      :show="showMedal"
-      :coursNom="coursNom"
-      :rendu="rendu"
-      @close="showModal = false"
-    ></pop-up-rendu>
+    <pop-up-rendu v-if="showModal" :show="showMedal" :coursNom="coursNom" :rendu="rendu" @close="showModal = false">
+    </pop-up-rendu>
   </div>
 </template>
 

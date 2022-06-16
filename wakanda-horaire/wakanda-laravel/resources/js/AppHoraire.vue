@@ -16,12 +16,16 @@ export default {
   data() {
     return {
       choice: [],
+      classe: null,
       isShowingMonth: true,
     }
   },
   methods: {
     getChecked(choice) {
       this.choice = choice
+    },
+    getClasse(classe) {
+      this.classe = classe
     },
     changeToWeek() {
       if(this.isShowingMonth){
@@ -46,9 +50,9 @@ export default {
     'active' : isShowingMonth,
     'inactive' : !isShowingMonth
   }" type="button" class="mois" value="Mois" @click="changeToMonth">
-  <CalendarMonth :tabChecked="choice" v-show="isShowingMonth"></CalendarMonth>
-  <CalendarWeek :tabChecked="choice" v-show="!isShowingMonth"></CalendarWeek>
-  <filtres-horaire @getChecked="getChecked"></filtres-horaire>
+  <CalendarMonth :tabChecked="choice" :classeSelection="classe" v-show="isShowingMonth"></CalendarMonth>
+  <CalendarWeek :tabChecked="choice" :classeSelection="classe" v-show="!isShowingMonth"></CalendarWeek>
+  <filtres-horaire @getChecked="getChecked" @getClasse="getClasse"></filtres-horaire>
 </template>
 
 <style scoped>
