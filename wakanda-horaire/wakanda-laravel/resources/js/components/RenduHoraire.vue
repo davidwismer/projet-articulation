@@ -11,7 +11,6 @@ const props = defineProps({
     default: false
   },
 });
-
 const cours = ref(tabCours);
 let coursNom;
 cours.value.forEach((cours) => {

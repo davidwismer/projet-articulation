@@ -136,10 +136,10 @@ export default {
         'hour': isHour
     }">
         <span>{{ getHourCase }}</span>
-        <cours-horaire-week class="cours-day" v-for="evt of getCoursCase" :cours="evt" v-show="getIsCours">
+        <cours-horaire-week class="cours-day" v-for="evt of getCoursCase" :isCurrentMonth="true" :cours="evt" v-show="getIsCours">
         </cours-horaire-week>
         <rendu-horaire class="rendu-day" v-for="evt of getRendusCase" :isCurrentMonth="true" :rendu="evt" v-show="getIsRendus"></rendu-horaire>
-        <event-horaire class="event-day" v-for="evt of getEventsCase" :evenement="evt" v-show="getIsEvents">
+        <event-horaire class="event-day" v-for="evt of getEventsCase" :isCurrentMonth="true" :evenement="evt" v-show="getIsEvents">
         </event-horaire>
     </li>
 </template>

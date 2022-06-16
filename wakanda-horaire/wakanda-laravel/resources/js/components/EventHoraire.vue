@@ -11,7 +11,6 @@ const props = defineProps({
     default: false
   }
 });
-
 const showModal = ref(false);
 function getDay(date) {
   let day = date.substring(8, 10);
