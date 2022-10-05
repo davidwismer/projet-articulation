@@ -24,6 +24,6 @@ DB_PASSWORD= *Password de la bd*
 - Effectuer les commandes composer install et npm install
 - Cliquer sur le lien https://wakanda-pingouin.heig-vd.ch/ et observer le projet.
 - Pour se connecter, les identifiants/mots de passe fictifs suivants sont libre d’utilisation pour démo : 
-Direction : direction@heig-vd.ch / *direction*
-Etudiant : eleve@heig-vd.ch / *eleve*
-Enseignant : prof@heig-vd.ch / *prof*
+  - Direction : direction@heig-vd.ch / *direction*
+  - Etudiant : eleve@heig-vd.ch / *eleve*
+  - Enseignant : prof@heig-vd.ch / *prof*
