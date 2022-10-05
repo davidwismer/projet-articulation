@@ -27,3 +27,4 @@ DB_PASSWORD= *Password de la bd*
   - Direction : direction@heig-vd.ch / *direction*
   - Etudiant : eleve@heig-vd.ch / *eleve*
   - Enseignant : prof@heig-vd.ch / *prof*
+- Lors de l'usage hors connexion sur l'app, uniquement les horaires des classes de la filières "Ingénierie des Médias" pour la période Janvier-Aout 2022 sont visibles (démo).
